@@ -3,26 +3,36 @@
 
 {{! The big featured header }}
 <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav overlay clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-        {{#if @blog.navigation}}
-          <div class="menu-button__container">
-            <a class="menu-button__link" href="#">
-              <span class="menu-bar"></span>
-              <span class="menu-bar"></span>
-              <span class="menu-bar"></span>
-            </a>
-            <div class="menu-button__circle"></div>
-          </div>
-        {{/if}}
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{@blog.title}}</h1>
-            <h2 class="page-description">{{@blog.description}}</h2>
-        </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      {{#if @blog.navigation}}
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      {{/if}}
+      {{#if @blog.logo}}
+        <a class="navbar-brand" href="{{@blog.url}}">
+          <img src="{{@blog.logo}}" alt="Blog Logo" />Brand</a>
+      {{/if}}
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <h1 class="page-title">{{@blog.title}}</h1>
+      <h2 class="page-description">{{@blog.description}}</h2>
+    </div>
+  </div>
+  <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45">
+    <span class="hidden">Scroll Down</span>
+  </a>
 </header>
 
 {{! The main content area on the homepage }}

@@ -21,7 +21,7 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}} nav-closed">
+<body class="{{body_class}}">
 
     {{navigation}}
 
@@ -41,10 +41,7 @@
     {{ghost_foot}}
 
     {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/bundle.js"}}"></script>
 
-
-<script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
 </body>
 </html>
