@@ -1,0 +1,13 @@
+.ghost-snap {
+  @extend .list-unstyled;
+
+  li {
+    @extend .col-sm-12;
+    @extend .col-xs-6;
+  }
+
+  img {
+    @extend .thumbnail;
+    @extend .img-responsive;
+  }
+}

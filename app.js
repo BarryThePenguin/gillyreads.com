@@ -2,9 +2,9 @@ var ghost = require('ghost');
 var path = require('path');
 
 function startServer(ghostServer) {
-  ghostServer.start();
+	ghostServer.start();
 }
 
 ghost({
-  config: path.join(__dirname, 'config.js')
+	config: path.join(__dirname, 'config.js')
 }).then(startServer);

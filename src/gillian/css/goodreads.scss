@@ -1,0 +1,32 @@
+.goodreads-widget {
+  @extend .embed-responsive;
+  border-radius: 5px;
+  background-color: #fff;
+  border: solid #683205 10px;
+  box-shadow: 0px 0px 4px 1px #595959, inset 0px 0px 0px 1px #7D730B;
+  padding: 15px 0 35px 15px;
+  height: 330px;
+
+  p {
+    padding: 0px;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  img {
+    border-style: none;
+  }
+
+  iframe {
+    position: relative;
+  }
+}
+
+.goodreads-footer {
+  margin-bottom: 10px;
+
+  img {
+    width: 100px;
+    float: left;
+  }
+}

@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+
+$font-family-sans-serif: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !default;
+
+$font-size-base: 22px !default;
+$line-height-base: 1.5 !default;
+
+$primary-green: #438376;
+
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/grid";
+
+// Components
+@import "bootstrap/thumbnails";
+@import "bootstrap/responsive-embed";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+@import "ghost-snap";
+@import "goodreads";
+
+html {
+  font-size: 16px;
+}
+article {
+  header {
+    h2 {
+      color: $primary-green;
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-top: 0;
+    }
+  }
+  section {
+    font-family: $font-family-serif;
+  }
+}
+aside {
+  header {
+    color: $primary-green;
+  }
+  section {
+    font-family: $font-family-serif;
+  }
+}
