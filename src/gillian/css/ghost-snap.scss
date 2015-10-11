@@ -1,13 +1,16 @@
 .ghost-snap {
-  @extend .list-unstyled;
-
-  li {
-    @extend .col-sm-12;
-    @extend .col-xs-6;
-  }
-
-  img {
-    @extend .thumbnail;
-    @extend .img-responsive;
-  }
+		ul {
+				@extend .list-unstyled;
+				lost-masonry-wrap: flex;
+		}
+		li {
+				lost-masonry-column: 1/2;
+				@media (min-width: 800px) {
+						lost-masonry-column: 1/1;
+				}
+		}
+		img {
+				@extend .thumbnail;
+				@extend .img-responsive;
+		}
 }

@@ -1,60 +1,10 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The big featured header }}
-<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="navbar-header">
-      {{#if @blog.navigation}}
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="sr-only">Toggle navigation</span>
-        </button>
-      {{/if}}
-      {{#if @blog.logo}}
-        <a class="navbar-brand" href="{{@blog.url}}">
-          <img src="{{@blog.logo}}" alt="Blog Logo" /> Brand
-          </a>
-      {{/if}}
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav">
-      </ul>
-    </div>
-  </nav>
-  <div class="vertical">
-    <div class="main-header-content inner">
-      <svg width="100%" viewBox="0 0 6 1">
-        <rect width="1" height="1" x="0" fill="#438376" />
-        <rect width="1" height="1" x="1" fill="#2e585a" />
-        <rect width="1" height="1" x="2" fill="#193126" />
-        <rect width="1" height="1" x="3" fill="#2e5a3b" />
-        <rect width="1" height="1" x="4" fill="#438346" />
-        <rect width="1" height="1" x="5" fill="#6aad58" />
-        <defs>
-          <path id="textpath" fill="none" d="M0,0.75 C2,0 4,1 6,0.75" />
-        </defs>
-        <use xlink:href="#textpath" />
-        <text x="6" font-family="Quicksand" font-size="0.6px" fill="white" text-anchor="end">
-          <textPath xlink:href="#textpath">
-            <tspan>{{@blog.title}}</tspan>
-          </textPath>
-        </text>
-      </svg>
-      <h2 class="page-description">{{@blog.description}}</h2>
-    </div>
-  </div>
-  <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45">
-    <span class="hidden">Scroll Down</span>
-  </a>
-</header>
-
 {{! The main content area on the homepage }}
-<main id="content" class="content container" role="main">
+<main role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+	{{! The tag below includes the post loop - partials/loop.hbs }}
+	{{> "loop"}}
 
 </main>

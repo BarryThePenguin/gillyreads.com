@@ -27,8 +27,10 @@ class Instagram {
 		self.api = 'https://api.instagram.com/v1';
 		self.accessToken = Instagram.accessToken;
 		self.clientID = Instagram.clientID;
-		self.$elem = $element;
+		self.$elem = document.createElement('ul');
 		self.options = Object.assign({}, config, options);
+
+		$element.appendChild(self.$elem);
 	}
 
 	// Users

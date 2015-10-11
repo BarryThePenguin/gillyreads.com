@@ -3,11 +3,10 @@
 
 $font-family-sans-serif: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !default;
-
 $font-size-base: 22px !default;
 $line-height-base: 1.5 !default;
-
 $primary-green: #438376;
+$headings-color: $primary-green;
 
 // Core variables and mixins
 @import "bootstrap/variables";
@@ -19,7 +18,6 @@ $primary-green: #438376;
 // Core CSS
 @import "bootstrap/scaffolding";
 @import "bootstrap/type";
-@import "bootstrap/grid";
 
 // Components
 @import "bootstrap/thumbnails";
@@ -28,32 +26,82 @@ $primary-green: #438376;
 // Utility classes
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
-
 @import "ghost-snap";
 @import "goodreads";
 
+$block: $line-height-computed / 2;
+@lost gutter 60px;
+
 html {
-  font-size: 16px;
+		font-size: 16px;
 }
-article {
-  header {
-    h2 {
-      color: $primary-green;
-      margin-bottom: 0;
-    }
-    h3 {
-      margin-top: 0;
-    }
-  }
-  section {
-    font-family: $font-family-serif;
-  }
+p {
+		font-family: $font-family-serif;
+}
+body {
+
+		// lost-utility: edit;
+}
+.site-wrapper {
+		padding: 15px;
+		lost-utility: clearfix;
+		lost-center: 980px flex;
+}
+main {
+		lost-column: 1/1;
+		@media (min-width: 800px) {
+				lost-column: 2/3;
+		}
 }
 aside {
-  header {
-    color: $primary-green;
-  }
-  section {
-    font-family: $font-family-serif;
-  }
+		lost-column: 1/1;
+		@media (min-width: 800px) {
+				lost-column: 1/3 1;
+		}
+		@media (min-width: 500px) and (max-width: 800px) {
+				section {
+						lost-column: 1/2;
+				}
+				.double {
+						lost-column: 2/2;
+				}
+		}
+		header {
+				text-transform: lowercase;
+		}
+}
+footer {
+    font-size: $font-size-small;
+    margin-bottom: $block;
+		lost-column: 1/1;
+		@media (min-width: 800px) {
+				section {
+						lost-column: 1/2;
+            &.poweredby {
+              text-align: right;
+            }
+				}
+		}
+}
+
+// pagination
+.pagination {
+		lost-column: 1/1;
+    text-align: center;
+}
+.extra-pagination {
+		lost-column: 1/1;
+		display: none;
+		.archive-template & {
+				display: block;
+		}
+}
+.author-thumb {
+		@extend .img-circle;
+		height: $line-height-computed;
+}
+.post-content {
+	img {
+		@include img-responsive;
+	}
 }
