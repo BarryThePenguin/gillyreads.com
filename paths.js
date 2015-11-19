@@ -31,9 +31,6 @@ function deps(p) {
 
 var paths = {
   dest: dest(),
-  bootstrap: {
-    style: deps('/bootstrap-sass/assets/stylesheets')
-  },
   style: {
     src: src('/css'),
     dest: dest('/assets/css'),

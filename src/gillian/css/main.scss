@@ -1,46 +1,34 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400);
 @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 
-$font-family-sans-serif: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif: 'EB Garamond', Georgia, "Times New Roman", Times, serif !default;
-$font-size-base: 22px !default;
-$line-height-base: 1.5 !default;
-$primary-green: #438376;
-$headings-color: $primary-green;
-
 // Core variables and mixins
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "variables";
+@import "mixins";
 
 // Reset and dependencies
-@import "bootstrap/normalize";
+@import "~normalize.css/normalize.css";
 
 // Core CSS
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
+@import "scaffolding";
+@import "type";
 
 // Components
-@import "bootstrap/thumbnails";
-@import "bootstrap/responsive-embed";
+@import "thumbnails";
+@import "responsive-embed";
 
 // Utility classes
-@import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
+@import "utilities";
+@import "responsive-utilities";
+
+// Plugins
 @import "ghost-snap";
 @import "goodreads";
-
-$block: $line-height-computed / 2;
+@import "icons";
 @lost gutter 60px;
-
-html {
-		font-size: 16px;
-}
-p {
-		font-family: $font-family-serif;
-}
 body {
 
 		// lost-utility: edit;
+		// background-image: url(http://basehold.it/i/30);
 }
 .site-wrapper {
 		padding: 15px;
@@ -49,45 +37,59 @@ body {
 }
 main {
 		lost-column: 1/1;
-		@media (min-width: 800px) {
+		@media (min-width: $screen-md-min) {
 				lost-column: 2/3;
+		}
+}
+article {
+		header {
+				margin-bottom: 1vr;
 		}
 }
 aside {
 		lost-column: 1/1;
-		@media (min-width: 800px) {
-				lost-column: 1/3 1;
-		}
-		@media (min-width: 500px) and (max-width: 800px) {
-				section {
-						lost-column: 1/2;
-				}
-				.double {
-						lost-column: 2/2;
-				}
-		}
+		margin-top: 1vr;
 		header {
 				text-transform: lowercase;
 		}
-}
-footer {
-    font-size: $font-size-small;
-    margin-bottom: $block;
-		lost-column: 1/1;
-		@media (min-width: 800px) {
+		section {
+				margin-bottom: 1vr;
+		}
+		@media (min-width: $screen-md-min) {
+				lost-column: 1/3 1;
+		}
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+				.double {
+						lost-column: 2/2;
+				}
 				section {
 						lost-column: 1/2;
-            &.poweredby {
-              text-align: right;
-            }
 				}
 		}
+}
+footer {
+		font-size: $font-size-small;
+		margin-bottom: #{$scale-down}vr;
+}
+.site-footer {
+		lost-column: 1/1;
+		@media (min-width: $screen-md-min) {
+				section {
+						lost-column: 1/2;
+						&.poweredby {
+								text-align: right;
+						}
+				}
+		}
+}
+a.title:hover {
+		text-decoration: none;
 }
 
 // pagination
 .pagination {
 		lost-column: 1/1;
-    text-align: center;
+		text-align: center;
 }
 .extra-pagination {
 		lost-column: 1/1;
@@ -98,10 +100,10 @@ footer {
 }
 .author-thumb {
 		@extend .img-circle;
-		height: $line-height-computed;
+		height: 1vr;
 }
 .post-content {
-	img {
-		@include img-responsive;
-	}
+		img {
+				@include img-responsive;
+		}
 }

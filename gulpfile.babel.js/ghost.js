@@ -7,9 +7,6 @@ const dirPath = (...paths) => {
 	return path.join(...params);
 };
 
-export default () => {
-	var config = path.resolve(dirPath('config.js'));
-	return ghost({config}).then(ghostServer => {
-		return ghostServer.start();
-	});
-};
+const config = path.resolve(dirPath('config.js'));
+
+export default () => ghost({config}).then(ghostServer => ghostServer.start());

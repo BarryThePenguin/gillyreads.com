@@ -11,13 +11,10 @@ function load(url, pfnError) {
 	script.src = url;
 	script.async = true;
 
-	let errorHandler = pfnError;
+	const errorHandler = pfnError;
 	if (typeof errorHandler === 'function') {
-		script.onerror = ex => {
-			errorHandler({
-				url: url,
-				event: ex
-			});
+		script.onerror = event => {
+			errorHandler({url, event});
 		};
 	}
 
@@ -37,21 +34,21 @@ function load(url, pfnError) {
 	head.appendChild(script);
 }
 
-let JSONP = {
+const JSONP = {
 	get: (url, params) => {
 		let query = (url || '').indexOf('?') === -1 ? '?' : '&';
-		let uniqueName = callbackName + '_json' + (++counter);
+		const uniqueName = `${callbackName}_json${++counter}`;
 
 		params = params || {};
 
-		for (let key in params) {
+		for (const key in params) {
 			if (params.hasOwnProperty(key)) {
-				query += encodeURIComponent(key) + '=' + encodeURIComponent(params[key]) + '&';
+				query += `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}&`;
 			}
 		}
 
 		return new Promise((resolve, reject) => {
-			load(url + query + callbackName + '=' + uniqueName, reject);
+			load(`${url}${query}${callbackName}=${uniqueName}`, reject);
 
 			window[uniqueName] = data => {
 				resolve(data);

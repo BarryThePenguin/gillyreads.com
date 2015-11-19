@@ -5,9 +5,12 @@ function develop() {
 	gulp.start('develop');
 }
 
+function build() {
+	gulp.start('build');
+}
+
 gulp.task('develop', [
 	'templates',
-	'styles',
 	'webpack',
 	'templates',
 	'fonts',
@@ -16,4 +19,10 @@ gulp.task('develop', [
 	'ghost'
 ], watch);
 
-gulp.task('default', ['clean'], develop);
+gulp.task('build', ['webpack', 'templates', 'fonts', 'extras']);
+
+if (process.env.NODE_ENV) {
+	gulp.task('default', ['clean'], build);
+} else {
+	gulp.task('default', ['clean'], develop);
+}

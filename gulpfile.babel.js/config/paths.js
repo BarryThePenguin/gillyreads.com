@@ -31,8 +31,9 @@ const modules = p => {
 
 export default {
 	dest: dest(),
-	bootstrap: {
-		style: modules('/bootstrap-sass/assets/stylesheets')
+	bundle: {
+		src: src(),
+		dest: dest('/assets')
 	},
 	style: {
 		src: src('/css/main.scss'),

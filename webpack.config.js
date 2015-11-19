@@ -1,1 +1,2 @@
-module.exports = require('./gulpfile.js/config/webpack')('development');
+require('babel/register');
+module.exports = require('./gulpfile.babel.js/config/webpack');

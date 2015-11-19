@@ -3,7 +3,20 @@
 		<header>
 			<h3>Hi, I'm Gillian and I read books</h3>
 		</header>
-		<p>These are my opinions lol</p>
+		<p>{{@blog.description}}</p>
+		<a href="https://twitter.com/gillythepenguin" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @gillythepenguin</a>
+		<script>
+			! function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0],
+					p = /^http:/.test(d.location) ? 'http' : 'https';
+				if (!d.getElementById(id)) {
+					js = d.createElement(s);
+					js.id = id;
+					js.src = p + '://platform.twitter.com/widgets.js';
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, 'script', 'twitter-wjs');
+		</script>
 	</section>
 	<section>
 		<header>

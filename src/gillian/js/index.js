@@ -7,7 +7,7 @@ Instagram.initialise({
 	clientID: '32a8a43b97c54d30964b9d65d0e5be79'
 });
 
-let instagram = new Instagram({
+const instagram = new Instagram({
 	query: '@gillydowe',
 	max: 4
 }, document.querySelector('.ghost-snap'));

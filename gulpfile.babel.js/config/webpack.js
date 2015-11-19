@@ -1,141 +1,136 @@
 /* eslint-env node */
 import _ from 'lodash';
+import autoprefixer from 'autoprefixer';
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import lost from 'lost';
 import path from 'path';
+import pxtorem from 'postcss-pxtorem';
+import vr from 'postcss-vertical-rhythm';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 
 import paths from './paths';
 import packageJson from '../../package.json';
 
-var configFns = {
-	development: getDevConfig,
-	production: getProdConfig,
-	test: getTestConfig
-};
+export default getConfig();
 
-export default env => {
-	let config = configFns[env]();
-	return addCommonPlugins(config);
-};
+function getConfig() {
+	let config = getCommonConfig();
 
-function getDevConfig() {
-	let commonPlugin = new webpack.optimize.CommonsChunkPlugin('lib.js');
-
-	let exclude = /node_modules/;
-	let devConfig = {
-		debug: true,
-		devtool: 'source-map',
-
-		context: path.resolve(paths.scripts.bundle),
-
-		entry: {
-			app: './index.js'
-		},
-
-		output: {
-			path: path.resolve(paths.scripts.dest),
-			filename: '[name].js'
-		},
-
-		stats: {
-			colors: true,
-			reasons: true
-		},
-
-		plugins: [commonPlugin],
-
-		resolve: {
-			extensions: ['', '.js']
-		},
-
-		module: {
-			loaders: [{
-				test: /\.js$/,
-				loaders: getLoaders(['ng-annotate', 'babel', 'xo']),
-				exclude: exclude
-			}]
-		},
-
-		eslint: {
-			emitError: false,
-			failOnError: false,
-			failOnWarning: false,
-			quiet: true
-		}
-	};
-
-	if (process.env.CI !== 'true') {
-		devConfig.plugins.push(new WebpackNotifierPlugin());
+	if (process.env.NODE_ENV === 'production') {
+		config = _.merge(config, getProdConfig());
+	} else {
+		config = _.merge(config, getDevConfig());
 	}
-
-	return devConfig;
-}
-
-function getProdConfig(noUglify) {
-	let commonPlugin = new webpack.optimize.CommonsChunkPlugin({
-		name: 'lib',
-		filename: '[name]-[hash].js'.replace(/\.js$/, '.min.js')
-	});
-
-	let prodConfig = _.merge({}, getDevConfig(), {
-		output: {
-			path: path.resolve(paths.scripts.dest),
-			filename: '[name]-[hash].js'.replace(/\.js$/, '.min.js')
-		},
-		devtool: 'source-map',
-		eslint: {
-			emitError: true,
-			failOnError: true
-		}
-	});
-
-	prodConfig.plugins = [
-		commonPlugin,
-		new webpack.NoErrorsPlugin(),
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.optimize.AggressiveMergingPlugin()
-	];
-
-	// allow getting rid of the UglifyJsPlugin
-	// https://github.com/webpack/webpack/issues/1079
-	if (!noUglify) {
-		prodConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		}));
-	}
-	return prodConfig;
-}
-
-function getTestConfig() {
-	return _.merge({}, getDevConfig(), {});
-}
-
-function getLoaders(loaders) {
-	return _.filter(loaders, loader => packageJson.devDependencies.hasOwnProperty(loader + '-loader'));
-}
-
-function addCommonPlugins(config) {
-	config.plugins = config.plugins || [];
-
-	config.plugins.unshift(new webpack.BannerPlugin(getBanner(), {
-		raw: true
-	}));
-	// put the global variables before everything else
-	config.plugins.unshift(new webpack.DefinePlugin({
-		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-		'VERSION': JSON.stringify(packageJson.version)
-	}));
 
 	return config;
 }
 
-function getBanner() {
-	return '//! ' + packageJson.name + ' version ' +
-		packageJson.version +
-		' built with ♥ by ' +
-		(packageJson.contributors || [packageJson.author]).join(', ') +
-		' (ó ì_í)=óò=(ì_í ò)\n';
+function getCommonConfig() {
+	return {
+		context: path.resolve(paths.bundle.src),
+		entry: {
+			app: './js/index',
+			styles: './css/main'
+		},
+		output: {
+			path: path.resolve(paths.bundle.dest)
+		},
+		stats: {
+			colors: true,
+			reasons: true
+		},
+		resolve: {
+			extensions: ['', '.js', '.scss']
+		},
+		postcss: getPostCss()
+	};
+}
+
+function getDevConfig() {
+	return {
+		debug: true,
+		devtool: 'eval',
+		output: {
+			filename: '[name].js'
+		},
+		module: {
+			loaders: [
+				getJavaScriptLoader(),
+				getStyleLoader()
+			]
+		},
+		plugins: _.union(getCommonPlugins(), [
+			new BrowserSyncPlugin({
+				host: 'localhost',
+				port: '8080'
+			}),
+			new ExtractTextPlugin('[name].css', {
+				allChunks: true
+			})
+		])
+	};
+}
+
+function getProdConfig() {
+	return {
+		debug: true,
+		devtool: 'source-map',
+		output: {
+			filename: '[name].min.js'
+		},
+		module: {
+			loaders: [
+				getJavaScriptLoader(),
+				getStyleLoader()
+			]
+		},
+		plugins: _.union(getCommonPlugins(), [
+			new webpack.optimize.DedupePlugin(),
+			new webpack.optimize.UglifyJsPlugin(),
+			new webpack.optimize.OccurenceOrderPlugin(),
+			new webpack.optimize.AggressiveMergingPlugin(),
+			new ExtractTextPlugin('[name].min.css', {
+				allChunks: true
+			})
+		])
+	};
+}
+
+function getJavaScriptLoader() {
+	return {
+		test: /\.js$/,
+		loaders: ['babel', 'xo'],
+		exclude: /node_modules/
+	};
+}
+
+function getStyleLoader() {
+	return {
+		test: /\.scss$/,
+		loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass'].join('!'))
+	};
+}
+
+function getPostCss() {
+	return [
+		vr(),
+		lost(),
+		autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}),
+		pxtorem()
+	];
+}
+
+function getCommonPlugins() {
+	return _.filter([
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+			'VERSION': JSON.stringify(packageJson.version)
+		}),
+		new WebpackNotifierPlugin()
+	]);
 }

@@ -1,0 +1,101 @@
+// Colours
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default; // #222
+$gray-dark: lighten($gray-base, 20%) !default; // #333
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+$primary-green: #408274 !default;
+$brand-primary: $primary-green !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+
+// Scaffolding
+$body-bg: #fff !default;
+$text-color: $gray-dark !default;
+$link-color: $brand-primary !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// Typography
+$font-family-sans-serif: 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-serif: 'EB Garamond', Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-serif !default;
+$font-size-base: 20px !default;
+$scale-up: 1.333 !default;
+$scale-down: 0.75 !default;
+$font-size-large: ceil(($font-size-base * $scale-up)) !default;
+$font-size-small: ceil(($font-size-base * $scale-down)) !default;
+
+// Headings
+$font-size-h4: $font-size-base !default;
+$font-size-h3: $font-size-h4 * $scale-up !default;
+$font-size-h2: $font-size-h3 * $scale-up !default;
+$font-size-h1: $font-size-h2 * $scale-up !default;
+$font-size-h5: $font-size-h4 * $scale-down !default;
+$font-size-h6: $font-size-h5 * $scale-down !default;
+
+// Line Height
+$line-height-base: 1.5 !default;
+$headings-font-family: $font-family-sans-serif !default;
+$headings-font-weight: 500 !default;
+$headings-color: inherit !default;
+
+// Components
+$border-radius-base: 4px !default;
+$border-radius-large: 6px !default;
+$border-radius-small: 3px !default;
+
+// Media queries breakpoints
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+// Thumbnails
+$thumbnail-padding: 4px !default;
+$thumbnail-bg: $body-bg !default;
+$thumbnail-border: #ddd !default;
+$thumbnail-border-radius: $border-radius-base !default;
+$thumbnail-caption-color: $text-color !default;
+$thumbnail-caption-padding: 9px !default;
+
+// Type
+$component-offset-horizontal: 180px !default;
+$text-muted: $gray-light !default;
+$abbr-border-color: $gray-light !default;
+$headings-small-color: $gray-light !default;
+$blockquote-small-color: $gray-light !default;
+$blockquote-font-size: ($font-size-base * 1.25) !default;
+$blockquote-border-color: $gray-lighter !default;
+$page-header-border-color: $gray-lighter !default;
+$dl-horizontal-offset: $component-offset-horizontal !default;
+$hr-border: $gray-lighter !default;
+
+// Form states and alerts
+// success
+$state-success-text: #3c763d !default;
+$state-success-bg: #dff0d8 !default;
+$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+// info
+$state-info-text: #31708f !default;
+$state-info-bg: #d9edf7 !default;
+$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+// warning
+$state-warning-text: #8a6d3b !default;
+$state-warning-bg: #fcf8e3 !default;
+$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+// danger
+$state-danger-text: #a94442 !default;
+$state-danger-bg: #f2dede !default;
+$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%) !default;

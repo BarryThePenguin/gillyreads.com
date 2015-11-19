@@ -5,8 +5,6 @@ import error from './lib';
 
 const $ = gulpLoadPlugins();
 
-export default (files) => {
-	return gulp.src(files)
+export default files => gulp.src(files)
 		.pipe($.plumber(error.onError))
 		.pipe($.xo());
-};
