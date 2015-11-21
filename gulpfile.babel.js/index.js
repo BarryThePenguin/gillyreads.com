@@ -11,6 +11,7 @@ import serve from './serve';
 import templates from './templates';
 import watch from './watch';
 import webpack from './webpack';
+import zip from './zip';
 
 gulp.task('clean', clean);
 gulp.task('extras', extras);
@@ -21,3 +22,4 @@ gulp.task('serve', ['ghost'], serve);
 gulp.task('templates', templates);
 gulp.task('watch', watch);
 gulp.task('webpack', webpack);
+gulp.task('zip', zip);

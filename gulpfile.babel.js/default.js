@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import watch from './watch';
+import zip from './zip';
 
 function develop() {
 	gulp.start('develop');
@@ -19,7 +20,7 @@ gulp.task('develop', [
 	'ghost'
 ], watch);
 
-gulp.task('build', ['webpack', 'templates', 'fonts', 'extras']);
+gulp.task('build', ['webpack', 'templates', 'fonts', 'extras'], zip);
 
 if (process.env.NODE_ENV) {
 	gulp.task('default', ['clean'], build);

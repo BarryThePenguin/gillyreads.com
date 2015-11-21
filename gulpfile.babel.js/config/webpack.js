@@ -10,7 +10,7 @@ import vr from 'postcss-vertical-rhythm';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 
-import paths from './paths';
+import * as paths from './paths';
 import packageJson from '../../package.json';
 
 export default getConfig();
