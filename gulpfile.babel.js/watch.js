@@ -3,5 +3,5 @@ import {paths} from './config';
 
 export default () => {
 	gulp.watch(paths.fonts.src, ['fonts']);
-	gulp.watch(paths.src, ['webpack']);
+	gulp.watch(paths.src(), ['webpack']);
 };
