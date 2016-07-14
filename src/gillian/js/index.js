@@ -9,6 +9,6 @@ new Instafeed({
 	limit: large.matches ? 16 : 8,
 	userId: '174349777',
 	resolution: 'low_resolution',
-	accessToken: '31694633.32a8a43.4e2eb7ef66db45efae265d0264b15a0a',
+	accessToken: '174349777.32a8a43.5d8e5946f9714ec9bf596aeea7054431',
 	target: document.querySelector('.instafeed')
 }).run();

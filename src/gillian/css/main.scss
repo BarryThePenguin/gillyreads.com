@@ -14,6 +14,7 @@
 
 // Components
 @import "thumbnails";
+@import "navigation";
 @import "responsive-embed";
 
 // Utility classes
@@ -24,16 +25,18 @@
 @import "instafeed";
 @import "goodreads";
 @import "icons";
-@lost gutter 60px;
-body {
 
+// Lost
+@lost gutter 60px;
+@lost flexbox flex;
+
+body {
 		// lost-utility: edit;
 		// background-image: url(http://basehold.it/i/30);
 }
 .site-wrapper {
 		padding: 15px;
-		lost-utility: clearfix;
-		lost-center: 980px flex;
+		lost-center: 980px;
 }
 main {
 		lost-column: 1/1;
@@ -43,20 +46,21 @@ main {
 }
 article {
 		header {
-				margin-bottom: 1vr;
+				margin-bottom: 1lh;
 		}
 }
 aside {
 		lost-column: 1/1;
-		margin-top: 1vr;
+		lost-flex-container: row;
+		margin-top: 1lh;
 		header {
 				text-transform: lowercase;
 		}
 		section {
-				margin-bottom: 1vr;
+				margin-bottom: 1lh;
 		}
 		@media (min-width: $screen-md-min) {
-				lost-column: 1/3 1;
+				lost-column: 1/3 3;
 		}
 		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 				section {
@@ -66,20 +70,18 @@ aside {
 }
 footer {
 		font-size: $font-size-small;
-		margin-bottom: #{$scale-down}vr;
+		margin-bottom: #{$scale-down}lh;
 }
 .site-footer {
 		padding: 15px;
-		lost-utility: clearfix;
-		lost-center: 980px flex;
-		@media (min-width: $screen-md-min) {
-				section {
-						lost-column: 1/2;
-						&.poweredby {
-								text-align: right;
-						}
+		lost-center: 980px;
+		section {
+				lost-column: 1/2;
+
+				&.poweredby {
+						text-align: right;
 				}
-		}
+		}	
 }
 a.title:hover {
 		text-decoration: none;
@@ -99,7 +101,7 @@ a.title:hover {
 }
 .author-thumb {
 		@extend .img-circle;
-		height: 1vr;
+		height: 1lh;
 }
 .post-content {
 		img {

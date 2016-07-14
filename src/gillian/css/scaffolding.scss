@@ -67,7 +67,7 @@ img {
 // Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
 .img-thumbnail {
 		padding: $thumbnail-padding;
-		line-height: 1vr;
+		line-height: 1lh;
 		background-color: $thumbnail-bg;
 		border: 1px solid $thumbnail-border;
 		border-radius: $thumbnail-border-radius;
@@ -84,8 +84,8 @@ img {
 
 // Horizontal rules
 hr {
-		margin-top: 1vr;
-		margin-bottom: 1vr;
+		margin-top: 1lh;
+		margin-bottom: 1lh;
 		border: 0;
 		border-top: 1px solid $hr-border;
 }

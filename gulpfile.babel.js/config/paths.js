@@ -51,7 +51,8 @@ export const templates = {
 	],
 	dest: dest(),
 	watch: [
-		dest('/**/*.hbs')
+		src('/**/*.hbs'),
+		common('/**/*.hbs')
 	]
 };
 

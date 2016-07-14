@@ -1,17 +1,18 @@
 /* eslint-env node */
+import path from 'path';
 import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import lost from 'lost';
-import path from 'path';
 import pxtorem from 'postcss-pxtorem';
-import vr from 'postcss-vertical-rhythm';
+import lh from 'postcss-lh';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
+import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 
-import * as paths from './paths';
 import packageJson from '../../package.json';
+import * as paths from './paths';
 
 export default getConfig();
 
@@ -78,7 +79,7 @@ function getProdConfig() {
 		debug: true,
 		devtool: 'source-map',
 		output: {
-			filename: '[name].min.js'
+			filename: '[name].js'
 		},
 		module: {
 			loaders: [
@@ -91,7 +92,7 @@ function getProdConfig() {
 			new webpack.optimize.UglifyJsPlugin(),
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.AggressiveMergingPlugin(),
-			new ExtractTextPlugin('[name].min.css', {
+			new ExtractTextPlugin('[name].css', {
 				allChunks: true
 			})
 		])
@@ -115,7 +116,11 @@ function getStyleLoader() {
 
 function getPostCss() {
 	return [
-		vr(),
+		lh({
+			rootSelector: ':root',
+			rhythmUnit: 'lh',
+			lineHeight: 1.5
+		}),
 		lost(),
 		autoprefixer({
 			browsers: ['last 2 versions'],
@@ -127,6 +132,7 @@ function getPostCss() {
 
 function getCommonPlugins() {
 	return _.filter([
+		new LodashModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'VERSION': JSON.stringify(packageJson.version)

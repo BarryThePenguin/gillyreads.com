@@ -42,8 +42,8 @@ h5,
 .h5,
 h6,
 .h6 {
-		margin-top: 1vr;
-		margin-bottom: .5vr;
+		margin-top: 1lh;
+		margin-bottom: .5lh;
 		small,
 		.small {
 				font-size: 75%;
@@ -52,30 +52,30 @@ h6,
 h1,
 .h1 {
 		font-size: $font-size-h1;
-		line-height: 2vr;
-		margin-top: 2vr;
-		margin-bottom: 1vr;
+		line-height: 2lh;
+		margin-top: 2lh;
+		margin-bottom: 1lh;
 }
 h2,
 .h2 {
 		font-size: $font-size-h2;
-		line-height: 2vr;
-		margin-top: 2vr;
-		margin-bottom: 1vr;
+		line-height: 2lh;
+		margin-top: 2lh;
+		margin-bottom: 1lh;
 }
 h3,
 .h3 {
 		font-size: $font-size-h3;
-		line-height: 1vr;
-		margin-top: 1vr;
-		margin-bottom: 1vr;
+		line-height: 1lh;
+		margin-top: 1lh;
+		margin-bottom: 1lh;
 }
 h4,
 .h4 {
 		font-size: $font-size-h4;
-		line-height: 1vr;
-		margin-top: 1vr;
-		margin-bottom: 1vr;
+		line-height: 1lh;
+		margin-top: 1lh;
+		margin-bottom: 1lh;
 }
 h5,
 .h5 {
@@ -90,10 +90,10 @@ h6,
 // -------------------------
 p {
 		margin: 0;
-		margin-bottom: 1vr;
+		margin-bottom: 1lh;
 }
 .lead {
-		margin-bottom: 1vr;
+		margin-bottom: 1lh;
 		font-size: floor(($font-size-base * 1.15));
 		font-weight: 300;
 		line-height: 1.4;
@@ -171,7 +171,7 @@ mark,
 // Page header
 // -------------------------
 .page-header {
-		padding-bottom: ((.5vr) - 1);
+		padding-bottom: ((.5lh) - 1);
 		margin: 0;
 		border-bottom: 1px solid $page-header-border-color;
 }
@@ -182,7 +182,7 @@ mark,
 ul,
 ol {
 		margin-top: 0;
-		margin-bottom: (.5vr);
+		margin-bottom: (.5lh);
 		ul,
 		ol {
 				margin-bottom: 0;
@@ -215,11 +215,11 @@ ol {
 // Description Lists
 dl {
 		margin-top: 0; // Remove browser default
-		margin-bottom: 1vr;
+		margin-bottom: 1lh;
 }
 dt,
 dd {
-		line-height: 1vr;
+		line-height: 1lh;
 }
 dt {
 		font-weight: bold;
@@ -244,8 +244,8 @@ abbr[data-original-title] {
 
 // Blockquotes
 blockquote {
-		padding: (.5vr) 1vr;
-		margin: 0 0 1vr;
+		padding: (.5lh) 1lh;
+		margin: 0 0 1lh;
 		font-size: $blockquote-font-size;
 		border-left: 5px solid $blockquote-border-color;
 		p,
@@ -263,7 +263,7 @@ blockquote {
 		.small {
 				display: block;
 				font-size: 80%; // back to default font-size
-				line-height: 1vr;
+				line-height: 1lh;
 				color: $blockquote-small-color;
 				&:before {
 						content: '\2014 \00A0'; // em dash, nbsp
@@ -297,7 +297,7 @@ blockquote.pull-right {
 
 // Addresses
 address {
-		margin-bottom: 1vr;
+		margin-bottom: 1lh;
 		font-style: normal;
-		line-height: 1vr;
+		line-height: 1lh;
 }
