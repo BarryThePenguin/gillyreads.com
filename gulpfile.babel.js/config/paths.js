@@ -15,8 +15,6 @@ export const dirPath = (...paths) => {
 
 export const src = p => dirPath('/src/', theme, p || '');
 
-export const common = p => dirPath('/src/_common', p || '');
-
 export const dest = p => dirPath('/content/themes/', theme, p || '');
 
 export const modules = p => dirPath('/node_modules/', p || '');
@@ -30,8 +28,7 @@ export const style = {
 	src: src('/css/main.scss'),
 	dest: dest('/assets/css'),
 	watch: [
-		src('/css/**/*.scss'),
-		common('/css/**/*.scss')
+		src('/css/**/*.scss')
 	],
 	imports: [
 		dirPath('node_modules')
@@ -46,13 +43,11 @@ export const scripts = {
 
 export const templates = {
 	src: [
-		src('/templates/**/*.hbs'),
-		common('/templates/**/*.hbs')
+		src('/templates/**/*.hbs')
 	],
 	dest: dest(),
 	watch: [
-		src('/**/*.hbs'),
-		common('/**/*.hbs')
+		src('/**/*.hbs')
 	]
 };
 
@@ -63,8 +58,7 @@ export const extras = {
 
 export const fonts = {
 	src: [
-		src('/fonts/*.{eot,svg,ttf,woff,otf}'),
-		common('/fonts/*.{eot,svg,ttf,woff,otf}')
+		src('/fonts/*.{eot,svg,ttf,woff,otf}')
 	],
 	dest: dest('/assets/fonts')
 };

@@ -23,3 +23,7 @@ indent_brace_style = BSD KNF
 # HTML
 [*.html]
 quote_type = double
+
+[{package.json,*.yml}]
+indent_style = space
+indent_size = 2
