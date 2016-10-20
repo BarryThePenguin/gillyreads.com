@@ -1,5 +1,5 @@
-import compileLogger from './compileLogger';
-import handleError from './handleError';
-import prettifyTime from './prettifyTime';
+import compileLogger from './compile-logger';
+import handleError from './handle-error';
+import prettifyTime from './prettify-time';
 
-export {compileLogger, handleError, prettifyTime};
+export default {compileLogger, handleError, prettifyTime};

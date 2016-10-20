@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import config from './config/webpack';
-import {compileLogger} from './lib';
+import config from '../webpack.config.babel';
+import compileLogger from './lib/compile-logger';
 
 const compiler = webpack(config);
 const result = done => (err, stats) => {

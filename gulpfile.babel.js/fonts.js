@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 
-import {paths} from './config';
+import {fonts} from '../config/paths';
 
-export default () => gulp.src(paths.fonts.src)
-	.pipe(gulp.dest(paths.fonts.dest));
+export default () => gulp.src(fonts.src)
+	.pipe(gulp.dest(fonts.dest));

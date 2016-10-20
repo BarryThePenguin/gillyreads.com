@@ -1,11 +1,11 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
+import {templates} from '../config/paths';
 import handleError from './lib';
-import {paths} from './config';
 
 const $ = gulpLoadPlugins();
 
-export default () => gulp.src(paths.templates.src)
+export default () => gulp.src(templates.src)
 	.pipe($.plumber(handleError))
-	.pipe(gulp.dest(paths.templates.dest));
+	.pipe(gulp.dest(templates.dest));

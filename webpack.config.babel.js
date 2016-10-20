@@ -1,4 +1,3 @@
-/* eslint-env node */
 import path from 'path';
 import _ from 'lodash';
 import autoprefixer from 'autoprefixer';
@@ -11,8 +10,9 @@ import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 
-import packageJson from '../../package.json';
-import * as paths from './paths';
+import * as paths from './config/paths';
+
+import packageJson from './package';
 
 export default getConfig();
 
@@ -135,7 +135,7 @@ function getCommonPlugins() {
 		new LodashModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-			'VERSION': JSON.stringify(packageJson.version)
+			VERSION: JSON.stringify(packageJson.version)
 		}),
 		new WebpackNotifierPlugin()
 	]);

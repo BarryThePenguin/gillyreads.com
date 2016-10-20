@@ -1,8 +1,8 @@
 import util from 'gulp-util';
 import del from 'del';
-import {paths} from './config';
+import {dest} from '../config/paths';
 
 export default () => {
-	util.log(`Cleaning ${paths.dest()}`);
-	return del(paths.dest());
+	util.log(`Cleaning ${dest()}`);
+	return del(dest());
 };

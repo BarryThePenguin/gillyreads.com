@@ -1,5 +1,5 @@
-var ghost = require('ghost');
-var path = require('path');
+const path = require('path');
+const ghost = require('ghost');
 
 function startServer(ghostServer) {
 	ghostServer.start();
