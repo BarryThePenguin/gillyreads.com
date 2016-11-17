@@ -45,7 +45,7 @@
     "style-loader": "0.13.1",
     "webpack": "1.13.3",
     "webpack-notifier": "1.4.1",
-    "xo": "0.17.0",
+    "xo": "0.17.1",
     "xo-loader": "0.7.0"
   },
   "xo": {
