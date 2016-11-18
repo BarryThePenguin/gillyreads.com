@@ -1,12 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400);
 @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+@typography true;
 
 // Core variables and mixins
 @import "variables";
 @import "mixins";
-
-// Reset and dependencies
-@import "~normalize.css/normalize.css";
 
 // Core CSS
 @import "scaffolding";
@@ -15,6 +13,7 @@
 // Components
 @import "thumbnails";
 @import "navigation";
+@import "author";
 @import "responsive-embed";
 
 // Utility classes
@@ -29,6 +28,7 @@
 // Lost
 @lost gutter 60px;
 @lost flexbox flex;
+@lost rounder 100;
 
 body {
 		// lost-utility: edit;
@@ -37,6 +37,11 @@ body {
 .site-wrapper {
 		padding: 15px;
 		lost-center: 980px;
+		lost-flex-container: column;
+
+		@media (min-width: $screen-md-min) {
+				lost-flex-container: row;
+		}
 }
 main {
 		lost-column: 1/1;
@@ -48,24 +53,26 @@ article {
 		header {
 				margin-bottom: 1lh;
 		}
+
+		margin-bottom: 2lh;
 }
 aside {
 		lost-column: 1/1;
 		lost-flex-container: row;
-		margin-top: 1lh;
 		header {
 				text-transform: lowercase;
 		}
 		section {
 				margin-bottom: 1lh;
 		}
-		@media (min-width: $screen-md-min) {
-				lost-column: 1/3 3;
-		}
 		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 				section {
 						lost-column: 1/2;
 				}
+		}
+		@media (min-width: $screen-md-min) {
+				lost-column: 1/3 3;
+				lost-flex-container: column;
 		}
 }
 footer {
@@ -81,7 +88,7 @@ footer {
 				&.poweredby {
 						text-align: right;
 				}
-		}	
+		}
 }
 a.title:hover {
 		text-decoration: none;

@@ -6,6 +6,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import lost from 'lost';
 import pxtorem from 'postcss-pxtorem';
 import lh from 'postcss-lh';
+import typography from 'postcss-typography';
 import webpack from 'webpack';
 import WebpackNotifierPlugin from 'webpack-notifier';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
@@ -116,6 +117,25 @@ function getStyleLoader() {
 
 function getPostCss() {
 	return [
+		typography({
+			googleFonts: [{
+				name: 'EB Garamond',
+				styles: [
+					'400'
+				]
+			}, {
+				name: 'Open Sans',
+				styles: [
+					'400'
+				]
+			}],
+			headerFontFamily: ['Quicksand', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+			bodyFontFamily: ['EB Garamond', 'Georgia', 'Times New Roman', 'Times', 'serif'],
+			baseFontSize: '20px',
+			headerWeight: 'normal',
+			bodyWeight: 'normal',
+			scaleRatio: 2.96
+		}),
 		lh({
 			rootSelector: ':root',
 			rhythmUnit: 'lh',
