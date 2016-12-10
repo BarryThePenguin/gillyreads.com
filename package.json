@@ -36,7 +36,7 @@
     "lost": "^8.0.0-beta.2",
     "ngrok": "^2.2.3",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.13.0",
+    "node-sass": "^4.0.0",
     "normalize.css": "^5.0.0",
     "postcss-lh": "^1.1.4",
     "postcss-loader": "^1.1.1",
