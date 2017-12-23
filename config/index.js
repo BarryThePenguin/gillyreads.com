@@ -1,3 +1,3 @@
-import * as paths from './paths';
+const paths = require('./paths');
 
-export default {paths};
+module.exports = {paths};

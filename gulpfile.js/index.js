@@ -1,26 +1,24 @@
-import gulp from 'gulp';
+const gulp = require('gulp');
 
-import clean from './clean';
-import extras from './extras';
-import fonts from './fonts';
-import ghost from './ghost';
-import serve from './serve';
-import templates from './templates';
-import watch from './watch';
-import webpack from './webpack';
-import zip from './zip';
+const clean = require('./clean');
+const extras = require('./extras');
+const fonts = require('./fonts');
+const serve = require('./serve');
+const templates = require('./templates');
+const watch = require('./watch');
+const webpack = require('./webpack');
+const zip = require('./zip');
 
 gulp.task('clean', clean);
 gulp.task('extras', extras);
 gulp.task('fonts', fonts);
-gulp.task('ghost', ['webpack', 'extras', 'templates'], ghost);
-gulp.task('serve', ['ghost'], serve);
+gulp.task('serve', ['webpack', 'extras', 'templates'], serve);
 gulp.task('templates', templates);
 gulp.task('watch', watch);
 gulp.task('webpack', webpack);
 gulp.task('zip', zip);
 
-// default task
+// Default task
 
 function develop() {
 	gulp.start('develop');
@@ -36,8 +34,7 @@ gulp.task('develop', [
 	'templates',
 	'fonts',
 	'extras',
-	'serve',
-	'ghost'
+	'serve'
 ], watch);
 
 gulp.task('build', ['webpack', 'templates', 'fonts', 'extras'], zip);

@@ -1,5 +1,5 @@
-import path from 'path';
-import util from 'gulp-util';
+const path = require('path');
+const util = require('gulp-util');
 
 let theme = 'gillian';
 
@@ -7,24 +7,24 @@ if (util.env.theme) {
 	theme = util.env.theme;
 }
 
-export const dirPath = (...paths) => {
+const dirPath = (...paths) => {
 	const params = ['./'];
 	params.push(...paths);
 	return path.join(...params);
 };
 
-export const src = p => dirPath('/src/', theme, p || '');
+const src = p => dirPath('/src/', theme, p || '');
 
-export const dest = p => dirPath('/content/themes/', theme, p || '');
+const dest = p => dirPath('/content/themes/', theme, p || '');
 
-export const modules = p => dirPath('/node_modules/', p || '');
+const modules = p => dirPath('/node_modules/', p || '');
 
-export const bundle = {
+const bundle = {
 	src: src(),
 	dest: dest('/assets')
 };
 
-export const style = {
+const style = {
 	src: src('/css/main.scss'),
 	dest: dest('/assets/css'),
 	watch: [
@@ -35,13 +35,13 @@ export const style = {
 	]
 };
 
-export const scripts = {
+const scripts = {
 	src: src('/js/**/*'),
 	dest: dest('/assets/js'),
 	bundle: src('/js/')
 };
 
-export const templates = {
+const templates = {
 	src: [
 		src('/templates/**/*.hbs')
 	],
@@ -51,14 +51,26 @@ export const templates = {
 	]
 };
 
-export const extras = {
+const extras = {
 	src: src('/stuff/*'),
 	dest: dest()
 };
 
-export const fonts = {
+const fonts = {
 	src: [
 		src('/fonts/*.{eot,svg,ttf,woff,otf}')
 	],
 	dest: dest('/assets/fonts')
+};
+
+module.exports = {
+	src,
+	dest,
+	modules,
+	bundle,
+	style,
+	scripts,
+	templates,
+	extras,
+	fonts
 };

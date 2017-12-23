@@ -1,6 +1,6 @@
-import gutil from 'gulp-util';
+const gutil = require('gulp-util');
 
-export default (err, stats) => {
+module.exports = (err, stats) => {
 	if (err) {
 		throw new gutil.PluginError('webpack', err);
 	}

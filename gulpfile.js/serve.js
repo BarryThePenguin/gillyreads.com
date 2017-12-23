@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/namespace, import/default, import/no-named-as-default-member, import/no-named-as-default
-import browserSync from 'browser-sync';
+const browserSync = require('browser-sync');
 
-export default () => {
+module.exports = () => {
 	browserSync({
 		proxy: 'http://localhost:2368',
 		port: 3000,

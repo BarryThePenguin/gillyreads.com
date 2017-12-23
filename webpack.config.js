@@ -1,21 +1,16 @@
-import path from 'path';
-import _ from 'lodash';
-import autoprefixer from 'autoprefixer';
-import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import lost from 'lost';
-import pxtorem from 'postcss-pxtorem';
-import lh from 'postcss-lh';
-import typography from 'postcss-typography';
-import webpack from 'webpack';
-import WebpackNotifierPlugin from 'webpack-notifier';
-import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
+const path = require('path');
+const _ = require('lodash');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const WebpackNotifierPlugin = require('webpack-notifier');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
-import * as paths from './config/paths';
+const paths = require('./config/paths');
 
-import packageJson from './package';
+const packageJson = require('./package');
 
-export default getConfig();
+module.exports = getConfig();
 
 function getConfig() {
 	let config = getCommonConfig();
@@ -44,26 +39,24 @@ function getCommonConfig() {
 			reasons: true
 		},
 		resolve: {
-			extensions: ['', '.js', '.scss']
-		},
-		postcss: getPostCss()
+			extensions: ['.js', '.scss']
+		}
 	};
 }
 
 function getDevConfig() {
 	return {
-		debug: true,
-		devtool: 'eval',
 		output: {
 			filename: '[name].js'
 		},
 		module: {
-			loaders: [
+			rules: [
 				getJavaScriptLoader(),
 				getStyleLoader()
 			]
 		},
 		plugins: _.union(getCommonPlugins(), [
+			new webpack.SourceMapDevToolPlugin(),
 			new BrowserSyncPlugin({
 				host: 'localhost',
 				port: '8080'
@@ -83,7 +76,7 @@ function getProdConfig() {
 			filename: '[name].js'
 		},
 		module: {
-			loaders: [
+			rules: [
 				getJavaScriptLoader(),
 				getStyleLoader()
 			]
@@ -103,7 +96,7 @@ function getProdConfig() {
 function getJavaScriptLoader() {
 	return {
 		test: /\.js$/,
-		loaders: ['babel', 'xo'],
+		use: ['babel-loader', 'xo-loader'],
 		exclude: /node_modules/
 	};
 }
@@ -111,43 +104,11 @@ function getJavaScriptLoader() {
 function getStyleLoader() {
 	return {
 		test: /\.scss$/,
-		loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'sass'].join('!'))
+		use: ExtractTextPlugin.extract({
+			fallback: 'style-loader',
+			use: ['css-loader', 'postcss-loader', 'sass-loader']
+		})
 	};
-}
-
-function getPostCss() {
-	return [
-		typography({
-			googleFonts: [{
-				name: 'EB Garamond',
-				styles: [
-					'400'
-				]
-			}, {
-				name: 'Open Sans',
-				styles: [
-					'400'
-				]
-			}],
-			headerFontFamily: ['Quicksand', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-			bodyFontFamily: ['EB Garamond', 'Georgia', 'Times New Roman', 'Times', 'serif'],
-			baseFontSize: '20px',
-			headerWeight: 'normal',
-			bodyWeight: 'normal',
-			scaleRatio: 2.96
-		}),
-		lh({
-			rootSelector: ':root',
-			rhythmUnit: 'lh',
-			lineHeight: 1.5
-		}),
-		lost(),
-		autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false
-		}),
-		pxtorem()
-	];
 }
 
 function getCommonPlugins() {

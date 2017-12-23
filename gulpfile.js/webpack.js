@@ -1,6 +1,6 @@
-import webpack from 'webpack';
-import config from '../webpack.config.babel';
-import compileLogger from './lib/compile-logger';
+const webpack = require('webpack');
+const config = require('../webpack.config');
+const compileLogger = require('./lib/compile-logger');
 
 const compiler = webpack(config);
 const result = done => (err, stats) => {
@@ -8,7 +8,7 @@ const result = done => (err, stats) => {
 	done();
 };
 
-export default done => {
+module.exports = done => {
 	if (process.env.NODE_ENV) {
 		webpack(config, result(done));
 	} else {
