@@ -1,12 +1,8 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        {{#foreach navigation}}
-          <li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-        <li><a class="subscribe-button icon-feed" href="{{@blog.url}}/subscribe/">Subscribe</a></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar">
+  <ul class="navbar-nav">
+    {{#foreach navigation}}
+      <li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}}
+    <li><a class="subscribe-button icon-feed" href="{{@blog.url}}/subscribe/">Subscribe</a></li>
+  </ul>
 </nav>

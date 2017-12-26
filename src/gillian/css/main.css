@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+
+@import 'typography';
+@import 'navbar';
+@import 'navigation';
+@import 'author';
+@import 'instafeed';
+@import 'goodreads';
+@import 'icons';
+
+@custom-media --small (min-width: 768px);
+@custom-media --medium (min-width: 992px);
+@custom-media --large (min-width: 1200px);
+
+@custom-media --small-max (max-width: 991px);
+@custom-media --medium-max (max-width: 1199px);
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+	border: 0;
+}
+
+.site-wrapper {
+	padding: 15px;
+	margin: 0 auto;
+
+	@media (--medium) {
+		display: flex;
+		max-width: 980px;
+	}
+}
+
+main {
+	@media (--medium) {
+		margin-right: 60px;
+		flex-basis: calc(2/3 * 100%);
+	}
+}
+
+article {
+	margin-bottom: 2lh;
+}
+
+article header {
+	margin-bottom: 1lh;
+}
+
+aside {
+	@media (--small) and (--small-max) {
+		display: flex;
+		flex-basis: calc(1/2 * 100%);
+	}
+
+	@media (--medium) {
+		flex-basis: calc(1/3 * 100%);
+	}
+}
+
+aside header {
+	text-transform: lowercase;
+}
+
+aside section {
+	@media (--small) {
+		margin: 0 1lh 1lh 0;
+	}
+}
+
+aside section:last-child {
+	@media (--small) {
+		margin-right: 0;
+	}
+}
+
+footer {
+	font-size: 75%;
+	margin-bottom: 1lh;
+
+	@media (--medium) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-basis: 100%;
+	}
+}
+
+blockquote {
+	padding: 0.5lh;
+	box-shadow: 4px 4px 2px 0px var(--grayLighter);
+}
+
+blockquote,
+q {
+	quotes: '“ ' '”';
+	font-style: italic;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	color: var(--grayLight);
+}
+
+blockquote:before,
+q:before {
+	font-size: 200%;
+	content: open-quote;
+	position: relative;
+	left: -1lh;
+}
+
+blockquote:after,
+q:after {
+	content: close-quote;
+}
+
+.post-meta {
+	display: inline-block;
+	line-height: 1lh;
+}
+
+.site-footer {
+	padding: 15px;
+	margin: 0 auto;
+	align-content: space-between;
+
+	@media (--medium) {
+		display: flex;
+		max-width: 980px;
+	}
+}
+
+.site-footer section {
+	flex-basis: 100%;
+}
+
+.poweredby {
+	@media (--medium) {
+		text-align: right;
+	}
+}
+
+.post-content img {
+	@include img-responsive;
+}

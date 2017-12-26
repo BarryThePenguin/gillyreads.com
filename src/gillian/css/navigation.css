@@ -1,0 +1,12 @@
+.pagination {
+	margin-bottom: 1lh;
+	text-align: center;
+}
+
+.extra-pagination {
+	display: none;
+}
+
+.paged .extra-pagination {
+	display: block;
+}

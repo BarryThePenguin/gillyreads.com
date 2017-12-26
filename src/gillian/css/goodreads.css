@@ -1,0 +1,41 @@
+.goodreads {
+	border-radius: 5px;
+	background-color: #fff;
+	border: solid #683205 10px;
+	box-shadow: 0px 0px 4px 1px #595959, inset 0px 0px 0px 1px #7d730b;
+	padding: 15px 0 35px 15px;
+	height: 330px;
+
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.goodreads p {
+	padding: 0px;
+	margin: 0;
+	font-size: 14px;
+}
+
+.goodreads img {
+	border-style: none;
+}
+
+.goodreads iframe {
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	border: 0;
+}
+
+.goodreads-footer {
+	margin-bottom: 10px;
+}
+
+.goodreads-footer img {
+	width: 100px;
+	float: left;
+}

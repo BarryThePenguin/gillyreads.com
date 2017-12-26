@@ -1,4 +1,9 @@
 {
-  "name": "Gillian",
-  "version": "1.0.0"
+  "name": "gillyreads",
+  "version": "1.0.0",
+  "author": {
+    "name" : "Jonathan Haines",
+    "email" : "jonno.haine@gmail.com",
+    "url" : "https://barrythepenguin.github.io/"
+  }
 }

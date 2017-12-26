@@ -6,7 +6,9 @@ const handleError = require('./lib');
 
 const $ = gulpLoadPlugins();
 
-module.exports = () => gulp.src(dest('**/*'))
-	.pipe($.plumber(handleError))
-	.pipe($.zip('gillian.zip'))
-	.pipe(gulp.dest(dest('../')));
+module.exports = () =>
+	gulp
+		.src(dest('**/*'))
+		.pipe($.plumber(handleError))
+		.pipe($.zip('gillian.zip'))
+		.pipe(gulp.dest('.'));

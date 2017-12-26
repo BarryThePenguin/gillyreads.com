@@ -1,5 +1,8 @@
 .author-thumb {
 	margin-bottom: 0;
+	border-radius: 1lh;
+	height: 1lh;
+	vertical-align: middle;
 }
 
 .author-meta {

@@ -1,0 +1,23 @@
+.icon-twitter {
+	fill: var(--grayLight);
+	&:hover {
+		fill: #55acee;
+		text-decoration: none;
+	}
+}
+
+.icon-facebook {
+	fill: var(--grayLight);
+	&:hover {
+		fill: #3b5998;
+		text-decoration: none;
+	}
+}
+
+.icon-google-plus {
+	fill: var(--grayLight);
+	&:hover {
+		fill: #dd4b39;
+		text-decoration: none;
+	}
+}

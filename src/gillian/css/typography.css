@@ -1,0 +1,12 @@
+@typography {
+	a {
+		color: var(--link);
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:active {
+		color: var(--linkHover);
+		text-decoration: underline;
+	}
+}
