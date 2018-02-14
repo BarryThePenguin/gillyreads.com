@@ -57,7 +57,7 @@
     "webpack": "^3.10.0",
     "webpack-merge": "^4.1.1",
     "webpack-notifier": "^1.4.1",
-    "xo": "^0.18.2",
+    "xo": "^0.20.0",
     "xo-loader": "^0.8.0"
   },
   "xo": {
