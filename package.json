@@ -54,7 +54,7 @@
     "prettier": "^1.9.2",
     "semver": "^5.3.0",
     "style-loader": "^0.19.1",
-    "webpack": "^3.10.0",
+    "webpack": "^4.0.0",
     "webpack-merge": "^4.1.1",
     "webpack-notifier": "^1.4.1",
     "xo": "^0.18.2",
