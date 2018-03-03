@@ -37,7 +37,7 @@
     "gulp-zip": "^4.0.0",
     "lodash-webpack-plugin": "^0.11.4",
     "lost": "^8.0.0-beta.2",
-    "ngrok": "^2.2.3",
+    "ngrok": "^3.0.0",
     "node-libs-browser": "^2.1.0",
     "normalize.css": "^7.0.0",
     "polished": "^1.9.0",
