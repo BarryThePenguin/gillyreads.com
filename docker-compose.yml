@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   ghost:
-    image: ghost:1-alpine
+    image: ghost:alpine
     restart: always
     environment:
       - NODE_ENV=development

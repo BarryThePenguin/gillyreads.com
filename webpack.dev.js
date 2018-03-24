@@ -4,7 +4,6 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
-	devtool: 'inline-source-map',
 	plugins: [
 		new WebpackNotifierPlugin(),
 		new BrowserSyncPlugin({

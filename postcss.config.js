@@ -6,7 +6,7 @@ const lh = require('postcss-lh');
 const typography = require('postcss-typography');
 const browserReporter = require('postcss-browser-reporter');
 const reporter = require('postcss-reporter');
-const { darken, lighten } = require('polished');
+const {darken, lighten} = require('polished');
 
 const grayBase = '#000';
 const grayDarker = lighten(0.135, grayBase);
@@ -24,8 +24,20 @@ const brandDanger = '#d9534f';
 const link = brandPrimary;
 const linkHover = darken(0.15, link);
 
-const headerFontFamily = ['Quicksand', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'];
-const bodyFontFamily = ['EB Garamond', 'Georgia', 'Times New Roman', 'Times', 'serif'];
+const headerFontFamily = [
+	'Quicksand',
+	'Helvetica Neue',
+	'Helvetica',
+	'Arial',
+	'sans-serif',
+];
+const bodyFontFamily = [
+	'EB Garamond',
+	'Georgia',
+	'Times New Roman',
+	'Times',
+	'serif',
+];
 
 const variables = {
 	grayBase,

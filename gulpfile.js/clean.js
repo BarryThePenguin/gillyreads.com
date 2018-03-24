@@ -1,8 +1,8 @@
-const util = require('gulp-util');
+const log = require('fancy-log');
 const del = require('del');
 const {dest} = require('../config/paths');
 
 module.exports = () => {
-	util.log(`Cleaning ${dest()}`);
+	log(`Cleaning ${dest()}`);
 	return del(dest());
 };

@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const devConfig = require('../webpack.dev');
-const prodConfig = require('../webpack.prod');
+const prodConfig = require('../webpack.common');
 const compileLogger = require('./lib/compile-logger');
 
 const result = done => (err, stats) => {
@@ -10,9 +10,18 @@ const result = done => (err, stats) => {
 
 module.exports = done => {
 	if (process.env.NODE_ENV === 'production') {
-		webpack(prodConfig, result(done));
+		webpack(
+			{
+				mode: 'production',
+				...prodConfig,
+			},
+			result(done)
+		);
 	} else {
-		const compiler = webpack(devConfig);
+		const compiler = webpack({
+			mode: 'development',
+			...devConfig,
+		});
 		compiler.run(result(done));
 	}
 };

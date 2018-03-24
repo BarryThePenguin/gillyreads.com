@@ -5,6 +5,6 @@ module.exports = () => {
 	browserSync({
 		proxy: 'http://localhost:2368',
 		port: 3000,
-		browser: ['google chrome']
+		browser: ['google chrome'],
 	});
 };
