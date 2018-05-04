@@ -59,7 +59,7 @@
     "webpack": "^4.2.0",
     "webpack-merge": "^4.1.2",
     "webpack-notifier": "^1.6.0",
-    "xo": "^0.20.3"
+    "xo": "^0.21.0"
   },
   "xo": {
     "prettier": true
