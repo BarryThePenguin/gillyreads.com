@@ -11,14 +11,18 @@
 	width: 50%;
 	height: 50%;
 	flex-basis: 50%;
+}
 
-	@media (--small) {
+@media (min-width: 768px) {
+	.instafeed a {
 		width: 25%;
 		height: 25%;
 		flex-basis: 25%;
 	}
+}
 
-	@media (--medium) {
+@media (min-width: 992px) {
+	.instafeed a {
 		width: 12.5%;
 		height: 12.5%;
 		flex-basis: 12.5%;

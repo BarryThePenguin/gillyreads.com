@@ -1,12 +1,13 @@
 const atImport = require('postcss-import');
 const url = require('postcss-url');
-const cssnext = require('postcss-cssnext');
+const presetEnv = require('postcss-preset-env');
 const pxtorem = require('postcss-pxtorem');
 const lh = require('postcss-lh');
 const typography = require('postcss-typography');
 const browserReporter = require('postcss-browser-reporter');
 const reporter = require('postcss-reporter');
 const {darken, lighten} = require('polished');
+const tailwindcss = require('tailwindcss');
 
 const grayBase = '#000';
 const grayDarker = lighten(0.135, grayBase);
@@ -62,6 +63,7 @@ const variables = {
 module.exports = {
 	plugins: [
 		atImport(),
+		tailwindcss('./tailwindcss'),
 		url(),
 		typography({
 			googleFonts: [
@@ -81,7 +83,7 @@ module.exports = {
 			bodyWeight: 'normal',
 			scaleRatio: 2.96,
 		}),
-		cssnext({
+		presetEnv({
 			features: {
 				customProperties: {
 					variables,

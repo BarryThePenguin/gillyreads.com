@@ -1,7 +1,9 @@
 /* eslint-env browser */
 
-// eslint-disable-next-line import/no-unassigned-import
-import './css/main.css';
+import 'typeface-eb-garamond'; // eslint-disable-line import/no-unassigned-import
+import 'typeface-quicksand'; // eslint-disable-line import/no-unassigned-import
+import './css/main.css'; // eslint-disable-line import/no-unassigned-import
+
 import Instafeed from 'instafeed.js';
 
 const large = window.matchMedia('(min-width: 768px)');

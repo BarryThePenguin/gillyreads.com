@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/namespace, import/default, import/no-named-as-default-member, import/no-named-as-default
 const browserSync = require('browser-sync');
 
 module.exports = () => {

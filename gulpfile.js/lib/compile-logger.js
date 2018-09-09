@@ -9,7 +9,7 @@ module.exports = (err, stats) => {
 	log(
 		'[webpack:build]',
 		stats.toString({
-			colors: true,
+			colors: true
 		})
 	);
 };

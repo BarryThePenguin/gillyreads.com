@@ -6,13 +6,15 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<main class="content" role="main">
+<main class="grid-body" role="main">
     <article class="{{post_class}}">
 
         <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
+            <h1 class="text-4xl leading-loose mb-6 font-normal">
+							{{title}}
+						</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
 
@@ -23,11 +25,13 @@
         <footer class="post-footer">
 
         {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
+        {{#primary_author}}
 
             {{#if profile_image}}
             <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{img_url}})"><span class="sr-only">{{name}}'s Picture</span></a>
+                <a class="img" href="{{url}}" style="background-image: url({{img_url}})">
+									<span class="sr-only">{{name}}'s Picture</span>
+								</a>
             </figure>
             {{/if}}
 
@@ -39,13 +43,13 @@
                 {{else}}
                     <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                 {{/if}}
-                <div class="author-meta">
+                <div class="mb-6">
                     {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
                     {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
                 </div>
             </section>
 
-        {{/author}}
+        {{/primary_author}}
 
             <section class="share">
                 <h4>Share this post</h4>

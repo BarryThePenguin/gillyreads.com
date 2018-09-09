@@ -5,5 +5,8 @@
     "name" : "Jonathan Haines",
     "email" : "jonno.haine@gmail.com",
     "url" : "https://barrythepenguin.github.io/"
-  }
+  },
+  "keywords": [
+    "ghost-theme"
+  ]
 }

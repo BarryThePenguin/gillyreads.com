@@ -16,7 +16,7 @@ const bundle = {
 const style = {
 	src: src('/css/main.scss'),
 	dest: dest('/assets/css'),
-	watch: [src('/css/**/*.scss')],
+	watch: [src('/css/**/*.scss'), dirPath('/tailwindcss/**/*.js')],
 	imports: [dirPath('node_modules')],
 };
 
