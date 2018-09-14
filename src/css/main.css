@@ -117,3 +117,11 @@
 .paged .extra-pagination {
 	display: block;
 }
+
+.kg-width-wide .kg-image {
+ 	max-width: 60vw;
+}
+
+.kg-width-full .kg-image {
+	max-width: 80vw;
+}
