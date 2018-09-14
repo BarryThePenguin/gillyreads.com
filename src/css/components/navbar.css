@@ -1,5 +1,5 @@
 .nav-link {
-	@apply text-green no-underline block px-4;
+	@apply no-underline block px-4 font-sans;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 

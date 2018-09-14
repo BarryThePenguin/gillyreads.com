@@ -1,41 +1,42 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/components";
 
+@import "components/typography";
 @import "components/goodreads";
 @import "components/navbar";
 @import "components/icons";
 @import "components/instafeed";
 @import "components/pagination";
+@import "components/post";
 
 @import "tailwindcss/utilities";
-
-a {
-	@apply no-underline text-green;
-}
-
-a:focus,
-a:hover {
-	@apply underline text-green-darker;
-}
-
-p {
-	@apply text-xl font-serif mb-6 text-grey-darkest font-normal leading-normal;
-}
-
-iframe {
-	@apply mb-6;
-}
 
 .body-grid {
 	display: grid;
 	grid-template:
-		"header header header header"
-		"nav    nav    nav    nav"
-		".      body   aside  ."
-		"insta  insta  insta  insta"
-		"footer footer footer footer";
-	grid-column-gap: 2rem;
-	grid-template-columns: auto minmax(auto, 50ch) minmax(auto, 20ch) auto;
+		"header header header"
+		"nav 		nav 	 nav"
+		".			tag 	 ."
+		". 			body   ."
+		".      aside  ."
+		"insta  insta  insta"
+		".      footer .";
+	grid-gap: 1rem;
+	grid-template-columns: auto;
+}
+
+@media (min-width: 768px) {
+	.body-grid {
+		grid-template:
+			"header header header header"
+			"nav    nav    nav    nav"
+			".			tag    tag    ."
+			".      body   aside  ."
+			"insta  insta  insta  insta"
+			"footer footer footer footer";
+		grid-gap: 2rem;
+		grid-template-columns: minmax(1rem, auto) minmax(auto, 50ch) minmax(auto, 25ch) minmax(1rem, auto);
+	}
 }
 
 .grid-header {
@@ -46,12 +47,30 @@ iframe {
 	grid-area: nav;
 }
 
+.grid-tag {
+	grid-area: tag;
+}
+
 .grid-body {
 	grid-area: body;
 }
 
 .grid-aside {
 	grid-area: aside;
+}
+
+@media (min-width: 576px) {
+	.grid-aside {
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 768px) {
+	.grid-aside {
+		display: block;
+	}
 }
 
 .grid-insta {
@@ -64,8 +83,19 @@ iframe {
 
 .instafeed {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+	.instafeed {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (min-width: 992px) {
+	.instafeed {
+		grid-template-columns: repeat(8, 1fr);
+	}
 }
 
 .sr-only {
@@ -86,35 +116,4 @@ iframe {
 
 .paged .extra-pagination {
 	display: block;
-}
-
-blockquote {
-	padding: 0.5lh;
-	box-shadow: 4px 4px 2px 0px var(--grayLighter);
-}
-
-blockquote,
-q {
-	quotes: '“ ' '”';
-	font-style: italic;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	color: var(--grayLight);
-}
-
-blockquote:before,
-q:before {
-	font-size: 200%;
-	content: open-quote;
-	position: relative;
-	left: -1lh;
-}
-
-blockquote:after,
-q:after {
-	content: close-quote;
 }

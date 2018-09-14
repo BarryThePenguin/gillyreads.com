@@ -14,12 +14,12 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "styles.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "main.css"}}" />
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}} grid body-grid font-sans text-xl text-grey-darkest leading-normal">
+<body class="{{body_class}} grid body-grid font-sans text-l md:text-xl text-grey-darkest leading-normal">
     {{> "header"}}
 
     {{navigation}}
@@ -31,7 +31,7 @@
 
     <section class="grid-insta instafeed"></section>
 
-    <footer class="grid-footer flex justify-between px-6 mb-6 ">
+    <footer class="grid-footer flex justify-between flex-col md:flex-row md:px-6 mb-6 ">
         <section class="copyright">
 					<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
         <section class="poweredby">

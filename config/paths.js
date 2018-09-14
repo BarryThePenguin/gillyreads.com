@@ -10,36 +10,36 @@ const modules = p => dirPath('/node_modules/', p || '');
 
 const bundle = {
 	src: src(),
-	dest: dest('/assets'),
+	dest: dest('/assets')
 };
 
 const style = {
 	src: src('/css/main.scss'),
 	dest: dest('/assets/css'),
 	watch: [src('/css/**/*.scss'), dirPath('/tailwindcss/**/*.js')],
-	imports: [dirPath('node_modules')],
+	imports: [dirPath('node_modules')]
 };
 
 const scripts = {
 	src: src('/js/**/*'),
 	dest: dest('/assets/js'),
-	bundle: src('/js/'),
+	bundle: src('/js/')
 };
 
 const templates = {
 	src: [src('/templates/**/*.hbs')],
 	dest: dest(),
-	watch: [src('/**/*.hbs')],
+	watch: [src('/**/*.hbs')]
 };
 
 const extras = {
 	src: src('/stuff/*'),
-	dest: dest(),
+	dest: dest()
 };
 
 const fonts = {
 	src: [src('/fonts/*.{eot,svg,ttf,woff,otf}')],
-	dest: dest('/assets/fonts'),
+	dest: dest('/assets/fonts')
 };
 
 module.exports = {
@@ -51,5 +51,5 @@ module.exports = {
 	scripts,
 	templates,
 	extras,
-	fonts,
+	fonts
 };

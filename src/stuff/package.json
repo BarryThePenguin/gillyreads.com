@@ -1,6 +1,7 @@
 {
-  "name": "gillyreads",
-  "version": "1.0.0",
+  "name": "gillyreads.com",
+  "version": "2.0.0",
+  "description": "Gill's blog",
   "author": {
     "name" : "Jonathan Haines",
     "email" : "jonno.haine@gmail.com",

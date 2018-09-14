@@ -1,11 +1,9 @@
 const atImport = require('postcss-import');
 const url = require('postcss-url');
 const presetEnv = require('postcss-preset-env');
-const pxtorem = require('postcss-pxtorem');
-const lh = require('postcss-lh');
-const typography = require('postcss-typography');
 const browserReporter = require('postcss-browser-reporter');
 const reporter = require('postcss-reporter');
+const cssnano = require('cssnano');
 const {darken, lighten} = require('polished');
 const tailwindcss = require('tailwindcss');
 
@@ -25,21 +23,6 @@ const brandDanger = '#d9534f';
 const link = brandPrimary;
 const linkHover = darken(0.15, link);
 
-const headerFontFamily = [
-	'Quicksand',
-	'Helvetica Neue',
-	'Helvetica',
-	'Arial',
-	'sans-serif',
-];
-const bodyFontFamily = [
-	'EB Garamond',
-	'Georgia',
-	'Times New Roman',
-	'Times',
-	'serif',
-];
-
 const variables = {
 	grayBase,
 	grayDarker,
@@ -55,9 +38,7 @@ const variables = {
 	brandDanger,
 	text: grayDark,
 	link,
-	linkHover,
-	headerFontFamily: headerFontFamily.join(','),
-	bodyFontFamily: bodyFontFamily.join(','),
+	linkHover
 };
 
 module.exports = {
@@ -65,34 +46,18 @@ module.exports = {
 		atImport(),
 		tailwindcss('./tailwindcss'),
 		url(),
-		typography({
-			googleFonts: [
-				{
-					name: 'EB Garamond',
-					styles: ['400'],
-				},
-				{
-					name: 'Open Sans',
-					styles: ['400'],
-				},
-			],
-			headerFontFamily,
-			bodyFontFamily,
-			baseFontSize: '20px',
-			headerWeight: 'normal',
-			bodyWeight: 'normal',
-			scaleRatio: 2.96,
-		}),
 		presetEnv({
 			features: {
-				customProperties: {
-					variables,
-				},
-			},
+				'custom-properties': {
+					appendVariables: true,
+					variables
+				}
+			}
 		}),
-		lh(),
-		pxtorem(),
 		browserReporter(),
 		reporter(),
-	],
+		cssnano({
+			preset: 'default'
+		})
+	]
 };

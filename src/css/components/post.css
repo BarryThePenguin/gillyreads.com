@@ -1,0 +1,25 @@
+.post-footer {
+	@apply text-base mb-6;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: auto auto;
+}
+
+@media (min-width: 992px) {
+	.post-footer {
+		grid-gap: 1rem;
+		grid-template-columns: auto auto auto;
+	}
+}
+
+.post-footer__figure {
+
+}
+
+.post-footer__author {
+
+}
+
+.post-footer__share {
+	grid-column: 1/3;
+}

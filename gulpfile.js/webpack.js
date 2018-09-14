@@ -13,14 +13,14 @@ module.exports = done => {
 		webpack(
 			{
 				mode: 'production',
-				...prodConfig,
+				...prodConfig
 			},
 			result(done)
 		);
 	} else {
 		const compiler = webpack({
 			mode: 'development',
-			...devConfig,
+			...devConfig
 		});
 		compiler.run(result(done));
 	}

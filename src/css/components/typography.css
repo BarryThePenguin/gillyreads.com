@@ -1,0 +1,84 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply leading-loose font-normal;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+a {
+  @apply no-underline text-green;
+}
+
+a:focus,
+a:hover {
+  @apply underline text-green-darker;
+}
+
+.post-content {
+	@apply mb-6 text-xl leading-normal text-grey-darkest font-normal;
+}
+
+li,
+p,
+blockquote,
+iframe {
+  @apply mb-6 font-serif;
+}
+
+blockquote {
+	@apply mx-6 p-4;
+  box-shadow: 4px 4px 2px 0px var(--grayLighter);
+}
+
+blockquote,
+q {
+  quotes: "“ " "”";
+  font-style: italic;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  color: var(--grayLight);
+}
+
+blockquote:before,
+q:before {
+	@apply leading-none;
+  font-size: 200%;
+  content: open-quote;
+  position: relative;
+  left: -1rem;
+}
+
+blockquote:after,
+q:after {
+  content: close-quote;
+}

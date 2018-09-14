@@ -21,8 +21,5 @@ gulp.task('build', gulp.parallel('webpack', 'templates', 'extras'));
 if (process.env.NODE_ENV === 'production') {
 	gulp.task('default', gulp.series('clean', 'build', 'zip'));
 } else {
-	gulp.task(
-		'default',
-		gulp.series('clean', 'build', gulp.parallel('serve', 'watch'))
-	);
+	gulp.task('default', gulp.series('clean', 'build', gulp.parallel('serve', 'watch')));
 }
