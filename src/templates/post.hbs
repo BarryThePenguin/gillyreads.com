@@ -6,10 +6,10 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<main class="grid-body" role="main">
+<main class="grid-body body-content mx-6 md:mx-0" role="main">
     <article class="{{post_class}}">
 
-        <header class="post-header">
+        <header class="post-header text-right">
             <h1>
 							{{title}}
 						</h1>
@@ -17,6 +17,13 @@
                 <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
+
+				{{#if feature_image}}
+						<figure class="feature-image" style="background-image: url({{feature_image}})">
+						</figure>
+				{{else}}
+				  	<div class="feature-colour"></div>
+				{{/if}}
 
         <section class="post-content">
             {{content}}

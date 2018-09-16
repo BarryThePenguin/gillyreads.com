@@ -1,23 +1,8 @@
 {{! The big featured header }}
 <header class="grid-header">
-	<a class="title" href="/">
-		<h1 class="sr-only">{{@blog.title}}</h1>
-		<svg width="100%" viewBox="0 0 6 1">
-			<rect width="1" height="1" x="0" fill="#408274" />
-			<rect width="1" height="1" x="1" fill="#2e585a" />
-			<rect width="1" height="1" x="2" fill="#193126" />
-			<rect width="1" height="1" x="3" fill="#2e5a3b" />
-			<rect width="1" height="1" x="4" fill="#408274" />
-			<rect width="1" height="1" x="5" fill="#6aad58" />
-			<defs>
-				<path id="textpath" fill="none" d="M0,0.75 C2,0 4,1 6,0.75" />
-			</defs>
-			<use xlink:href="#textpath" />
-			<text x="6" font-family="Quicksand" font-size="0.6px" fill="white" text-anchor="end">
-				<textPath xlink:href="#textpath">
-					<tspan>{{@blog.title}}</tspan>
-				</textPath>
-			</text>
-		</svg>
+	<a class="title inline-block no-underline text-green hover:text-green-dark hover:no-underline" href="/">
+		<h1 class="leading-tight">
+			{{@blog.title}}
+		</h1>
 	</a>
 </header>

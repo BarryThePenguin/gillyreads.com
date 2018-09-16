@@ -23,6 +23,9 @@ const brandDanger = '#d9534f';
 const link = brandPrimary;
 const linkHover = darken(0.15, link);
 
+const linkLight = brandSuccess;
+const linkLightHover = darken(0.15, linkLight);
+
 const variables = {
 	grayBase,
 	grayDarker,
@@ -38,7 +41,9 @@ const variables = {
 	brandDanger,
 	text: grayDark,
 	link,
-	linkHover
+	linkHover,
+	linkLight,
+	linkLightHover
 };
 
 module.exports = {

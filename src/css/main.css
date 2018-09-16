@@ -2,9 +2,11 @@
 @import "tailwindcss/components";
 
 @import "components/typography";
-@import "components/goodreads";
-@import "components/navbar";
 @import "components/icons";
+@import "components/header";
+@import "components/navbar";
+@import "components/content";
+@import "components/goodreads";
 @import "components/instafeed";
 @import "components/pagination";
 @import "components/post";
@@ -14,37 +16,72 @@
 .body-grid {
 	display: grid;
 	grid-template:
-		"header header header"
-		"nav 		nav 	 nav"
-		".			tag 	 ."
-		". 			body   ."
-		".      aside  ."
-		"insta  insta  insta"
-		".      footer .";
+		"header header header nav    nav"
+		".      .      .      nav    nav"
+		".			tag 	 tag 		tag	   ."
+		"body   body   body   body   body"
+		".      aside  aside  aside  ."
+		"insta  insta  insta  insta  insta"
+		".      footer footer footer .";
 	grid-gap: 1rem;
-	grid-template-columns: auto;
+	grid-template-columns: 1rem 1fr 1fr 1fr 1rem;
 }
 
-@media (min-width: 768px) {
+@screen md {
 	.body-grid {
 		grid-template:
-			"header header header header"
-			"nav    nav    nav    nav"
-			".			tag    tag    ."
-			".      body   aside  ."
-			"insta  insta  insta  insta"
-			"footer footer footer footer";
+			".      nav    nav    nav    nav"
+			"header body   body   body   ."
+			".      body   body   body   tag"
+			".      aside  aside  aside   ."
+			"insta  insta  insta  insta  insta"
+			"footer footer footer footer footer";
 		grid-gap: 2rem;
-		grid-template-columns: minmax(1rem, auto) minmax(auto, 50ch) minmax(auto, 25ch) minmax(1rem, auto);
+		grid-template-columns: 1rem 1fr 1fr 1fr 1rem;
+	}
+}
+
+@screen lg {
+	.body-grid {
+		grid-template:
+			"header nav    nav    nav    nav    nav"
+			"header body   body   body   aside  ."
+			".      body   body   body   tag    ."
+			".      body   body   body   .      ."
+			"insta  insta  insta  insta  insta  insta"
+			"footer footer footer footer footer footer";
+		grid-gap: 2rem;
+		grid-template-columns: 1rem 1fr 1fr 1fr minmax(auto, 25ch) 1rem;
 	}
 }
 
 .grid-header {
 	grid-area: header;
+	grid-column: 1 / span 3;
+	margin-left: -10vw;
+}
+
+@screen md {
+	.grid-header {
+		margin-left: -5vw;
+	}
 }
 
 .grid-nav {
 	grid-area: nav;
+  grid-column: 3 / span 3;
+}
+
+@screen md {
+	.grid-nav {
+	  grid-column: 2 / span 4;
+	}
+}
+
+@screen lg {
+	.grid-nav {
+	  grid-column: 3 / span 5;
+	}
 }
 
 .grid-tag {
@@ -55,11 +92,17 @@
 	grid-area: body;
 }
 
+@screen md {
+	.grid-body {
+	  grid-column: 2 / span 3;
+	}
+}
+
 .grid-aside {
 	grid-area: aside;
 }
 
-@media (min-width: 576px) {
+@screen sm {
 	.grid-aside {
 		display: grid;
 		grid-gap: 1rem;
@@ -67,7 +110,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@screen md {
 	.grid-aside {
 		display: block;
 	}
@@ -86,13 +129,13 @@
 	grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 768px) {
+@screen md {
 	.instafeed {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
-@media (min-width: 992px) {
+@screen lg {
 	.instafeed {
 		grid-template-columns: repeat(8, 1fr);
 	}
