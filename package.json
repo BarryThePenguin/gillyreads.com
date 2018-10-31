@@ -60,7 +60,7 @@
     "prettier": "^1.14.2",
     "semver": "^5.5.1",
     "style-loader": "^0.23.0",
-    "tailwindcss": "^0.6.5",
+    "tailwindcss": "^0.7.0",
     "typeface-eb-garamond": "0.0.54",
     "typeface-quicksand": "0.0.54",
     "webpack": "^4.19.0",
