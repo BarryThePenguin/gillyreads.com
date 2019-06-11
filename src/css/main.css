@@ -1,4 +1,4 @@
-@import "tailwindcss/preflight";
+@import "tailwindcss/base";
 @import "tailwindcss/components";
 
 @import "components/typography";
@@ -167,4 +167,16 @@
 
 .kg-width-full .kg-image {
 	max-width: 80vw;
+}
+
+.kg-gallery-container {
+
+}
+
+.kg-gallery-row {
+
+}
+
+.kg-gallery-image {
+
 }

@@ -32,17 +32,17 @@ h6 {
 }
 
 a {
-  @apply no-underline text-green-dark;
+  @apply no-underline text-green-600;
 	transition: color 0.2s linear;
 }
 
 a:focus,
 a:hover {
-  @apply underline text-green-darker;
+  @apply underline text-green-800;
 }
 
 .post-content {
-	@apply mb-6 text-xl leading-normal text-grey-darkest font-normal;
+	@apply mb-6 text-xl leading-normal text-gray-900 font-normal;
 }
 
 li,

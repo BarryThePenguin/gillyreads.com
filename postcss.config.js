@@ -49,7 +49,7 @@ const variables = {
 module.exports = {
 	plugins: [
 		atImport(),
-		tailwindcss('./tailwindcss'),
+		tailwindcss,
 		url(),
 		presetEnv({
 			features: {

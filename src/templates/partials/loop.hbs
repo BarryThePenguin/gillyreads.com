@@ -5,10 +5,10 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="content-post mb-12 md:bg-green-darkest {{post_class}}">
+<article class="content-post mb-12 md:bg-green-900 {{post_class}}">
     <header class="post-header">
         <h2 class="text-4xl leading-normal md:leading-loose mb-6 font-normal">
-					<a class="md:text-green-light md:hover:text-green-dark" href="{{url}}">
+					<a class="md:text-green-400 md:hover:text-green-700" href="{{url}}">
 						{{{title}}}
 					</a>
 				</h2>
@@ -19,7 +19,7 @@
     <section>
         <p>
 					{{excerpt words="26"}}
-					<a href="{{url}}" class="md:text-green-light md:hover:text-green-dark">
+					<a href="{{url}}" class="md:text-green-400 md:hover:text-green-700">
 						&raquo;
 					</a>
 				</p>

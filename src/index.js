@@ -1,10 +1,28 @@
 /* eslint-env browser */
 
+import 'core-js/es'; // eslint-disable-line import/no-unassigned-import
+import 'regenerator-runtime/runtime'; // eslint-disable-line import/no-unassigned-import
 import 'typeface-eb-garamond'; // eslint-disable-line import/no-unassigned-import
 import 'typeface-quicksand'; // eslint-disable-line import/no-unassigned-import
 import './css/main.css'; // eslint-disable-line import/no-unassigned-import
 
 import Instafeed from 'instafeed.js';
+
+window.addEventListener('load', async () => {
+	await Promise.all([
+		import('autotrack/lib/plugins/event-tracker'),
+		import('autotrack/lib/plugins/outbound-link-tracker'),
+		import('autotrack/lib/plugins/url-change-tracker')
+	]);
+
+	ga('create', 'UA-78690357-1', 'auto');
+
+	ga('require', 'eventTracker');
+	ga('require', 'outboundLinkTracker');
+	ga('require', 'urlChangeTracker');
+
+	ga('send', 'pageview');
+});
 
 const instafeedElement = document.querySelector('.instafeed');
 
