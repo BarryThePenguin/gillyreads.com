@@ -47,7 +47,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-zip": "^5.0.0",
     "lost": "^8.3.1",
-    "mini-css-extract-plugin": "^0.7.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "node-libs-browser": "^2.2.0",
     "plugin-error": "^1.0.1",
     "polished": "^3.4.0",
