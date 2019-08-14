@@ -11,15 +11,13 @@ import Instafeed from 'instafeed.js';
 window.addEventListener('load', async () => {
 	await Promise.all([
 		import('autotrack/lib/plugins/event-tracker'),
-		import('autotrack/lib/plugins/outbound-link-tracker'),
-		import('autotrack/lib/plugins/url-change-tracker')
+		import('autotrack/lib/plugins/outbound-link-tracker')
 	]);
 
 	ga('create', 'UA-78690357-1', 'auto');
 
 	ga('require', 'eventTracker');
 	ga('require', 'outboundLinkTracker');
-	ga('require', 'urlChangeTracker');
 
 	ga('send', 'pageview');
 });

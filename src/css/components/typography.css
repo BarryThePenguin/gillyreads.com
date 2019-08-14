@@ -47,9 +47,10 @@ a:hover {
 
 li,
 p,
+figure,
 blockquote,
 iframe {
-  @apply mb-6 font-serif;
+  @apply mb-4 font-serif;
 }
 
 blockquote {

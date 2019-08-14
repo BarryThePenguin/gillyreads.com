@@ -10,21 +10,22 @@
 @import "components/instafeed";
 @import "components/pagination";
 @import "components/post";
+@import "components/related-posts";
 
 @import "tailwindcss/utilities";
 
 .body-grid {
 	display: grid;
 	grid-template:
-		"header header header nav    nav"
-		".      .      .      nav    nav"
-		".			tag 	 tag 		tag	   ."
-		"body   body   body   body   body"
-		".      aside  aside  aside  ."
-		"insta  insta  insta  insta  insta"
-		".      footer footer footer .";
+		"header header header header nav    nav    nav"
+		".      .      .      .      nav    nav    nav"
+		".			.			 tag 	  tag 	 tag 		tag    ."
+		".   		body	 body   body   body 	body   ."
+		".      . 		 aside  aside  aside  .      ."
+		"insta  insta  insta  insta  insta  insta  insta"
+		".      footer footer footer footer footer .";
 	grid-gap: 1rem;
-	grid-template-columns: 1rem 1fr 1fr 1fr 1rem;
+	grid-template-columns: 0 1rem 1fr 1fr 1fr 1rem 0;
 }
 
 @screen md {
@@ -33,7 +34,7 @@
 			".      nav    nav    nav    nav"
 			"header body   body   body   ."
 			".      body   body   body   tag"
-			".      aside  aside  aside   ."
+			".      aside  aside  aside  ."
 			"insta  insta  insta  insta  insta"
 			"footer footer footer footer footer";
 		grid-gap: 2rem;
@@ -57,19 +58,20 @@
 
 .grid-header {
 	grid-area: header;
-	grid-column: 1 / span 3;
+	grid-column: 1 / span 4;
 	margin-left: -10vw;
 }
 
 @screen md {
 	.grid-header {
+		grid-column: 1 / span 3;
 		margin-left: -5vw;
 	}
 }
 
 .grid-nav {
 	grid-area: nav;
-  grid-column: 3 / span 3;
+  grid-column: 4 / span 4;
 }
 
 @screen md {
@@ -80,7 +82,7 @@
 
 @screen lg {
 	.grid-nav {
-	  grid-column: 3 / span 5;
+	  grid-column: 3 / span 4;
 	}
 }
 
@@ -161,6 +163,20 @@
 	display: block;
 }
 
+.kg-card {
+	@apply mb-6 flex flex-col items-center;
+}
+
+.kg-card figcaption {
+	@apply text-center mx-4;
+}
+
+.kg-width-wide,
+.kg-width-full {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
 .kg-width-wide .kg-image {
  	max-width: 60vw;
 }
@@ -170,13 +186,29 @@
 }
 
 .kg-gallery-container {
-
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100vw;
 }
 
 .kg-gallery-row {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.kg-gallery-image {
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
 
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
 }
