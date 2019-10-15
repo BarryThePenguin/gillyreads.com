@@ -61,7 +61,7 @@
     "tailwindcss": "^1.0.4",
     "typeface-eb-garamond": "0.0.72",
     "typeface-quicksand": "0.0.71",
-    "webpack": "^4.35.0",
+    "webpack": "^4.41.2",
     "webpack-merge": "^4.2.1",
     "webpack-notifier": "^1.7.0",
     "xo": "^0.24.0"
