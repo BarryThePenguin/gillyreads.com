@@ -56,7 +56,7 @@
     "postcss-reporter": "^6.0.1",
     "postcss-url": "^8.0.0",
     "prettier": "^1.18.2",
-    "semver": "^6.1.2",
+    "semver": "^7.1.1",
     "style-loader": "^0.23.1",
     "tailwindcss": "^1.0.4",
     "typeface-eb-garamond": "0.0.72",
