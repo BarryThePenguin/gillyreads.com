@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "autotrack": "^2.4.1",
-    "core-js": "^3.1.4",
+    "core-js": "^3.6.5",
     "instafeed.js": "^1.4.1",
     "regenerator-runtime": "^0.13.2"
   },
