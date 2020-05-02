@@ -1,6 +1,12 @@
 content
 node_modules
 
+.ghost-cli
+.ghostpid
+current
+config.development.json
+versions
+
 config.js
 ghost*.db
 *.zip

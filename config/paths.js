@@ -2,11 +2,11 @@ const path = require('path');
 
 const dirPath = (...paths) => path.join('./', ...paths);
 
-const src = p => dirPath('/src/', p || '');
+const src = (p) => dirPath('/src/', p || '');
 
-const dest = p => dirPath('/content/themes/gillian/', p || '');
+const dest = (p) => dirPath('/content/themes/gillian/', p || '');
 
-const modules = p => dirPath('/node_modules/', p || '');
+const modules = (p) => dirPath('/node_modules/', p || '');
 
 const bundle = {
 	src: src(),

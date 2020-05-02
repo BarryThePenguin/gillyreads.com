@@ -1,10 +1,12 @@
 /* eslint-env browser */
 
-import 'core-js/es'; // eslint-disable-line import/no-unassigned-import
-import 'regenerator-runtime/runtime'; // eslint-disable-line import/no-unassigned-import
-import 'typeface-eb-garamond'; // eslint-disable-line import/no-unassigned-import
-import 'typeface-quicksand'; // eslint-disable-line import/no-unassigned-import
-import './css/main.css'; // eslint-disable-line import/no-unassigned-import
+/* eslint-disable import/no-unassigned-import */
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import 'typeface-eb-garamond';
+import 'typeface-quicksand';
+import './css/main.css';
+/* eslint-enable import/no-unassigned-import */
 
 import Instafeed from 'instafeed.js';
 
@@ -26,17 +28,15 @@ const instafeedElement = document.querySelector('.instafeed');
 
 if ('IntersectionObserver' in window) {
 	const observer = new IntersectionObserver(
-		entries => {
-			entries.forEach(entry => {
+		function (entries) {
+			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					createInstafeed(entry.target).run();
 					observer.disconnect();
 				}
 			});
 		},
-		{
-			threshold: 0
-		}
+		{threshold: 0}
 	);
 
 	observer.observe(instafeedElement);

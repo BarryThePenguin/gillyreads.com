@@ -1,25 +1,52 @@
-const gulp = require('gulp');
+const {pipeline} = require('stream');
+const {src, dest, series, parallel, watch} = require('gulp');
+const del = require('del');
+const gulpZip = require('gulp-zip');
+const log = require('fancy-log');
+const {reload} = require('browser-sync');
+const browserSync = require('browser-sync');
+const paths = require('../config/paths');
 
-const clean = require('./clean');
-const extras = require('./extras');
-const serve = require('./serve');
-const templates = require('./templates');
-const watch = require('./watch');
 const webpack = require('./webpack');
-const zip = require('./zip');
 
-gulp.task('clean', clean);
-gulp.task('extras', extras);
-gulp.task('serve', serve);
-gulp.task('templates', templates);
-gulp.task('watch', watch);
-gulp.task('webpack', webpack);
-gulp.task('zip', zip);
+function clean() {
+	log(`Cleaning ${paths.dest()}`);
+	return del(paths.dest());
+}
 
-gulp.task('build', gulp.parallel('webpack', 'templates', 'extras'));
+function fonts(done) {
+	return pipeline(src(paths.fonts.src), dest(paths.fonts.dest), done);
+}
+
+function extras(done) {
+	return pipeline(src(paths.extras.src), dest(paths.extras.dest), done);
+}
+
+function templates(done) {
+	return pipeline(src(paths.templates.src), dest(paths.templates.dest), done);
+}
+
+function zip(done) {
+	return pipeline(src(paths.dest('**/*')), gulpZip('gillian.zip'), dest('.'), done);
+}
+
+function serve() {
+	watch(paths.fonts.src, fonts).on('change', reload);
+	watch(paths.templates.watch, templates).on('change', reload);
+	watch(paths.style.watch, webpack).on('change', reload);
+	watch(paths.src('/**/*'), webpack).on('change', reload);
+
+	browserSync({
+		proxy: 'http://localhost:2369',
+		port: 3000,
+		browser: ['google chrome']
+	});
+}
+
+const build = parallel(webpack, templates, extras);
 
 if (process.env.NODE_ENV === 'production') {
-	gulp.task('default', gulp.series('clean', 'build', 'zip'));
+	exports.default = series(clean, build, zip);
 } else {
-	gulp.task('default', gulp.series('clean', 'build', gulp.parallel('serve', 'watch')));
+	exports.default = series(clean, build, serve);
 }

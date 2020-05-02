@@ -1,6 +1,6 @@
 {
   "name": "gillyreads",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Gill's blog",
   "author": {
     "name" : "Jonathan Haines",
@@ -8,10 +8,13 @@
     "url" : "https://barrythepenguin.github.io/"
   },
   "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v2"
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
   },
   "keywords": [
     "ghost-theme"
-  ]
+  ],
+  "config": {
+    "posts_per_page": 10
+  }
 }

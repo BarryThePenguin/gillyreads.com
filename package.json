@@ -5,7 +5,7 @@
   "author": {
     "name": "Jonathan Haines",
     "email": "jonno.haine@gmail.com",
-    "url": "https://barrythepenguin.github.io/"
+    "url": "https://jonno.dev/"
   },
   "keywords": [
     "ghost-theme"
@@ -19,56 +19,55 @@
   "scripts": {
     "start": "gulp",
     "pack": "NODE_ENV=production gulp",
+    "postpack": "gscan -z ./gillian.zip",
     "test": "xo"
   },
   "dependencies": {
     "autotrack": "^2.4.1",
-    "core-js": "^3.1.4",
+    "core-js": "^3.6.5",
     "instafeed.js": "^1.4.1",
-    "regenerator-runtime": "^0.13.2"
+    "regenerator-runtime": "^0.13.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.5",
-    "babel-eslint": "^10.0.2",
-    "babel-loader": "^8.0.6",
-    "babel-polyfill": "^6.16.0",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "css-loader": "^3.0.0",
+    "browserslist": "^4.12.0",
+    "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
-    "del": "^4.1.1",
+    "del": "^5.1.0",
     "fancy-log": "^1.3.3",
-    "file-loader": "^4.0.0",
+    "file-loader": "^6.0.0",
+    "ghost-cli": "^1.13.1",
+    "gscan": "^3.5.4",
     "gulp": "^4.0.2",
-    "gulp-zip": "^5.0.0",
-    "lost": "^8.3.1",
-    "mini-css-extract-plugin": "^0.7.0",
+    "gulp-zip": "^5.0.1",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-libs-browser": "^2.2.1",
     "plugin-error": "^1.0.1",
-    "polished": "^3.4.1",
-    "postcss": "^7.0.17",
+    "polished": "^3.5.2",
+    "postcss": "^7.0.27",
     "postcss-browser-reporter": "^0.6.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.6.0",
+    "postcss-preset-env": "^6.7.0",
     "postcss-reporter": "^6.0.1",
     "postcss-url": "^8.0.0",
-    "prettier": "^1.18.2",
-    "semver": "^6.1.2",
-    "style-loader": "^0.23.1",
-    "tailwindcss": "^1.0.4",
-    "typeface-eb-garamond": "0.0.72",
-    "typeface-quicksand": "0.0.71",
-    "webpack": "^4.35.0",
-    "webpack-merge": "^4.2.1",
-    "webpack-notifier": "^1.7.0",
-    "xo": "^0.24.0"
+    "prettier": "^2.0.5",
+    "style-loader": "^1.2.1",
+    "tailwindcss": "^1.4.4",
+    "typeface-eb-garamond": "^1.1.4",
+    "typeface-quicksand": "^1.1.4",
+    "webpack": "^4.43.0",
+    "webpack-merge": "^4.2.2",
+    "webpack-notifier": "^1.8.0",
+    "xo": "^0.30.0"
   },
   "xo": {
     "prettier": true,
-    "parser": "babel-eslint",
     "globals": [
       "ga"
     ]

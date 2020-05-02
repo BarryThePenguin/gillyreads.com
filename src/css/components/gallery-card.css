@@ -1,0 +1,49 @@
+.kg-card {
+	@apply mb-6 flex flex-col items-center;
+}
+
+.kg-card figcaption {
+	@apply text-center mx-4;
+}
+
+.kg-width-wide,
+.kg-width-full {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.kg-width-wide .kg-image {
+ 	max-width: 60vw;
+}
+
+.kg-width-full .kg-image {
+	max-width: 80vw;
+}
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100vw;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
