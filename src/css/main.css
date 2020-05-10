@@ -13,6 +13,8 @@
 @import "components/related-posts";
 @import "components/gallery-card";
 @import "components/bookmark-card";
+@import "components/subscribe-form";
+@import "components/subscribe-overlay";
 
 @import "tailwindcss/utilities";
 
@@ -120,6 +122,12 @@
 	}
 }
 
+@screen lg {
+	.grid-aside {
+		grid-row: 2 / span 3;
+	}
+}
+
 .grid-insta {
 	grid-area: insta;
 }
@@ -145,16 +153,8 @@
 	}
 }
 
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	clip-path: inset(50%);
-	border: 0;
+.bg-instagram {
+	background-image: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 }
 
 .extra-pagination {

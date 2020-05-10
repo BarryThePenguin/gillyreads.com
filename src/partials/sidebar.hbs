@@ -1,0 +1,35 @@
+<aside class="grid-aside">
+	<div class="sticky top-0">
+		<section class="mb-6">
+			<header>
+				<h3 class="text-3xl lowercase">
+					Hi, I'm Gillian and I read books
+				</h3>
+			</header>
+			<p>{{@site.description}}</p>
+			<div class="space-x-2">
+				<a href="{{twitter_url}}" target="_blank" rel="noopener" class="bg-twitter icon-social">
+					{{> "icons/twitter"}}
+				</a>
+				<a href="https://www.instagram.com/gillyreads/" target="_blank" rel="noopener" class="bg-instagram icon-social">
+					{{> "icons/instagram"}}
+				</a>
+			</div>
+		</section>
+		<section>
+			<header>
+				<h4 class="text-base lowercase mb-6">
+					My Goodreads
+				</h4>
+			</header>
+			<div class="goodreads">
+				<iframe title="goodreads" src="https://www.goodreads.com/widgets/user_update_widget?height=400&num_updates=3&user=3219443"></iframe>
+				<div class="goodreads-footer">
+					<a href="https://www.goodreads.com/">
+						<img alt="Goodreads: Book reviews, recommendations, and discussion" src="https://www.goodreads.com/images/layout/goodreads_logo_140.png" />
+					</a>
+				</div>
+			</div>
+		</section>
+	</div>
+</aside>

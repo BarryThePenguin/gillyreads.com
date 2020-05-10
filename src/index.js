@@ -31,7 +31,7 @@ if ('IntersectionObserver' in window) {
 		function (entries) {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					createInstafeed(entry.target).run();
+					createInstafeed(entry.target)
 					observer.disconnect();
 				}
 			});
@@ -41,18 +41,21 @@ if ('IntersectionObserver' in window) {
 
 	observer.observe(instafeedElement);
 } else {
-	createInstafeed(instafeedElement).run();
+	createInstafeed(instafeedElement)
 }
 
-function createInstafeed(target) {
+async function createInstafeed(target) {
 	const large = window.matchMedia('(min-width: 768px)');
 
-	return new Instafeed({
-		get: 'user',
-		limit: large.matches ? 16 : 8,
-		userId: '174349777',
-		resolution: 'low_resolution',
-		accessToken: '174349777.1677ed0.d38d143ea61c4cc1a4562d62a3e41960',
-		target
-	});
+	const result = await fetch('https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=0o6p5i78pd78wh8ts8mcku')
+
+	if (result.ok) {
+		const {Token} = await result.json()
+
+		new Instafeed({
+			limit: large.matches ? 16 : 8,
+			accessToken: Token,
+			target
+		}).run();
+	}
 }

@@ -39,6 +39,10 @@
 				</section>
     </footer>
 
+		{{#if @labs.members}}
+			{{> "subscription-overlay"}}
+		{{/if}}
+
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 

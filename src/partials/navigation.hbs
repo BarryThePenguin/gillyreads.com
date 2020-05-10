@@ -7,10 +7,12 @@
 				</a>
 			</li>
     {{/foreach}}
-    <li class="mb-0 md:mb-6 md:text-center flex-1">
-			<a class="nav-link md:px-4" href="{{@site.url}}/subscribe/">
-				Subscribe
-			</a>
-		</li>
+		{{#if @labs.members}}
+	    <li class="mb-0 md:mb-6 md:text-center flex-1">
+				<a class="nav-link md:px-4" href="#subscribe">
+					Subscribe
+				</a>
+			</li>
+		{{/if}}
   </ul>
 </nav>

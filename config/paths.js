@@ -27,7 +27,7 @@ const scripts = {
 };
 
 const templates = {
-	src: [src('/templates/**/*.hbs')],
+	src: [src('/**/*.hbs')],
 	dest: dest(),
 	watch: [src('/**/*.hbs')]
 };
