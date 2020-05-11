@@ -49,7 +49,7 @@
     "node-libs-browser": "^2.2.1",
     "plugin-error": "^1.0.1",
     "polished": "^3.6.2",
-    "postcss": "^7.0.29",
+    "postcss": "^7.0.30",
     "postcss-browser-reporter": "^0.6.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
