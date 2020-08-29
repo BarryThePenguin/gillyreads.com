@@ -64,7 +64,7 @@
     "webpack": "^4.43.0",
     "webpack-merge": "^5.1.2",
     "webpack-notifier": "^1.8.0",
-    "xo": "^0.30.0"
+    "xo": "^0.33.0"
   },
   "xo": {
     "prettier": true,
