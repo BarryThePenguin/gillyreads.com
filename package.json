@@ -26,7 +26,7 @@
     "autotrack": "^2.4.1",
     "core-js": "^3.6.5",
     "instafeed.js": "git+https://github.com/stevenschobert/instafeed.js.git#62c4c152f88749d3227ed843f7e60777100879b1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
