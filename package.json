@@ -52,7 +52,7 @@
     "postcss": "^7.0.32",
     "postcss-browser-reporter": "^0.6.0",
     "postcss-import": "^12.0.1",
-    "postcss-loader": "^3.0.0",
+    "postcss-loader": "^4.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-reporter": "^6.0.1",
     "postcss-url": "^8.0.0",
