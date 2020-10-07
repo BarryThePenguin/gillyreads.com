@@ -59,7 +59,7 @@
     "prettier": "^2.1.2",
     "style-loader": "^1.2.1",
     "tailwindcss": "^1.8.10",
-    "typeface-eb-garamond": "^1.1.4",
+    "typeface-eb-garamond": "^1.1.13",
     "typeface-quicksand": "^1.1.4",
     "webpack": "^4.44.2",
     "webpack-merge": "^5.1.4",
