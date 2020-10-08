@@ -62,7 +62,7 @@
     "typeface-eb-garamond": "^1.1.13",
     "typeface-quicksand": "^1.1.13",
     "webpack": "^4.44.2",
-    "webpack-merge": "^5.1.4",
+    "webpack-merge": "^5.2.0",
     "webpack-notifier": "^1.8.0",
     "xo": "^0.33.1"
   },
