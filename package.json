@@ -58,7 +58,7 @@
     "postcss-url": "^8.0.0",
     "prettier": "^2.1.2",
     "style-loader": "^1.2.1",
-    "tailwindcss": "^1.8.12",
+    "tailwindcss": "^1.8.13",
     "typeface-eb-garamond": "^1.1.13",
     "typeface-quicksand": "^1.1.13",
     "webpack": "^4.44.2",
