@@ -1,77 +1,7 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply leading-normal font-normal;
-}
-
-@screen sm {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply leading-loose;
-	}
-}
-
-h1 {
-  @apply text-4xl mb-6;
-}
-
-h2 {
-  @apply text-3xl mb-6;
-}
-
-h3 {
-  @apply text-2xl mb-6;
-}
-
-h4 {
-  @apply text-xl mb-4;
-}
-
-h5 {
-  @apply text-lg mb-4;
-}
-
-h6 {
-  @apply text-base;
-}
-
-a {
-  @apply no-underline text-green-600;
-	transition: color 0.2s linear;
-}
-
-a:focus,
-a:hover {
-  @apply underline text-green-800;
-}
-
-.post-content {
-	@apply mb-6 text-xl leading-normal text-gray-900 font-normal;
-}
-
 hr {
 	@apply my-6 h-20 border-none;
 	@apply bg-center bg-no-repeat bg-contain;
 	background-image: url(../../assets/bookshelf.png);
-}
-
-li {
-	@apply font-serif mb-2;
-}
-
-ul,
-p,
-figure,
-blockquote,
-iframe {
-  @apply font-serif mb-4;
 }
 
 blockquote {

@@ -1,5 +1,4 @@
 .post-footer {
-	@apply text-base mb-6;
 	display: grid;
 	grid-gap: 1rem;
 	grid-template-columns: auto auto;

@@ -3,7 +3,6 @@
 /* eslint-disable import/no-unassigned-import */
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import 'typeface-eb-garamond';
 import 'typeface-quicksand';
 import './css/main.css';
 /* eslint-enable import/no-unassigned-import */

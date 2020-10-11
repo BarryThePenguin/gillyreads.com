@@ -29,6 +29,14 @@
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
 
+	.loop-content a {
+		@apply text-green-400;
+	}
+
+	.loop-content a:hover {
+		@apply text-green-700;
+	}
+
 	.feature-image,
 	.feature-colour,
 	.body-content .post-header {
@@ -43,11 +51,6 @@
 		margin-bottom: 1.5rem;
 		background-repeat: no-repeat;
 		background-position: center center;
-	}
-
-	.content-post {
-		color: white;
-		padding: 3rem;
 	}
 
 	.content-post:nth-of-type(odd) {

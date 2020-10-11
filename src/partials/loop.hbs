@@ -5,32 +5,32 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="content-post mb-12 md:bg-green-900 {{post_class}}">
+<article class="content-post mb-12 md:p-12 md:text-white md:bg-green-900 prose sm:prose-xl {{post_class}}">
     <header class="post-header">
-        <h2 class="text-4xl leading-normal md:leading-loose mb-6 font-normal">
-					<a class="md:text-green-400 md:hover:text-green-700" href="{{url}}">
-						{{{title}}}
-					</a>
-				</h2>
+      <h2>
+				<a href="{{url}}" class="md:text-green-400 md:hover:text-green-700">
+					{{{title}}}
+				</a>
+			</h2>
     </header>
 		{{#if profile_image}}
 			<img src="{{img_url}}" role="presentation" />
 		{{/if}}
     <section>
-        <p>
-					{{excerpt words="26"}}
-					<a href="{{url}}" class="md:text-green-400 md:hover:text-green-700">
-						&raquo;
-					</a>
-				</p>
+      <p>
+				{{excerpt words="26"}}
+				<a href="{{url}}" class="md:text-green-400 md:hover:text-green-700">
+					&raquo;
+				</a>
+			</p>
     </section>
-    <footer class="mb-6 text-sm">
-        {{#if primary_author.profile_image}}
-					<img class="h-5 rounded-full align-middle" src="{{primary_author.profile_image}}" alt="Author image" nopin="nopin" />
-				{{/if}}
-        {{primary_author.name}}
-				&mdash;
-        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    <footer>
+      {{#if primary_author.profile_image}}
+				<img class="h-5 rounded-full align-middle" src="{{primary_author.profile_image}}" alt="Author image" nopin="nopin" />
+			{{/if}}
+      {{primary_author.name}}
+			&mdash;
+      <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
     </footer>
 </article>
 {{/foreach}}

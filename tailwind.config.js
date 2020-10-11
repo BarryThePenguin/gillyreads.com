@@ -6,7 +6,33 @@ module.exports = {
 		enabled: true,
 		content: paths.templates.src
 	},
+	future: {
+		purgeLayersByDefault: true,
+		removeDeprecatedGapUtilities: true
+	},
+	plugins: [require('@tailwindcss/typography')],
 	theme: {
+		typography: (theme) => ({
+			default: {
+				css: {
+					a: {
+						color: theme('colors.green.600'),
+						transition: 'color 0.2s linear',
+						textDecoration: 'none',
+						'&:hover': {
+							color: theme('colors.green.800'),
+							textDecoration: 'none'
+						}
+					},
+					'h1, h2, h3, h4': {
+						fontWeight: 'normal'
+					},
+					strong: {
+						fontWeight: '500'
+					}
+				}
+			}
+		}),
 		extend: {
 			colors: {
 				twitter: '#1da1f2'
@@ -15,8 +41,7 @@ module.exports = {
 				95: '.95'
 			},
 			fontFamily: {
-				sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
-				serif: ['"EB Garamond"', ...defaultTheme.fontFamily.serif]
+				sans: ['Quicksand', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	}
