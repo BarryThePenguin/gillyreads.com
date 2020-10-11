@@ -24,10 +24,6 @@
 }
 
 @screen md {
-	.body-content {
-		margin-top: 25vw;
-	}
-
 	.loop-content {
 		grid-gap: 2rem;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -55,26 +51,38 @@
 	}
 
 	.content-post:nth-of-type(odd) {
-    grid-column: 3/span 3;
+    grid-column: 2 / span 4;
 		border: none;
 		text-align: left;
 	}
 
 	.content-post:nth-of-type(even) {
-		grid-column: 1 / span 3;
+		grid-column: 1 / span 4;
 		border: none;
 		text-align: left;
 	}
 
 	.loop-content .extra-pagination,
 	.loop-content .pagination {
-		grid-column: 3/ span 3;
+		grid-column: 3 / span 3;
 	}
 }
 
 @screen lg {
 	.body-content .post {
 		width: 52ch;
+	}
+
+	.content-post:nth-of-type(odd) {
+		grid-column: 3 / span 3;
+		border: none;
+		text-align: left;
+	}
+
+	.content-post:nth-of-type(even) {
+		grid-column: 2 / span 3;
+		border: none;
+		text-align: left;
 	}
 
 	.feature-image,

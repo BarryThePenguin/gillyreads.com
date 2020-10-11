@@ -12,7 +12,7 @@ module.exports = {
 				twitter: '#1da1f2'
 			},
 			opacity: {
-				'95': '.95',
+				95: '.95'
 			},
 			fontFamily: {
 				sans: ['Quicksand', ...defaultTheme.fontFamily.sans],

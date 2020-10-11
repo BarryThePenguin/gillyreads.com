@@ -36,7 +36,7 @@
 	.body-grid {
 		grid-template:
 			".      nav    nav    nav    nav"
-			"header body   body   body   ."
+			"header .      .      .      ."
 			".      body   body   body   tag"
 			".      aside  aside  aside  ."
 			"insta  insta  insta  insta  insta"
@@ -49,8 +49,8 @@
 @screen lg {
 	.body-grid {
 		grid-template:
-			"header nav    nav    nav    nav    nav"
-			"header body   body   body   aside  ."
+			".      nav    nav    nav    nav    nav"
+			"header .      .      .      aside  ."
 			".      body   body   body   tag    ."
 			".      body   body   body   .      ."
 			"insta  insta  insta  insta  insta  insta"
@@ -62,14 +62,12 @@
 
 .grid-header {
 	grid-area: header;
-	grid-column: 1 / span 4;
-	margin-left: -10vw;
+	grid-column: 1 / span 5;
 }
 
 @screen md {
 	.grid-header {
 		grid-column: 1 / span 3;
-		margin-left: -5vw;
 	}
 }
 

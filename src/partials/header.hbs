@@ -2,7 +2,11 @@
 <header class="grid-header">
 	<a class="title inline-block no-underline text-green-500 hover:text-green-700 hover:no-underline" href="/">
 		<h1 class="leading-tight">
-			{{@site.title}}
+			{{#if @site.logo}}
+				<img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+			{{else}}
+				{{@site.title}}
+			{{/if}}
 		</h1>
 	</a>
 </header>

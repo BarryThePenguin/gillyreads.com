@@ -1,16 +1,8 @@
-.title {
-  background: linear-gradient(#1A4731, #1A4731) no-repeat -10vw;
-}
-
 .title h1 {
 	font-size: 24vw;
 }
 
 @screen md {
-	.title {
-		background: none;
-	}
-
 	.title h1 {
 		font-size: 18vw;
 	}

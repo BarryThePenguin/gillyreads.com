@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const common = require('./webpack.common');
