@@ -59,7 +59,7 @@
     "postcss-url": "^9.0.0",
     "prettier": "^2.1.2",
     "style-loader": "^2.0.0",
-    "tailwindcss": "^1.9.2",
+    "tailwindcss": "^1.9.6",
     "typeface-quicksand": "^1.1.13",
     "webpack": "^4.44.2",
     "webpack-merge": "^5.2.0",
