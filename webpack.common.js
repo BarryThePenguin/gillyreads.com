@@ -141,7 +141,7 @@ module.exports.serviceWorkerConfig = {
 	},
 	plugins: [
 		new InjectManifest({
-			swSrc: './src/service-worker.js'
+			swSrc: './src/sw.js'
 		})
 	]
 };
