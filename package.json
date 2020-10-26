@@ -24,8 +24,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "instafeed.js": "v2.0.0-rc2",
-    "regenerator-runtime": "^0.13.7"
+    "instafeed.js": "v2.0.0-rc2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

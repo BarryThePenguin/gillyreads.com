@@ -47,6 +47,7 @@
     {{ghost_foot}}
 
     {{! The main JavaScript file for the theme }}
-    <script type="text/javascript" src="{{asset "main.js"}}"></script>
+    <script type="module" src="{{asset "main.mjs"}}"></script>
+		<script nomodule type="text/javascript" src="{{asset "main.bundle.js"}}"></script>
 </body>
 </html>

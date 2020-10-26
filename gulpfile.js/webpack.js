@@ -1,6 +1,7 @@
 const webpack = require('webpack');
+const {merge} = require('webpack-merge');
 const devConfig = require('../webpack.dev');
-const prodConfig = require('../webpack.common');
+const {legacyConfig, moduleConfig} = require('../webpack.common');
 const compileLogger = require('./lib/compile-logger');
 
 const result = (done) => (err, stats) => {
@@ -11,17 +12,18 @@ const result = (done) => (err, stats) => {
 module.exports = (done) => {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(
-			{
-				mode: 'production',
-				...prodConfig
-			},
+			[
+				merge(legacyConfig, {
+					mode: 'production'
+				}),
+				merge(moduleConfig, {
+					mode: 'production'
+				})
+			],
 			result(done)
 		);
 	} else {
-		const compiler = webpack({
-			mode: 'development',
-			...devConfig
-		});
+		const compiler = webpack([legacyConfig, devConfig]);
 		compiler.run(result(done));
 	}
 };
