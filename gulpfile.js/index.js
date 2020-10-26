@@ -27,7 +27,7 @@ function templates(done) {
 }
 
 function zip(done) {
-	return pipeline(src(paths.dest('**/*')), gulpZip('gillian.zip'), dest('.'), done);
+	return pipeline(src(paths.dest('**/*')), gulpZip('gillyreads.zip'), dest('.'), done);
 }
 
 function serve() {
