@@ -1,8 +1,6 @@
 /* eslint-env browser */
 
-/* eslint-disable import/no-unassigned-import */
 import './css/main.css';
-/* eslint-enable import/no-unassigned-import */
 
 loadGoogleTagManager('GTM-TZFNZMF');
 loadServiceWorker();
