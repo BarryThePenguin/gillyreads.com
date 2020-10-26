@@ -1,7 +1,7 @@
 hr {
 	@apply my-6 h-20 border-none;
 	@apply bg-center bg-no-repeat bg-contain;
-	background-image: url(../../assets/bookshelf.png);
+	background-image: url("../../images/bookshelf.png");
 }
 
 blockquote {

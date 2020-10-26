@@ -26,6 +26,10 @@ function templates(done) {
 	return pipeline(src(paths.templates.src), dest(paths.templates.dest), done);
 }
 
+function images(done) {
+	return pipeline(src(paths.images.src), dest(paths.images.dest), done);
+}
+
 function zip(done) {
 	return pipeline(src(paths.dest('**/*')), gulpZip('gillyreads.zip'), dest('.'), done);
 }
@@ -34,7 +38,8 @@ function serve() {
 	watch(paths.fonts.src, fonts).on('change', reload);
 	watch(paths.templates.watch, templates).on('change', reload);
 	watch(paths.style.watch, webpack).on('change', reload);
-	watch(paths.src('/**/*'), webpack).on('change', reload);
+	watch(paths.images.watch, images).on('change', reload);
+	watch(paths.src('/**/*'), parallel(extras, webpack)).on('change', reload);
 
 	browserSync({
 		proxy: 'http://localhost:2369',
@@ -43,7 +48,7 @@ function serve() {
 	});
 }
 
-const build = parallel(webpack, templates, extras);
+const build = parallel(webpack, images, templates, extras);
 
 if (process.env.NODE_ENV === 'production') {
 	exports.default = series(clean, build, zip);

@@ -31,6 +31,12 @@ const templates = {
 	watch: [src('/**/*.hbs')]
 };
 
+const images = {
+	src: [src('/images/**/*')],
+	dest: [dest('/assets/images')],
+	watch: [src('/images/**/*')]
+};
+
 const extras = {
 	src: src('/stuff/*'),
 	dest: dest()
@@ -50,5 +56,6 @@ module.exports = {
 	scripts,
 	templates,
 	extras,
+	images,
 	fonts
 };

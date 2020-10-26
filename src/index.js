@@ -1,11 +1,11 @@
 /* eslint-env browser */
 
 /* eslint-disable import/no-unassigned-import */
-import 'typeface-quicksand';
 import './css/main.css';
 /* eslint-enable import/no-unassigned-import */
 
 loadGoogleTagManager('GTM-TZFNZMF');
+loadServiceWorker();
 
 const instafeedElement = document.querySelector('.instafeed');
 
@@ -59,6 +59,14 @@ function handleResponse(response) {
 
 function tokenResult({Token}) {
 	return {ok: true, Token};
+}
+
+function loadServiceWorker() {
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/service-worker.js');
+		});
+	}
 }
 
 function loadGoogleTagManager(id) {

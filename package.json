@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "instafeed.js": "v2.0.0-rc2"
+    "instafeed.js": "v2.0.0-rc2",
+    "ky": "^0.24.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -62,6 +63,7 @@
     "webpack": "^5.2.0",
     "webpack-merge": "^5.2.0",
     "webpack-notifier": "^1.8.0",
+    "workbox-webpack-plugin": "^5.1.4",
     "xo": "^0.34.1"
   },
   "xo": {

@@ -1,0 +1,22 @@
+{
+  "name":"Gilly Reads",
+  "short_name":"Gilly Reads",
+  "description":"Hi, I'm Gillian and I read books",
+  "lang":"en",
+  "start_url":"/",
+  "background_color":"#ffffff",
+  "display":"standalone",
+  "theme_color":"#68d391",
+  "icons":[
+     {
+      "src": "/assets/images/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/icon-300x300.png",
+      "type": "image/png",
+      "sizes": "300x300"
+    }
+  ]
+}

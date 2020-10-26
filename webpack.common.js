@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const {InjectManifest} = require('workbox-webpack-plugin');
 
 const paths = require('./config/paths');
 
@@ -102,4 +103,45 @@ module.exports.moduleConfig = {
 		]
 	},
 	plugins
+};
+
+module.exports.serviceWorkerConfig = {
+	mode: 'development',
+
+	output: {
+		path: path.resolve(paths.dest())
+	},
+	module: {
+		rules: [
+			{
+				oneOf: [
+					{
+						test: /\.js$/,
+						exclude: /node_modules/,
+						loader: 'babel-loader',
+						options: {
+							presets: [
+								[
+									'@babel/preset-env',
+									{
+										useBuiltIns: 'usage',
+										corejs: '3.6',
+										targets: {
+											esmodules: false
+										}
+									}
+								]
+							],
+							plugins: ['@babel/plugin-syntax-dynamic-import']
+						}
+					}
+				]
+			}
+		]
+	},
+	plugins: [
+		new InjectManifest({
+			swSrc: './src/service-worker.js'
+		})
+	]
 };
