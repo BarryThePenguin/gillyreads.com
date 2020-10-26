@@ -19,7 +19,7 @@
   "scripts": {
     "start": "gulp",
     "pack": "NODE_ENV=production gulp",
-    "postpack": "gscan -z ./gillian.zip",
+    "postpack": "gscan -z ./gillyreads.zip",
     "test": "xo"
   },
   "dependencies": {
