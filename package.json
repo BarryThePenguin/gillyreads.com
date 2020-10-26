@@ -23,13 +23,12 @@
     "test": "xo"
   },
   "dependencies": {
-    "autotrack": "^2.4.1",
     "core-js": "^3.6.5",
     "instafeed.js": "v2.0.0-rc2",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.1",
+    "@babel/core": "^7.12.3",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.12.1",
     "@tailwindcss/typography": "^0.2.0",
@@ -46,31 +45,28 @@
     "gscan": "^3.6.0",
     "gulp": "^4.0.2",
     "gulp-zip": "^5.0.2",
-    "mini-css-extract-plugin": "^1.0.0",
+    "mini-css-extract-plugin": "^1.2.0",
     "node-libs-browser": "^2.2.1",
     "plugin-error": "^1.0.1",
     "polished": "^4.0.3",
-    "postcss": "^8.1.1",
+    "postcss": "^8.1.4",
     "postcss-browser-reporter": "^0.6.0",
-    "postcss-import": "^12.0.1",
+    "postcss-import": "^13.0.0",
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
     "postcss-reporter": "^7.0.1",
-    "postcss-url": "^9.0.0",
+    "postcss-url": "^10.0.0",
     "prettier": "^2.1.2",
     "style-loader": "^2.0.0",
     "tailwindcss": "^1.9.6",
     "typeface-quicksand": "^1.1.13",
-    "webpack": "^4.44.2",
+    "webpack": "^5.2.0",
     "webpack-merge": "^5.2.0",
     "webpack-notifier": "^1.8.0",
     "xo": "^0.34.1"
   },
   "xo": {
-    "prettier": true,
-    "globals": [
-      "ga"
-    ]
+    "prettier": true
   },
   "browserslist": [
     "defaults"

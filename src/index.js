@@ -6,22 +6,9 @@ import 'regenerator-runtime/runtime';
 import 'typeface-quicksand';
 import './css/main.css';
 /* eslint-enable import/no-unassigned-import */
-
 import Instafeed from 'instafeed.js';
 
-window.addEventListener('load', async () => {
-	await Promise.all([
-		import('autotrack/lib/plugins/event-tracker'),
-		import('autotrack/lib/plugins/outbound-link-tracker')
-	]);
-
-	ga('create', 'UA-78690357-1', 'auto');
-
-	ga('require', 'eventTracker');
-	ga('require', 'outboundLinkTracker');
-
-	ga('send', 'pageview');
-});
+loadGoogleTagManager('GTM-TZFNZMF');
 
 const instafeedElement = document.querySelector('.instafeed');
 
@@ -59,4 +46,14 @@ async function createInstafeed(target) {
 			target
 		}).run();
 	}
+}
+
+function loadGoogleTagManager(id) {
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+	const f = document.querySelector('script');
+	const j = document.createElement('script');
+	j.async = true;
+	j.src = `https://www.googletagmanager.com/gtm.js?id=${id}`;
+	f.parentNode.insertBefore(j, f);
 }

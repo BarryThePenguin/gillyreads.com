@@ -5,8 +5,6 @@ const paths = require('./config/paths');
 
 module.exports = {
 	output: {
-		filename: '[name].bundle.js',
-		chunkFilename: '[name].bundle.js',
 		path: path.resolve(paths.bundle.dest),
 		publicPath: '/assets/'
 	},
@@ -27,7 +25,7 @@ module.exports = {
 						loader: 'file-loader',
 						exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
 						options: {
-							name: 'static/[name].[hash:8].[ext]'
+							name: 'static/[name].[contenthash].[ext]'
 						}
 					}
 				]
