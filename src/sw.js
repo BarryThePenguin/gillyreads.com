@@ -47,8 +47,10 @@ self.addEventListener('install', (event) => {
 
 	api
 		.get('posts', {
-			key: 'c2bf893ce67fc9f7aaa96d0848',
-			fields: 'id,url'
+			searchParams: {
+				key: 'c2bf893ce67fc9f7aaa96d0848',
+				fields: 'id,url'
+			}
 		})
 		.json()
 		.then(({posts}) => {
