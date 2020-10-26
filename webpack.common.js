@@ -107,7 +107,7 @@ module.exports.moduleConfig = {
 
 module.exports.serviceWorkerConfig = {
 	mode: 'development',
-
+	entry: {},
 	output: {
 		path: path.resolve(paths.dest())
 	},
