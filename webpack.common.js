@@ -87,7 +87,7 @@ module.exports.moduleConfig = {
 										useBuiltIns: 'usage',
 										corejs: '3.6',
 										targets: {
-											esmodules: false
+											esmodules: true
 										}
 									}
 								]
