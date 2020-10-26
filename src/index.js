@@ -3,7 +3,6 @@
 import './css/main.css';
 
 loadGoogleTagManager('GTM-TZFNZMF');
-loadServiceWorker();
 
 const instafeedElement = document.querySelector('.instafeed');
 
@@ -57,14 +56,6 @@ function handleResponse(response) {
 
 function tokenResult({Token}) {
 	return {ok: true, Token};
-}
-
-function loadServiceWorker() {
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/sw.js');
-		});
-	}
 }
 
 function loadGoogleTagManager(id) {

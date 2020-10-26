@@ -8,12 +8,21 @@ import {ExpirationPlugin} from 'workbox-expiration';
 import {precacheAndRoute} from 'workbox-precaching';
 import ky from 'ky';
 
+const FALLBACK_HTML_URL = '/offline';
+
 precacheAndRoute(self.__WB_MANIFEST);
 
 skipWaiting();
 
 // Ignore Admin
 registerRoute(({url}) => url.pathname.startsWith('/ghost'), new NetworkOnly());
+
+registerRoute(
+	({request}) => request.destination === 'image',
+	new CacheFirst({
+		cacheName: 'images'
+	})
+);
 
 registerRoute(
 	({url}) => url.origin === 'https://fonts.googleapis.com',
@@ -45,19 +54,23 @@ self.addEventListener('install', (event) => {
 		prefixUrl: `https://gilly-reads.ghost.io/ghost/api/${version}/content`
 	});
 
-	api
-		.get('posts', {
-			searchParams: {
-				key: 'c2bf893ce67fc9f7aaa96d0848',
-				fields: 'id,url'
-			}
-		})
-		.json()
-		.then(({posts}) => {
-			const urls = posts.map(({url}) => url);
-			const cacheName = cacheNames.runtime;
+	event.waitUntil(
+		caches.open(cacheNames.runtime).then((cache) => {
+			cache.add(FALLBACK_HTML_URL);
 
-			event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
+			api
+				.get('posts', {
+					searchParams: {
+						key: 'c2bf893ce67fc9f7aaa96d0848',
+						fields: 'id,url'
+					}
+				})
+				.json()
+				.then(({posts}) => {
+					const urls = posts.map(({url}) => url);
+					cache.addAll(urls);
+				})
+				.catch((error) => console.log('Failed to warm cache', error));
 		})
-		.catch((error) => console.log('Failed to warm cache', error));
+	);
 });
