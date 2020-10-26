@@ -22,7 +22,7 @@
 						{{#get "posts" limit="1" order="published_at desc"}}
 							{{#foreach posts}}
 								<p>
-									<a href="{{slug}}">{{title}}</a>
+									<a href="{{url}}">{{title}}</a>
 								</p>
 							{{/foreach}}
 						{{/get}}
