@@ -61,7 +61,7 @@
     "tailwindcss": "^1.9.6",
     "typeface-quicksand": "^1.1.13",
     "webpack": "^5.2.0",
-    "webpack-merge": "^5.2.0",
+    "webpack-merge": "^5.3.0",
     "webpack-notifier": "^1.8.0",
     "workbox-webpack-plugin": "^5.1.4",
     "xo": "^0.34.1"
