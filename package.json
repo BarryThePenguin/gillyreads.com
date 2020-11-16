@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "instafeed.js": "v2.0.0-rc2",
+    "instafeed.js": "v2.0.0-rc3",
     "ky": "^0.24.0"
   },
   "devDependencies": {
