@@ -3,59 +3,68 @@
 import './css/main.css';
 
 loadGoogleTagManager('GTM-TZFNZMF');
+const instaFeedPromise = loadInstafeed();
 
-const instafeedElement = document.querySelector('.instafeed');
+onIntersection('.instafeed', (target) => {
+	instaFeedPromise
+		.then(createInstafeed(target))
+		.then((instafeed) => instafeed.run())
+		.catch(console.error);
+});
 
-if ('IntersectionObserver' in window) {
-	const observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					loadInstafeed(entry.target);
-					observer.disconnect();
-				}
-			});
-		},
-		{threshold: 0}
-	);
+function onIntersection(target, callback) {
+	const element = document.querySelector(target);
+	if ('IntersectionObserver' in window) {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						callback(entry.target);
+						observer.disconnect();
+					}
+				});
+			},
+			{threshold: 0}
+		);
 
-	observer.observe(instafeedElement);
-} else {
-	loadInstafeed(instafeedElement);
+		observer.observe(element);
+	} else {
+		setTimeout(callback.bind(undefined, element));
+	}
 }
 
-function loadInstafeed(target) {
-	import('instafeed.js').then(({default: Instafeed}) => createInstafeed({Instafeed, target}));
-}
+function createInstafeed(target) {
+	return function ([Instafeed, accessToken]) {
+		const large = window.matchMedia('(min-width: 768px)');
 
-function createInstafeed({Instafeed, target}) {
-	return fetch(
-		'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w'
-	)
-		.then(handleResponse)
-		.then((result) => {
-			if (result.ok) {
-				const large = window.matchMedia('(min-width: 768px)');
-
-				new Instafeed({
-					limit: large.matches ? 16 : 8,
-					accessToken: result.Token,
-					target
-				}).run();
-			}
+		return new Instafeed({
+			limit: large.matches ? 16 : 8,
+			accessToken,
+			target
 		});
+	};
 }
 
-function handleResponse(response) {
-	if (response.ok) {
-		return response.json().then(tokenResult);
+function loadInstafeed() {
+	return Promise.all([importInstafeed(), loadInstagramToken()]);
+
+	function importInstafeed() {
+		return import('instafeed.js').then((instafeed) => instafeed.default);
 	}
 
-	return Promise.resolve({ok: false});
-}
+	function loadInstagramToken() {
+		return fetch(
+			'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w'
+		).then(handleResponse);
+	}
 
-function tokenResult({Token}) {
-	return {ok: true, Token};
+	function handleResponse(response) {
+		if (response.ok) {
+			return response.json().then(({Token}) => Token);
+		}
+
+		return Promise.reject(new Error(`Failed to fetch token. ${response.status}: ${response.statusText}`));
+	}
 }
 
 function loadGoogleTagManager(id) {
