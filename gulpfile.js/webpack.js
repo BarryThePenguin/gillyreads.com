@@ -4,8 +4,8 @@ const devConfig = require('../webpack.dev');
 const {legacyConfig, moduleConfig, serviceWorkerConfig} = require('../webpack.common');
 const compileLogger = require('./lib/compile-logger');
 
-const result = (done) => (err, stats) => {
-	compileLogger(err, stats);
+const result = (done) => (error, stats) => {
+	compileLogger(error, stats);
 	done();
 };
 

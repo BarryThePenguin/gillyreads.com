@@ -8,7 +8,7 @@ const instafeedElement = document.querySelector('.instafeed');
 
 if ('IntersectionObserver' in window) {
 	const observer = new IntersectionObserver(
-		function (entries) {
+		(entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					loadInstafeed(entry.target);
@@ -33,7 +33,7 @@ function createInstafeed({Instafeed, target}) {
 		'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w'
 	)
 		.then(handleResponse)
-		.then(function (result) {
+		.then((result) => {
 			if (result.ok) {
 				const large = window.matchMedia('(min-width: 768px)');
 
@@ -60,7 +60,7 @@ function tokenResult({Token}) {
 
 function loadGoogleTagManager(id) {
 	window.dataLayer = window.dataLayer || [];
-	window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+	window.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
 	const f = document.querySelector('script');
 	const j = document.createElement('script');
 	j.async = true;

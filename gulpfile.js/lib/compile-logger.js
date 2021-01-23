@@ -1,9 +1,9 @@
 const log = require('fancy-log');
 const PluginError = require('plugin-error');
 
-module.exports = (err, stats) => {
-	if (err) {
-		throw new PluginError('webpack', err);
+module.exports = (error, stats) => {
+	if (error) {
+		throw new PluginError('webpack', error);
 	}
 
 	log(
