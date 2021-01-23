@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "instafeed.js": "v2.0.0-rc2",
+    "instafeed.js": "v2.0.0-rc3",
     "ky": "^0.24.0"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.13",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "browserslist": "^4.14.5",
+    "browserslist": "^4.16.1",
     "css-loader": "^5.0.0",
     "cssnano": "^4.1.10",
     "del": "^6.0.0",
@@ -54,7 +54,7 @@
     "postcss-import": "^13.0.0",
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
-    "postcss-reporter": "^7.0.1",
+    "postcss-reporter": "^7.0.2",
     "postcss-url": "^10.0.0",
     "prettier": "^2.1.2",
     "style-loader": "^2.0.0",
