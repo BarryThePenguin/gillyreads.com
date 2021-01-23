@@ -19,7 +19,7 @@ const fileRule = {
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		name: '[name].css'
+		filename: '[name].css'
 	})
 ];
 
