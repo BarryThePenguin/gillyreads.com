@@ -23,13 +23,14 @@ module.exports = {
 				DEFAULT: {
 					css: {
 						a: {
-							color: theme('colors.green.600'),
+							color: theme('colors.green.700'),
 							transition: 'color 0.2s linear',
-							textDecoration: 'none',
 							'&:hover': {
-								color: theme('colors.green.800'),
-								textDecoration: 'none'
+								color: theme('colors.green.500')
 							}
+						},
+						blockquote: {
+							color: theme('colors.gray.500')
 						},
 						'h1, h2, h3, h4': {
 							fontWeight: 'normal'

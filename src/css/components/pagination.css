@@ -1,13 +1,11 @@
-@layer components {
-	.pagination {
-		@apply text-center mb-6;
-	}
+.pagination {
+	@apply text-center mb-6;
+}
 
-	.pagination a {
-		@apply text-green-700;
-	}
+.pagination a {
+	@apply text-green-700;
+}
 
-	.pagination a:hover {
-		@apply text-green-800;
-	}
+.pagination a:hover {
+	@apply text-green-800;
 }

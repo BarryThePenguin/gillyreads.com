@@ -1,41 +1,39 @@
-@layer components {
-	.subscribe-form {
-	  padding: 6.5vw 7vw 8vw;
-	}
+.subscribe-form {
+  padding: 6.5vw 7vw 8vw;
+}
 
-	.subscribe-form .button-loader,
-	.subscribe-form .message-success,
-	.subscribe-form .message-error {
-	    display: none;
-	}
+.subscribe-form .button-loader,
+.subscribe-form .message-success,
+.subscribe-form .message-error {
+    display: none;
+}
 
-	.subscribe-form .loading .button-content {
-	    visibility: hidden;
-	}
+.subscribe-form .loading .button-content {
+    visibility: hidden;
+}
 
-	.subscribe-form .loading .button-loader {
-	  position: absolute;
-	  display: inline-block;
-	}
+.subscribe-form .loading .button-loader {
+  position: absolute;
+  display: inline-block;
+}
 
-	.subscribe-form .button-loader svg path,
-	.subscribe-form .button-loader svg rect {
-	    fill: #fff;
-	}
+.subscribe-form .button-loader svg path,
+.subscribe-form .button-loader svg rect {
+    fill: #fff;
+}
 
-	.subscribe-form .success .message-success,
-	.subscribe-form .invalid .message-error,
-	.subscribe-form .error .message-error {
-	    @apply text-red-500;
-	}
+.subscribe-form .success .message-success,
+.subscribe-form .invalid .message-error,
+.subscribe-form .error .message-error {
+    @apply text-red-500;
+}
 
-	.subscribe-form .success .message-success {
-	    display: block;
-	    @apply text-green-500;
-	}
+.subscribe-form .success .message-success {
+    display: block;
+    @apply text-green-500;
+}
 
-	.subscribe-form .invalid .message-error,
-	.subscribe-form .error .message-error {
-	    display: block;
-	}
+.subscribe-form .invalid .message-error,
+.subscribe-form .error .message-error {
+    display: block;
 }

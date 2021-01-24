@@ -1,28 +1,26 @@
-@layer components {
-	.nav-link {
-		@apply no-underline block px-4 font-sans transition-colors duration-300;
-	}
+.nav-link {
+	@apply no-underline block px-4 font-sans transition-colors duration-300;
+}
 
-	.nav-link:hover {
-		@apply text-white no-underline;
-	}
+.nav-link:hover {
+	@apply text-white no-underline;
+}
 
-	.navbar li:nth-child(1) a:hover {
-		background-color: #408274;
-	}
-	.navbar li:nth-child(2) a:hover {
-		background-color: #2e585a;
-	}
-	.navbar li:nth-child(3) a:hover {
-		background-color: #193126;
-	}
-	.navbar li:nth-child(4) a:hover {
-		background-color: #2e5a3b;
-	}
-	.navbar li:nth-child(5) a:hover {
-		background-color: #408274;
-	}
-	.navbar li:nth-child(6) a:hover {
-		background-color: #6aad58;
-	}
+.navbar li:nth-child(1) a:hover {
+	background-color: #408274;
+}
+.navbar li:nth-child(2) a:hover {
+	background-color: #2e585a;
+}
+.navbar li:nth-child(3) a:hover {
+	background-color: #193126;
+}
+.navbar li:nth-child(4) a:hover {
+	background-color: #2e5a3b;
+}
+.navbar li:nth-child(5) a:hover {
+	background-color: #408274;
+}
+.navbar li:nth-child(6) a:hover {
+	background-color: #6aad58;
 }

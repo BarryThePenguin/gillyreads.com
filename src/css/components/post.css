@@ -1,26 +1,24 @@
-@layer components {
+.post-footer {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: auto auto;
+}
+
+@screen lg {
 	.post-footer {
-		display: grid;
 		grid-gap: 1rem;
-		grid-template-columns: auto auto;
+		grid-template-columns: auto auto auto;
 	}
+}
 
-	@screen lg {
-		.post-footer {
-			grid-gap: 1rem;
-			grid-template-columns: auto auto auto;
-		}
-	}
+.post-footer__figure {
 
-	.post-footer__figure {
+}
 
-	}
+.post-footer__author {
 
-	.post-footer__author {
+}
 
-	}
-
-	.post-footer__share {
-		grid-column: 1 / span 3;
-	}
+.post-footer__share {
+	grid-column: 1 / span 3;
 }

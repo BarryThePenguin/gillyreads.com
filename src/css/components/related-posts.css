@@ -1,5 +1,3 @@
-@layer components {
-	.related-posts {
-		grid-column: 1/span 3;
-	}
+.related-posts {
+	grid-column: 1/span 3;
 }

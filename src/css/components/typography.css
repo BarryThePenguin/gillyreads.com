@@ -1,39 +1,10 @@
-@layer components {
+@layer base {
 	hr {
-		@apply my-6 h-20 border-none;
-		@apply bg-center bg-no-repeat bg-contain;
+		@apply my-6 h-20 border-none bg-center bg-no-repeat bg-contain;
 		background-image: url("../../images/bookshelf.png");
 	}
 
 	blockquote {
-		@apply mx-6 p-4;
 	  box-shadow: 4px 4px 2px 0px var(--grayLighter);
-	}
-
-	blockquote,
-	q {
-	  quotes: "“ " "”";
-	  font-style: italic;
-	}
-
-	blockquote:before,
-	blockquote:after,
-	q:before,
-	q:after {
-	  color: var(--grayLight);
-	}
-
-	blockquote:before,
-	q:before {
-		@apply leading-none;
-	  font-size: 200%;
-	  content: open-quote;
-	  position: relative;
-	  left: -1rem;
-	}
-
-	blockquote:after,
-	q:after {
-	  content: close-quote;
 	}
 }

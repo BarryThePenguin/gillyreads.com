@@ -1,17 +1,15 @@
-@layer components {
+.title h1 {
+	font-size: 24vw;
+}
+
+@screen md {
 	.title h1 {
-		font-size: 24vw;
+		font-size: 18vw;
 	}
+}
 
-	@screen md {
-		.title h1 {
-			font-size: 18vw;
-		}
-	}
-
-	@screen lg {
-		.title h1 {
-			font-size: 16vw;
-		}
+@screen lg {
+	.title h1 {
+		font-size: 16vw;
 	}
 }
