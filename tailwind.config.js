@@ -25,6 +25,7 @@ module.exports = {
 						a: {
 							color: theme('colors.green.700'),
 							transition: 'color 0.2s linear',
+							textDecoration: 'none',
 							'&:hover': {
 								color: theme('colors.green.500')
 							}
