@@ -37,7 +37,6 @@ function zip(done) {
 function serve() {
 	watch(paths.fonts.src, fonts).on('change', reload);
 	watch(paths.templates.watch, templates).on('change', reload);
-	watch(paths.style.watch, webpack).on('change', reload);
 	watch(paths.images.watch, images).on('change', reload);
 	watch(paths.src('/**/*'), parallel(extras, webpack)).on('change', reload);
 
