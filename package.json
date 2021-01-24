@@ -67,17 +67,7 @@
     "xo": "^0.37.1"
   },
   "xo": {
-    "prettier": true,
-    "rules": {
-      "import/no-unassigned-import": [
-        "error",
-        {
-          "allow": [
-            "**/*.css"
-          ]
-        }
-      ]
-    }
+    "prettier": true
   },
   "browserslist": [
     "defaults"

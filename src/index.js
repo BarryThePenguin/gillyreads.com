@@ -1,6 +1,7 @@
 /* eslint-env browser */
 
 import './css/main.css';
+import Instafeed from 'instafeed.js';
 
 loadGoogleTagManager('GTM-TZFNZMF');
 const instaFeedPromise = loadInstafeed();
@@ -34,7 +35,7 @@ function onIntersection(target, callback) {
 }
 
 function createInstafeed(target) {
-	return function ([Instafeed, accessToken]) {
+	return function (accessToken) {
 		const large = window.matchMedia('(min-width: 768px)');
 
 		return new Instafeed({
@@ -46,17 +47,9 @@ function createInstafeed(target) {
 }
 
 function loadInstafeed() {
-	return Promise.all([importInstafeed(), loadInstagramToken()]);
-
-	function importInstafeed() {
-		return import('instafeed.js').then((instafeed) => instafeed.default);
-	}
-
-	function loadInstagramToken() {
-		return fetch(
-			'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w'
-		).then(handleResponse);
-	}
+	return fetch(
+		'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w'
+	).then(handleResponse);
 
 	function handleResponse(response) {
 		if (response.ok) {
