@@ -1,6 +1,6 @@
 
 <section class="related-posts">
-	{{#get "posts" limit="3" filter="tags:[{{tags[*].slug}}]+id:-{{id}}" include="tags" as |related|}}
+	{{#get "posts" limit="3" filter="tags:[{{post.tags[*].slug}}]+id:-{{post.id}}" include="tags" as |related|}}
 	  <h4>
 			Related posts
 		</h4>
