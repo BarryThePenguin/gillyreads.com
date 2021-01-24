@@ -1,5 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @import "components/typography";
 @import "components/icons";
@@ -14,8 +15,6 @@
 @import "components/bookmark-card";
 @import "components/subscribe-form";
 @import "components/subscribe-overlay";
-
-@import "tailwindcss/utilities";
 
 .body-grid {
 	display: grid;

@@ -9,6 +9,8 @@ const result = (done) => (error, stats) => {
 	done();
 };
 
+let compiler;
+
 module.exports = (done) => {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(
@@ -26,7 +28,10 @@ module.exports = (done) => {
 			result(done)
 		);
 	} else {
-		const compiler = webpack([legacyConfig, devConfig, serviceWorkerConfig]);
+		if (typeof compiler === 'undefined') {
+			compiler = webpack([legacyConfig, devConfig, serviceWorkerConfig]);
+		}
+
 		compiler.run(result(done));
 	}
 };

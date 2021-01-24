@@ -34,11 +34,12 @@
 
     {{> "sidebar"}}
 
-    <section class="grid-insta instafeed"></section>
+    <section role="complementary" class="grid-insta instafeed"></section>
 
     <footer class="grid-footer flex justify-between flex-col md:flex-row m-6">
         <section class="copyright">
-					<a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+					<a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+				</section>
         <section class="poweredby">
 					Proudly published with <a href="https://ghost.org">Ghost</a>
 				</section>
