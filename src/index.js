@@ -18,12 +18,12 @@ function onIntersection(target, callback) {
 	if ('IntersectionObserver' in window) {
 		const observer = new IntersectionObserver(
 			(entries) => {
-				entries.forEach((entry) => {
+				for (const entry of entries) {
 					if (entry.isIntersecting) {
 						callback(entry.target);
 						observer.disconnect();
 					}
-				});
+				}
 			},
 			{threshold: 0}
 		);
