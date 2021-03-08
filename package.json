@@ -23,7 +23,7 @@
     "test": "xo"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
+    "core-js": "^3.9.1",
     "instafeed.js": "v2.0.0-rc3",
     "ky": "^0.27.0"
   },
