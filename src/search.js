@@ -65,7 +65,7 @@ async function handleSearch(event, searchResults) {
 	loadIndex.then((index) => {
 		const {value} = event.target;
 		const results = queryIndex(index, value.toLocaleLowerCase().split(/\s+/));
-		const entries = Array.from(results, (result) => blogData.get(result.ref)).slice(0, 5);
+		const entries = Array.from(results, (result) => blogData.get(result.ref)).slice(0, 15);
 
 		const htmlEntries = renderEntries(entries);
 
