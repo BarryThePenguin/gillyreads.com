@@ -8,7 +8,7 @@ const blogData = new Map();
 const ghostApi = ky.create({
 	prefixUrl: new URL('/ghost/api/v3/content', window.location.origin),
 	searchParams: {
-		key: '0ddccfe869e91045130352d230',
+		key: 'c2bf893ce67fc9f7aaa96d0848',
 		limit: 'all',
 		include: 'tags',
 		formats: ['plaintext']
