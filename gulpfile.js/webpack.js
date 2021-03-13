@@ -6,12 +6,12 @@ const compileLogger = require('./lib/compile-logger');
 
 const result = (done) => (error, stats) => {
 	compileLogger(error, stats);
-	done();
+	done(error);
 };
 
 let compiler;
 
-module.exports = (done) => {
+function compile(done) {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(
 			[
@@ -29,9 +29,11 @@ module.exports = (done) => {
 		);
 	} else {
 		if (typeof compiler === 'undefined') {
-			compiler = webpack([legacyConfig, devConfig, serviceWorkerConfig]);
+			compiler = webpack(devConfig);
 		}
 
 		compiler.run(result(done));
 	}
-};
+}
+
+module.exports = compile;

@@ -2,8 +2,11 @@
 
 import './css/main.css';
 import Instafeed from 'instafeed.js';
+import {setupSearch} from './search.js';
 
 loadGoogleTagManager('GTM-TZFNZMF');
+setupSearch('[data-search-form]');
+
 const instaFeedPromise = loadInstafeed();
 
 onIntersection('.instafeed', (target) => {

@@ -1,50 +1,50 @@
 const path = require('path');
 
-const dirPath = (...paths) => path.join('./', ...paths);
+const dirPath = (...paths) => path.join('.', ...paths);
 
-const src = (p) => dirPath('/src/', p || '');
+const src = (...p) => dirPath('src', ...p);
 
-const dest = (p) => dirPath('/content/themes/gillian/', p || '');
+const dest = (...p) => dirPath('content/themes/gillian', ...p);
 
-const modules = (p) => dirPath('/node_modules/', p || '');
+const modules = (...p) => dirPath('node_modules', ...p);
+
+const assets = (...p) => dest('assets', ...p);
 
 const bundle = {
 	src: src(),
-	dest: dest('/assets')
+	dest: assets()
 };
 
-const style = {
-	dest: dest('/assets/css'),
-	watch: [src('/css/**/*.css'), dirPath('/tailwind.config.js')],
-	imports: [dirPath('node_modules')]
+const styles = {
+	watch: assets('*.css')
 };
 
 const scripts = {
-	src: src('/js/**/*'),
-	dest: dest('/assets/js'),
-	bundle: src('/js/')
+	src: src('js/**/*'),
+	watch: [assets('*.js'), assets('*.mjs')],
+	bundle: src('js')
 };
 
 const templates = {
-	src: [src('/**/*.hbs')],
+	src: src('**/*.hbs'),
 	dest: dest(),
-	watch: [src('/**/*.hbs')]
+	watch: src('/**/*.hbs')
 };
 
 const images = {
-	src: [src('/images/**/*')],
-	dest: [dest('/assets/images')],
-	watch: [src('/images/**/*')]
+	src: src('images/**/*'),
+	dest: assets('images'),
+	watch: src('images/**/*')
 };
 
 const extras = {
-	src: src('/stuff/*'),
+	src: src('stuff/*'),
 	dest: dest()
 };
 
 const fonts = {
-	src: [src('/fonts/*.{eot,svg,ttf,woff,otf}')],
-	dest: dest('/assets/fonts')
+	src: [src('fonts/*.{eot,svg,ttf,woff,otf}')],
+	dest: assets('fonts')
 };
 
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
 	dest,
 	modules,
 	bundle,
-	style,
+	styles,
 	scripts,
 	templates,
 	extras,

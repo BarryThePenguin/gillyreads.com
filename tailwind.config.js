@@ -3,10 +3,7 @@ const typography = require('@tailwindcss/typography');
 const paths = require('./config/paths');
 
 module.exports = {
-	purge: {
-		enabled: true,
-		content: paths.templates.src
-	},
+	purge: [paths.src('**/*.hbs'), paths.src('**/*.js')],
 	plugins: [typography],
 	theme: {
 		extend: {

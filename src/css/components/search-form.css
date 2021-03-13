@@ -1,0 +1,48 @@
+.search-form {
+  /* padding: 6.5vw 7vw 8vw; */
+}
+
+.search-form .button-loader,
+.search-form .message-success,
+.search-form .message-error {
+    display: none;
+}
+
+.search-form .loading .button-content {
+    visibility: hidden;
+}
+
+.search-form .loading .button-loader {
+  position: absolute;
+  display: inline-block;
+}
+
+.search-form .button-loader svg path,
+.search-form .button-loader svg rect {
+    fill: #fff;
+}
+
+.search-form .success .message-success,
+.search-form .invalid .message-error,
+.search-form .error .message-error {
+    @apply text-red-500;
+}
+
+.search-form .success .message-success {
+    display: block;
+    @apply text-green-500;
+}
+
+.search-form .invalid .message-error,
+.search-form .error .message-error {
+    display: block;
+}
+
+.search-link:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}

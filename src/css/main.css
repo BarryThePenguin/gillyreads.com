@@ -15,6 +15,8 @@
 @import "components/bookmark-card";
 @import "components/subscribe-form";
 @import "components/subscribe-overlay";
+@import "components/search-form";
+@import "components/search-overlay";
 
 .body-grid {
 	display: grid;
