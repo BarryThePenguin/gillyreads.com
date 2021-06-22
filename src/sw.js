@@ -1,11 +1,11 @@
 /* eslint-env serviceworker */
 
 import {cacheNames} from 'workbox-core';
-import {registerRoute} from 'workbox-routing';
+import {registerRoute, setDefaultHandler, setCatchHandler} from 'workbox-routing';
 import {CacheFirst, StaleWhileRevalidate, NetworkOnly} from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
-import {precacheAndRoute} from 'workbox-precaching';
+import {precacheAndRoute, matchPrecache} from 'workbox-precaching';
 import ky from 'ky';
 
 const FALLBACK_HTML_URL = '/offline/';
@@ -46,6 +46,16 @@ registerRoute(
 		]
 	})
 );
+
+setDefaultHandler(new StaleWhileRevalidate());
+
+setCatchHandler(async ({event}) => {
+	if (event.request.destination === 'document') {
+		return matchPrecache(FALLBACK_HTML_URL);
+	}
+
+	return Response.error();
+});
 
 self.addEventListener('install', (event) => {
 	const version = 'v3';
