@@ -6,7 +6,7 @@ import {setupSearch} from './search.js';
 
 loadGoogleTagManager('GTM-TZFNZMF');
 setupSearch('[data-search-form]');
-installServiceWorker('/sw.js');
+installServiceWorker(`/sw.js?${Date.now()}`);
 
 const instaFeedPromise = loadInstafeed();
 
