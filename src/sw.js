@@ -1,6 +1,6 @@
 /* eslint-env serviceworker */
 
-import {cacheNames, skipWaiting} from 'workbox-core';
+import {cacheNames} from 'workbox-core';
 import {registerRoute} from 'workbox-routing';
 import {CacheFirst, StaleWhileRevalidate, NetworkOnly} from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
@@ -8,11 +8,11 @@ import {ExpirationPlugin} from 'workbox-expiration';
 import {precacheAndRoute} from 'workbox-precaching';
 import ky from 'ky';
 
-const FALLBACK_HTML_URL = '/offline';
+const FALLBACK_HTML_URL = '/offline/';
 
 precacheAndRoute(self.__WB_MANIFEST);
 
-skipWaiting();
+self.skipWaiting();
 
 // Ignore Admin
 registerRoute(({url}) => url.pathname.startsWith('/ghost'), new NetworkOnly());

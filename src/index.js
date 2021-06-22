@@ -6,6 +6,7 @@ import {setupSearch} from './search.js';
 
 loadGoogleTagManager('GTM-TZFNZMF');
 setupSearch('[data-search-form]');
+installServiceWorker('/sw.js');
 
 const instaFeedPromise = loadInstafeed();
 
@@ -69,4 +70,14 @@ function loadGoogleTagManager(id) {
 	j.async = true;
 	j.src = `https://www.googletagmanager.com/gtm.js?id=${id}`;
 	f.parentNode.insertBefore(j, f);
+}
+
+function installServiceWorker(path) {
+	const url = new URL(window.location.href);
+
+	if ('serviceWorker' in navigator && url.searchParams.get('sw') === 'true') {
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register(path);
+		});
+	}
 }

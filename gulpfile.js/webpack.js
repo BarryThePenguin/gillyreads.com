@@ -29,7 +29,7 @@ function compile(done) {
 		);
 	} else {
 		if (typeof compiler === 'undefined') {
-			compiler = webpack(devConfig);
+			compiler = webpack([devConfig, serviceWorkerConfig]);
 		}
 
 		compiler.run(result(done));
