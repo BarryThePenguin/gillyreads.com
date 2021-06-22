@@ -48,8 +48,5 @@ const build = parallel(webpack, images, templates, extras);
 
 exports['stop-ghost'] = stopGhost;
 
-if (process.env.NODE_ENV === 'production') {
-	exports.default = series(clean, build, zip);
-} else {
-	exports.default = series(startGhost, clean, build, serve);
-}
+exports.default =
+	process.env.NODE_ENV === 'production' ? series(clean, build, zip) : series(startGhost, clean, build, serve);

@@ -11,7 +11,7 @@ const instaFeedPromise = loadInstafeed();
 
 onIntersection('.instafeed', (target) => {
 	instaFeedPromise
-		.then(createInstafeed(target))
+		.then((accessToken) => createInstafeed(accessToken, target))
 		.then((instafeed) => instafeed.run())
 		.catch(console.error);
 });
@@ -33,20 +33,18 @@ function onIntersection(target, callback) {
 
 		observer.observe(element);
 	} else {
-		setTimeout(callback.bind(undefined, element));
+		setTimeout(() => callback(element));
 	}
 }
 
-function createInstafeed(target) {
-	return function (accessToken) {
-		const large = window.matchMedia('(min-width: 768px)');
+function createInstafeed(accessToken, target) {
+	const large = window.matchMedia('(min-width: 768px)');
 
-		return new Instafeed({
-			limit: large.matches ? 16 : 8,
-			accessToken,
-			target
-		});
-	};
+	return new Instafeed({
+		limit: large.matches ? 16 : 8,
+		accessToken,
+		target
+	});
 }
 
 function loadInstafeed() {
