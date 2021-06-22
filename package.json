@@ -29,7 +29,7 @@
     "ky": "^0.27.0",
     "leven": "^3.1.0",
     "lunr": "^2.3.9",
-    "p-lazy": "^3.1.0"
+    "p-lazy": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
