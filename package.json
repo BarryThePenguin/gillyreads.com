@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.14.7",
     "@tailwindcss/typography": "^0.4.1",
     "babel-loader": "^8.2.2",
-    "browser-sync": "^2.26.14",
+    "browser-sync": "^2.27.4",
     "browserslist": "^4.16.3",
     "css-loader": "^5.2.6",
     "cssnano": "^5.0.6",
