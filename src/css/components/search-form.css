@@ -30,7 +30,7 @@
 
 .search-form .success .message-success {
     display: block;
-    @apply text-green-500;
+    @apply text-emerald-500;
 }
 
 .search-form .invalid .message-error,

@@ -1,9 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const typography = require('@tailwindcss/typography');
-const paths = require('./config/paths');
 
 module.exports = {
-	purge: [paths.src('**/*.hbs'), paths.src('**/*.js')],
+	content: ['./src/**/*.{hbs,js}'],
 	plugins: [typography],
 	theme: {
 		extend: {
@@ -20,11 +19,11 @@ module.exports = {
 				DEFAULT: {
 					css: {
 						a: {
-							color: theme('colors.green.700'),
+							color: theme('colors.emerald.700'),
 							transition: 'color 0.2s linear',
 							textDecoration: 'none',
 							'&:hover': {
-								color: theme('colors.green.500')
+								color: theme('colors.emerald.500')
 							}
 						},
 						blockquote: {

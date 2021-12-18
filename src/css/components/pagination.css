@@ -3,9 +3,9 @@
 }
 
 .pagination a {
-	@apply text-green-700;
+	@apply text-emerald-700;
 }
 
 .pagination a:hover {
-	@apply text-green-800;
+	@apply text-emerald-800;
 }

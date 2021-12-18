@@ -1,14 +1,16 @@
-const {pipeline} = require('stream');
-const {src, dest, series, parallel, watch} = require('gulp');
-const del = require('del');
-const gulpZip = require('gulp-zip');
-const {task} = require('gulp-execa');
-const log = require('fancy-log');
-const browserSync = require('browser-sync');
-const copy = require('./lib/copy');
-const paths = require('../config/paths');
+import {pipeline} from 'stream';
+import gulp from 'gulp';
+import del from 'del';
+import gulpZip from 'gulp-zip';
+import {task} from 'gulp-execa';
+import log from 'fancy-log';
+import browserSync from 'browser-sync';
+import {copy} from './lib/copy.js';
+import * as paths from './config/paths.js';
 
-const webpack = require('./webpack');
+import webpack from './webpack.js';
+
+const {src, dest, series, parallel, watch} = gulp;
 
 const {reload} = browserSync;
 
@@ -17,9 +19,9 @@ function clean() {
 	return del(paths.dest());
 }
 
-const startGhost = task('ghost start --development');
-const upgradeGhost = task('ghost update');
-const stopGhost = task('ghost stop');
+export const startGhost = task('ghost start --development');
+export const upgradeGhost = task('ghost update');
+export const stopGhost = task('ghost stop');
 
 const fonts = copy('fonts');
 const extras = copy('extras');
@@ -41,14 +43,12 @@ function serve() {
 	browserSync({
 		proxy: 'http://localhost:2369',
 		port: 3000,
-		browser: ['google chrome']
+		browser: ['firefox']
 	});
 }
 
 const build = parallel(webpack, images, templates, extras);
 
-exports['ghost:upgrade'] = upgradeGhost;
-exports['ghost:stop'] = stopGhost;
-
-exports.default =
-	process.env.NODE_ENV === 'production' ? series(clean, build, zip) : series(startGhost, clean, build, serve);
+export default process.env.NODE_ENV === 'production'
+	? series(clean, build, zip)
+	: series(startGhost, clean, build, serve);

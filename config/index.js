@@ -1,3 +1,1 @@
-const paths = require('./paths');
-
-module.exports = {paths};
+export * from './paths.js';

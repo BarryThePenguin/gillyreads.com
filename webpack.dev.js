@@ -1,8 +1,8 @@
-const {merge} = require('webpack-merge');
-const WebpackNotifierPlugin = require('webpack-notifier');
-const {moduleConfig} = require('./webpack.common');
+import {merge} from 'webpack-merge';
+import WebpackNotifierPlugin from 'webpack-notifier';
+import {moduleConfig} from './webpack.common.js';
 
-module.exports = merge(moduleConfig, {
+export default merge(moduleConfig, {
 	devtool: 'cheap-module-source-map',
 
 	plugins: [new WebpackNotifierPlugin()]

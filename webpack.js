@@ -1,8 +1,8 @@
-const webpack = require('webpack');
-const {merge} = require('webpack-merge');
-const devConfig = require('../webpack.dev');
-const {legacyConfig, moduleConfig, serviceWorkerConfig} = require('../webpack.common');
-const compileLogger = require('./lib/compile-logger');
+import webpack from 'webpack';
+import {merge} from 'webpack-merge';
+import devConfig from './webpack.dev.js';
+import {legacyConfig, moduleConfig, serviceWorkerConfig} from './webpack.common.js';
+import {compileLogger} from './lib/compile-logger.js';
 
 const result = (done) => (error, stats) => {
 	compileLogger(error, stats);
@@ -11,7 +11,7 @@ const result = (done) => (error, stats) => {
 
 let compiler;
 
-function compile(done) {
+export default function compile(done) {
 	if (process.env.NODE_ENV === 'production') {
 		webpack(
 			[
@@ -35,5 +35,3 @@ function compile(done) {
 		compiler.run(result(done));
 	}
 }
-
-module.exports = compile;

@@ -1,8 +1,8 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {InjectManifest} = require('workbox-webpack-plugin');
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import {InjectManifest} from 'workbox-webpack-plugin';
 
-const paths = require('./config/paths');
+import * as paths from './config/paths.js';
 
 const cssRule = {
 	test: /\.css$/,
@@ -23,7 +23,7 @@ const plugins = [
 	})
 ];
 
-module.exports.legacyConfig = {
+export const legacyConfig = {
 	mode: 'development',
 
 	output: {
@@ -64,7 +64,7 @@ module.exports.legacyConfig = {
 	plugins
 };
 
-module.exports.moduleConfig = {
+export const moduleConfig = {
 	mode: 'development',
 
 	output: {
@@ -105,7 +105,7 @@ module.exports.moduleConfig = {
 	plugins
 };
 
-module.exports.serviceWorkerConfig = {
+export const serviceWorkerConfig = {
 	mode: 'development',
 	entry: {},
 	output: {

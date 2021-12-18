@@ -30,11 +30,11 @@
 	}
 
 	.loop-content a {
-		@apply text-green-400;
+		@apply text-emerald-400;
 	}
 
 	.loop-content a:hover {
-		@apply text-green-700;
+		@apply text-emerald-700;
 	}
 
 	.feature-image,

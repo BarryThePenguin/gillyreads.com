@@ -30,7 +30,7 @@
 
 .subscribe-form .success .message-success {
     display: block;
-    @apply text-green-500;
+    @apply text-emerald-500;
 }
 
 .subscribe-form .invalid .message-error,
