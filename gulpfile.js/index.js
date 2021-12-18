@@ -18,6 +18,7 @@ function clean() {
 }
 
 const startGhost = task('ghost start --development');
+const upgradeGhost = task('ghost update');
 const stopGhost = task('ghost stop');
 
 const fonts = copy('fonts');
@@ -46,7 +47,8 @@ function serve() {
 
 const build = parallel(webpack, images, templates, extras);
 
-exports['stop-ghost'] = stopGhost;
+exports['ghost:upgrade'] = upgradeGhost;
+exports['ghost:stop'] = stopGhost;
 
 exports.default =
 	process.env.NODE_ENV === 'production' ? series(clean, build, zip) : series(startGhost, clean, build, serve);
