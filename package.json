@@ -46,7 +46,7 @@
     "fancy-log": "^2.0.0",
     "file-loader": "^6.2.0",
     "ghost-cli": "^1.18.1",
-    "gscan": "^4.21.0",
+    "gscan": "^4.22.0",
     "gulp": "^4.0.2",
     "gulp-execa": "^3.0.2",
     "gulp-zip": "^5.1.0",
