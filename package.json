@@ -50,7 +50,7 @@
     "gulp": "^4.0.2",
     "gulp-execa": "^3.0.2",
     "gulp-zip": "^5.1.0",
-    "mini-css-extract-plugin": "^2.4.6",
+    "mini-css-extract-plugin": "^2.5.3",
     "node-libs-browser": "^2.2.1",
     "plugin-error": "^1.0.1",
     "postcss": "^8.4.5",
