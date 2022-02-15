@@ -41,7 +41,7 @@
     "browser-sync": "^2.27.7",
     "browserslist": "^4.16.3",
     "css-loader": "^6.5.1",
-    "cssnano": "^5.0.15",
+    "cssnano": "^5.0.17",
     "del": "^6.0.0",
     "fancy-log": "^2.0.0",
     "file-loader": "^6.2.0",
