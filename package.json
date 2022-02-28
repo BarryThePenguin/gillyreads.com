@@ -67,7 +67,7 @@
     "webpack-merge": "^5.8.0",
     "webpack-notifier": "^1.15.0",
     "workbox-webpack-plugin": "^6.4.2",
-    "xo": "^0.39.1"
+    "xo": "^0.48.0"
   },
   "xo": {
     "prettier": true
