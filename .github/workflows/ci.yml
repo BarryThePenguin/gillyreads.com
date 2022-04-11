@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: github.ref == 'refs/heads/main'
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: deploy-zip
 
