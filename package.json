@@ -25,7 +25,7 @@
     "test": "xo"
   },
   "dependencies": {
-    "core-js": "^3.21.1",
+    "core-js": "^3.23.1",
     "instafeed.js": "v2.0.0",
     "ky": "^0.28.7",
     "leven": "^4.0.0",
@@ -40,7 +40,7 @@
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "browserslist": "^4.19.3",
-    "css-loader": "^6.5.1",
+    "css-loader": "^6.7.1",
     "cssnano": "^5.0.17",
     "del": "^6.0.0",
     "fancy-log": "^2.0.0",
