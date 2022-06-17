@@ -45,7 +45,7 @@
     "del": "^6.0.0",
     "fancy-log": "^2.0.0",
     "file-loader": "^6.2.0",
-    "ghost-cli": "^1.18.1",
+    "ghost-cli": "^1.21.0",
     "gscan": "^4.31.2",
     "gulp": "^4.0.2",
     "gulp-execa": "^3.0.2",
