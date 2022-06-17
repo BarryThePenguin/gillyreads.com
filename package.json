@@ -48,7 +48,7 @@
     "ghost-cli": "^1.21.0",
     "gscan": "^4.31.2",
     "gulp": "^4.0.2",
-    "gulp-execa": "^3.0.2",
+    "gulp-execa": "^4.0.0",
     "gulp-zip": "^5.1.0",
     "mini-css-extract-plugin": "^2.6.1",
     "node-libs-browser": "^2.2.1",
