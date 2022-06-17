@@ -42,7 +42,7 @@
     "browserslist": "^4.19.3",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.11",
-    "del": "^6.0.0",
+    "del": "^6.1.1",
     "fancy-log": "^2.0.0",
     "file-loader": "^6.2.0",
     "ghost-cli": "^1.21.0",
