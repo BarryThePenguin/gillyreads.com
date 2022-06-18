@@ -6,6 +6,9 @@ module.exports = {
 	plugins: [typography],
 	theme: {
 		extend: {
+			backgroundImage: {
+				bookshelf: 'url("../../src/images/bookshelf.png")'
+			},
 			colors: {
 				twitter: '#1da1f2'
 			},
