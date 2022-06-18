@@ -5,5 +5,5 @@ import {moduleConfig} from './webpack.common.js';
 export default merge(moduleConfig, {
 	devtool: 'cheap-module-source-map',
 
-	plugins: [new WebpackNotifierPlugin()]
+	plugins: [new WebpackNotifierPlugin()],
 });

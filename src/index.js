@@ -29,7 +29,7 @@ function onIntersection(target, callback) {
 					}
 				}
 			},
-			{threshold: 0}
+			{threshold: 0},
 		);
 
 		observer.observe(element);
@@ -44,13 +44,13 @@ function createInstafeed(accessToken, target) {
 	return new Instafeed({
 		limit: large.matches ? 16 : 8,
 		accessToken,
-		target
+		target,
 	});
 }
 
 function loadInstafeed() {
 	return fetch(
-		'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w'
+		'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w',
 	).then(handleResponse);
 
 	function handleResponse(response) {

@@ -20,15 +20,15 @@ registerRoute(({url}) => url.pathname.startsWith('/ghost'), new NetworkOnly());
 registerRoute(
 	({request}) => request.destination === 'image',
 	new CacheFirst({
-		cacheName: 'images'
-	})
+		cacheName: 'images',
+	}),
 );
 
 registerRoute(
 	({url}) => url.origin === 'https://fonts.googleapis.com',
 	new StaleWhileRevalidate({
-		cacheName: 'google-fonts-stylesheets'
-	})
+		cacheName: 'google-fonts-stylesheets',
+	}),
 );
 
 registerRoute(
@@ -37,14 +37,14 @@ registerRoute(
 		cacheName: 'google-fonts-webfonts',
 		plugins: [
 			new CacheableResponsePlugin({
-				statuses: [0, 200]
+				statuses: [0, 200],
 			}),
 			new ExpirationPlugin({
 				maxAgeSeconds: 60 * 60 * 24 * 365,
-				maxEntries: 30
-			})
-		]
-	})
+				maxEntries: 30,
+			}),
+		],
+	}),
 );
 
 setDefaultHandler(new StaleWhileRevalidate());
@@ -61,7 +61,7 @@ self.addEventListener('install', (event) => {
 	const version = 'v3';
 
 	const api = ky.create({
-		prefixUrl: `https://gilly-reads.ghost.io/ghost/api/${version}/content`
+		prefixUrl: `https://gilly-reads.ghost.io/ghost/api/${version}/content`,
 	});
 
 	event.waitUntil(
@@ -72,8 +72,8 @@ self.addEventListener('install', (event) => {
 				.get('posts', {
 					searchParams: {
 						key: 'c2bf893ce67fc9f7aaa96d0848',
-						fields: 'id,url'
-					}
+						fields: 'id,url',
+					},
 				})
 				.json()
 				.then(({posts}) => {
@@ -81,6 +81,6 @@ self.addEventListener('install', (event) => {
 					cache.addAll(urls);
 				})
 				.catch((error) => console.log('Failed to warm cache', error));
-		})
+		}),
 	);
 });

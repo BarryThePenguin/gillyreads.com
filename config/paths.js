@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 const dirPath = (...paths) => path.join('.', ...paths);
 
@@ -12,37 +12,37 @@ export const assets = (...p) => dest('assets', ...p);
 
 export const bundle = {
 	src: src(),
-	dest: assets()
+	dest: assets(),
 };
 
 export const styles = {
-	watch: assets('*.css')
+	watch: assets('*.css'),
 };
 
 export const scripts = {
 	src: src('js/**/*'),
 	watch: [assets('*.js'), assets('*.mjs')],
-	bundle: src('js')
+	bundle: src('js'),
 };
 
 export const templates = {
 	src: src('**/*.hbs'),
 	dest: dest(),
-	watch: src('**/*.hbs')
+	watch: src('**/*.hbs'),
 };
 
 export const images = {
 	src: src('images/**/*'),
 	dest: assets('images'),
-	watch: src('images/**/*')
+	watch: src('images/**/*'),
 };
 
 export const extras = {
 	src: src('stuff/*'),
-	dest: dest()
+	dest: dest(),
 };
 
 export const fonts = {
 	src: [src('fonts/*.{eot,svg,ttf,woff,otf}')],
-	dest: assets('fonts')
+	dest: assets('fonts'),
 };

@@ -1,3 +1,4 @@
+import process from 'node:process';
 import webpack from 'webpack';
 import {merge} from 'webpack-merge';
 import devConfig from './webpack.dev.js';
@@ -16,16 +17,16 @@ export default function compile(done) {
 		webpack(
 			[
 				merge(legacyConfig, {
-					mode: 'production'
+					mode: 'production',
 				}),
 				merge(moduleConfig, {
-					mode: 'production'
+					mode: 'production',
 				}),
 				merge(serviceWorkerConfig, {
-					mode: 'production'
-				})
+					mode: 'production',
+				}),
 			],
-			result(done)
+			result(done),
 		);
 	} else {
 		if (typeof compiler === 'undefined') {
