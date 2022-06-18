@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {InjectManifest} from 'workbox-webpack-plugin';
 
@@ -6,18 +6,18 @@ import * as paths from './config/paths.js';
 
 const cssRule = {
 	test: /\.css$/,
-	use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+	use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
 };
 
 const fileRule = {
 	test: /\.(png|svg|jpg|jpeg|gif)$/i,
-	type: 'asset/resource'
+	type: 'asset/resource',
 };
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		filename: '[name].css'
-	})
+		filename: '[name].css',
+	}),
 ];
 
 export const legacyConfig = {
@@ -25,7 +25,7 @@ export const legacyConfig = {
 
 	output: {
 		filename: '[name].bundle.js',
-		path: path.resolve(paths.bundle.dest)
+		path: path.resolve(paths.bundle.dest),
 	},
 	module: {
 		rules: [
@@ -43,21 +43,21 @@ export const legacyConfig = {
 										useBuiltIns: 'usage',
 										corejs: '3.6',
 										targets: {
-											esmodules: false
-										}
-									}
-								]
+											esmodules: false,
+										},
+									},
+								],
 							],
-							plugins: ['@babel/plugin-syntax-dynamic-import']
-						}
+							plugins: ['@babel/plugin-syntax-dynamic-import'],
+						},
 					},
 					cssRule,
-					fileRule
-				]
-			}
-		]
+					fileRule,
+				],
+			},
+		],
 	},
-	plugins
+	plugins,
 };
 
 export const moduleConfig = {
@@ -65,7 +65,7 @@ export const moduleConfig = {
 
 	output: {
 		filename: '[name].mjs',
-		path: path.resolve(paths.bundle.dest)
+		path: path.resolve(paths.bundle.dest),
 	},
 	module: {
 		rules: [
@@ -83,28 +83,28 @@ export const moduleConfig = {
 										useBuiltIns: 'usage',
 										corejs: '3.6',
 										targets: {
-											esmodules: true
-										}
-									}
-								]
+											esmodules: true,
+										},
+									},
+								],
 							],
-							plugins: ['@babel/plugin-syntax-dynamic-import']
-						}
+							plugins: ['@babel/plugin-syntax-dynamic-import'],
+						},
 					},
 					cssRule,
-					fileRule
-				]
-			}
-		]
+					fileRule,
+				],
+			},
+		],
 	},
-	plugins
+	plugins,
 };
 
 export const serviceWorkerConfig = {
 	mode: 'development',
 	entry: {},
 	output: {
-		path: path.resolve(paths.dest())
+		path: path.resolve(paths.dest()),
 	},
 	module: {
 		rules: [
@@ -122,21 +122,21 @@ export const serviceWorkerConfig = {
 										useBuiltIns: 'usage',
 										corejs: '3.6',
 										targets: {
-											esmodules: false
-										}
-									}
-								]
+											esmodules: false,
+										},
+									},
+								],
 							],
-							plugins: ['@babel/plugin-syntax-dynamic-import']
-						}
-					}
-				]
-			}
-		]
+							plugins: ['@babel/plugin-syntax-dynamic-import'],
+						},
+					},
+				],
+			},
+		],
 	},
 	plugins: [
 		new InjectManifest({
-			swSrc: './src/sw.js'
-		})
-	]
+			swSrc: './src/sw.js',
+		}),
+	],
 };

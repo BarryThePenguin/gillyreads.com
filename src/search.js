@@ -11,8 +11,8 @@ const ghostApi = ky.create({
 		key: 'c2bf893ce67fc9f7aaa96d0848',
 		limit: 'all',
 		include: 'tags',
-		formats: ['plaintext']
-	}
+		formats: ['plaintext'],
+	},
 });
 
 const loadIndex = Lazy.from(() =>
@@ -33,7 +33,7 @@ const loadIndex = Lazy.from(() =>
 					title: String(post.title),
 					description: String(post.custom_excerpt),
 					publishedDate: String(post.published_at),
-					tag: post.tags?.map(({name}) => name).join(', ') ?? 'undefined'
+					tag: post.tags?.map(({name}) => name).join(', ') ?? 'undefined',
 				};
 
 				this.add(parsedData);
@@ -42,13 +42,13 @@ const loadIndex = Lazy.from(() =>
 					title: post.title,
 					description: post.custom_excerpt,
 					publishedDate: formatDate(parsedData.publishedDate),
-					url: post.url
+					url: post.url,
 				});
 			}
 		});
 
 		return {index, lunr, leven};
-	})
+	}),
 );
 
 export function setupSearch(selector) {
@@ -81,17 +81,17 @@ function queryIndex({index, lunr}, terms) {
 		const results = index.query((query) => {
 			query.term(term, {
 				usePipeline: true,
-				boost: 100
+				boost: 100,
 			});
 			query.term(term, {
 				usePipeline: false,
 				boost: 10,
-				wildcard: lunr.Query.wildcard.TRAILING
+				wildcard: lunr.Query.wildcard.TRAILING,
 			});
 			query.term(term, {
 				usePipeline: false,
 				editDistance: 1,
-				boost: 1
+				boost: 1,
 			});
 		});
 
@@ -104,7 +104,7 @@ function queryIndex({index, lunr}, terms) {
 		}
 	}
 
-	if (otherResults.size) {
+	if (otherResults.size > 0) {
 		for (const [ref] of searchResults) {
 			if (!otherResults.has(ref)) {
 				searchResults.delete(ref);

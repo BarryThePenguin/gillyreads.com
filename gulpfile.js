@@ -1,4 +1,5 @@
-import {pipeline} from 'stream';
+import process from 'node:process';
+import {pipeline} from 'node:stream';
 import gulp from 'gulp';
 import del from 'del';
 import gulpZip from 'gulp-zip';
@@ -43,7 +44,7 @@ function serve() {
 	browserSync({
 		proxy: 'http://localhost:2369',
 		port: 3000,
-		browser: ['firefox']
+		browser: ['firefox'],
 	});
 }
 

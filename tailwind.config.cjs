@@ -7,16 +7,16 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				bookshelf: 'url("../../src/images/bookshelf.png")'
+				bookshelf: 'url("../../src/images/bookshelf.png")',
 			},
 			colors: {
-				twitter: '#1da1f2'
+				twitter: '#1da1f2',
 			},
 			opacity: {
-				95: '.95'
+				95: '.95',
 			},
 			fontFamily: {
-				sans: ['Quicksand', ...defaultTheme.fontFamily.sans]
+				sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
 			},
 			typography: (theme) => ({
 				DEFAULT: {
@@ -26,21 +26,21 @@ module.exports = {
 							transition: 'color 0.2s linear',
 							textDecoration: 'none',
 							'&:hover': {
-								color: theme('colors.emerald.500')
-							}
+								color: theme('colors.emerald.500'),
+							},
 						},
 						blockquote: {
-							color: theme('colors.gray.500')
+							color: theme('colors.gray.500'),
 						},
 						'h1, h2, h3, h4': {
-							fontWeight: 'normal'
+							fontWeight: 'normal',
 						},
 						strong: {
-							fontWeight: '500'
-						}
-					}
-				}
-			})
-		}
-	}
+							fontWeight: '500',
+						},
+					},
+				},
+			}),
+		},
+	},
 };
