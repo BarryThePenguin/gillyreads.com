@@ -10,11 +10,8 @@ const cssRule = {
 };
 
 const fileRule = {
-	loader: 'file-loader',
-	exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
-	options: {
-		name: 'static/[name].[contenthash].[ext]'
-	}
+	test: /\.(png|svg|jpg|jpeg|gif)$/i,
+	type: 'asset/resource'
 };
 
 const plugins = [
@@ -28,8 +25,7 @@ export const legacyConfig = {
 
 	output: {
 		filename: '[name].bundle.js',
-		path: path.resolve(paths.bundle.dest),
-		publicPath: '/assets/'
+		path: path.resolve(paths.bundle.dest)
 	},
 	module: {
 		rules: [
@@ -69,8 +65,7 @@ export const moduleConfig = {
 
 	output: {
 		filename: '[name].mjs',
-		path: path.resolve(paths.bundle.dest),
-		publicPath: '/assets/'
+		path: path.resolve(paths.bundle.dest)
 	},
 	module: {
 		rules: [

@@ -28,7 +28,7 @@ export const scripts = {
 export const templates = {
 	src: src('**/*.hbs'),
 	dest: dest(),
-	watch: src('/**/*.hbs')
+	watch: src('**/*.hbs')
 };
 
 export const images = {
