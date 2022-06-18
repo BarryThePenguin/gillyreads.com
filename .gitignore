@@ -10,3 +10,4 @@ versions
 config.js
 ghost*.db
 *.zip
+*.tgz
