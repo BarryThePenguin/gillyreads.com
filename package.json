@@ -27,7 +27,7 @@
   "dependencies": {
     "core-js": "^3.23.1",
     "instafeed.js": "v2.0.0",
-    "ky": "^0.30.0",
+    "ky": "^0.31.0",
     "leven": "^4.0.0",
     "lunr": "^2.3.9",
     "p-lazy": "^4.0.0"
