@@ -1,20 +1,16 @@
 /* eslint-env browser */
 
 import './css/main.css';
-import Instafeed from 'instafeed.js';
 import {setupSearch} from './search.js';
 
 loadGoogleTagManager('GTM-TZFNZMF');
 setupSearch('[data-search-form]');
 installServiceWorker(`/sw.js?${Date.now()}`);
 
-const instaFeedPromise = loadInstafeed();
+const instafeed = loadInstafeed();
 
 onIntersection('.instafeed', (target) => {
-	instaFeedPromise
-		.then((accessToken) => createInstafeed(accessToken, target))
-		.then((instafeed) => instafeed.run())
-		.catch(console.error);
+	instafeed.run(target).catch((error) => console.log(error));
 });
 
 function onIntersection(target, callback) {
@@ -38,27 +34,36 @@ function onIntersection(target, callback) {
 	}
 }
 
-function createInstafeed(accessToken, target) {
-	const large = window.matchMedia('(min-width: 768px)');
-
-	return new Instafeed({
-		limit: large.matches ? 16 : 8,
-		accessToken,
-		target,
-	});
-}
-
 function loadInstafeed() {
-	return fetch(
-		'https://ig.instant-tokens.com/users/9af08e41-25eb-4ebc-96f9-bd8d5cda4b4b/instagram/17841400413312724/token?userSecret=wdo96hovcaf1d9xzsh7q9w',
-	).then(handleResponse);
+	const loadFeed = fetch('https://feeds.behold.so/1R6tyEunCryufxwGgOaZ').then(handleResponse);
+
+	return {
+		/**
+		 *
+		 * @param {HTMLElement} target
+		 * @returns
+		 */
+		run(target) {
+			return loadFeed.then((feed) => {
+				for (const photo of feed) {
+					const link = document.createElement('a');
+					const image = document.createElement('img');
+					link.href = photo.permalink;
+					image.title = photo.caption;
+					image.src = photo.mediaUrl;
+					link.append(image);
+					target.append(link);
+				}
+			});
+		},
+	};
 
 	function handleResponse(response) {
 		if (response.ok) {
-			return response.json().then(({Token}) => Token);
+			return response.json();
 		}
 
-		return Promise.reject(new Error(`Failed to fetch token. ${response.status}: ${response.statusText}`));
+		throw new Error(`Failed to fetch token. ${response.status}: ${response.statusText}`);
 	}
 }
 

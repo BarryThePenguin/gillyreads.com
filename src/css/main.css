@@ -141,13 +141,13 @@
 
 @screen md {
 	.instafeed {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @screen lg {
 	.instafeed {
-		grid-template-columns: repeat(8, 1fr);
+		grid-template-columns: repeat(6, 1fr);
 	}
 }
 
