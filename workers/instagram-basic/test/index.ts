@@ -2,7 +2,7 @@
 
 import anyTest, {TestFn} from 'ava';
 import {fetch, MockAgent, setGlobalDispatcher} from 'undici';
-import {Miniflare, Request, Response, RequestInfo, RequestInit} from 'miniflare';
+import {Miniflare, Request, RequestInfo, RequestInit} from 'miniflare';
 
 type Context = {
 	mf: Miniflare;

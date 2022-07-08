@@ -1,19 +1,19 @@
-<nav aria-label="Main" class="grid-nav text-right mt-20 md:mt-6">
+<nav aria-label="Main" class="grid-nav text-right self-end">
   <ul class="navbar list-reset text-xl md:text-2xl leading-loose md:flex md:justify-between">
     {{#foreach navigation}}
-      <li class="mb-0 md:mb-6 md:text-center flex-1 nav-{{slug}}{{#if current}} active{{/if}}" role="presentation">
-				<a class="nav-link text-emerald-700 md:px-4" href="{{url absolute="true"}}">
+      <li class="md:text-center flex-1 nav-{{slug}}{{#if current}} active{{/if}}" role="presentation">
+				<a class="nav-link text-emerald-700 py-2 md:py-6 md:px-4" href="{{url absolute="true"}}">
 					{{label}}
 				</a>
 			</li>
     {{/foreach}}
-    <li class="mb-0 md:mb-6 md:text-center flex-1">
-			<a class="nav-link text-emerald-700 md:px-4" href="#subscribe">
+    <li class="md:text-center flex-1">
+			<a class="nav-link text-emerald-700 py-2 md:py-6 md:px-4" href="#/portal/signup">
 				Subscribe
 			</a>
 		</li>
-		<li class="mb-0 md:mb-6 md:text-center flex-1">
-			<a class="nav-link text-emerald-700 md:px-4" href="#search">
+		<li class="md:text-center flex-1">
+			<a class="nav-link text-emerald-700 py-2 md:py-6 md:px-4" href="#search">
 				Search
 			</a>
 		</li>

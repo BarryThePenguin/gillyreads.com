@@ -1,9 +1,0 @@
-@layer base {
-	hr {
-		@apply my-6 h-20 border-none bg-bookshelf bg-center bg-no-repeat bg-contain;
-	}
-
-	blockquote {
-	  box-shadow: 4px 4px 2px 0px var(--grayLighter);
-	}
-}

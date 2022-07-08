@@ -15,9 +15,11 @@ const {src, dest, series, parallel, watch} = gulp;
 
 const {reload} = browserSync;
 
-function clean() {
-	log(`Cleaning ${paths.dest()}`);
-	return del(paths.dest());
+function clean(path = paths.dest()) {
+	return () => {
+		log(`Cleaning ${path}`);
+		return del(path);
+	};
 }
 
 export const startGhost = task('ghost start --development');
@@ -34,9 +36,9 @@ function zip(done) {
 }
 
 function serve() {
-	watch(paths.fonts.src, fonts).on('change', reload);
-	watch(paths.templates.watch, templates).on('change', reload);
-	watch(paths.images.watch, images).on('change', reload);
+	watch(paths.fonts.src, series(clean(paths.fonts.clean), fonts)).on('change', reload);
+	watch(paths.templates.watch, series(clean(paths.templates.clean), templates)).on('change', reload);
+	watch(paths.images.watch, series(clean(paths.images.clean), images)).on('change', reload);
 	watch(paths.scripts.watch).on('change', () => reload());
 	watch(paths.styles.watch).on('change', reload);
 	watch(paths.src('**/*'), parallel(extras, webpack));
@@ -51,5 +53,5 @@ function serve() {
 const build = parallel(webpack, images, templates, extras);
 
 export default process.env.NODE_ENV === 'production'
-	? series(clean, build, zip)
-	: series(startGhost, clean, build, serve);
+	? series(clean(), build, zip)
+	: series(startGhost, clean(), build, serve);

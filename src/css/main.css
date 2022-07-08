@@ -2,9 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "components/typography";
 @import "components/icons";
-@import "components/header";
 @import "components/navbar";
 @import "components/content";
 @import "components/instafeed";
@@ -13,8 +11,6 @@
 @import "components/related-posts";
 @import "components/gallery-card";
 @import "components/bookmark-card";
-@import "components/subscribe-form";
-@import "components/subscribe-overlay";
 @import "components/search-form";
 @import "components/search-overlay";
 
@@ -22,7 +18,6 @@
 	display: grid;
 	grid-template:
 		"header header header header nav    nav    nav"
-		".      .      .      .      nav    nav    nav"
 		".			.			 tag 	  tag 	 tag 		tag    ."
 		".   		body	 body   body   body 	body   ."
 		".      . 		 aside  aside  aside  .      ."
@@ -35,9 +30,10 @@
 @screen md {
 	.body-grid {
 		grid-template:
-			".      nav    nav    nav    nav"
-			"header .      .      .      ."
-			".      body   body   body   tag"
+			"nav      nav    nav    nav    nav"
+			". 			header header .      ."
+			".      tag    .      .      ."
+			".      body   body   body   ."
 			".      aside  aside  aside  ."
 			"insta  insta  insta  insta  insta"
 			"footer footer footer footer footer";
@@ -49,8 +45,8 @@
 @screen lg {
 	.body-grid {
 		grid-template:
-			".      nav    nav    nav    nav    nav"
-			"header .      .      .      aside  ."
+			".      .      nav    nav    nav    nav"
+			"header header header .      aside  ."
 			".      body   body   body   tag    ."
 			".      body   body   body   .      ."
 			"insta  insta  insta  insta  insta  insta"
@@ -62,30 +58,10 @@
 
 .grid-header {
 	grid-area: header;
-	grid-column: 1 / span 5;
-}
-
-@screen md {
-	.grid-header {
-		grid-column: 1 / span 3;
-	}
 }
 
 .grid-nav {
 	grid-area: nav;
-  grid-column: 4 / span 4;
-}
-
-@screen md {
-	.grid-nav {
-	  grid-column: 2 / span 4;
-	}
-}
-
-@screen lg {
-	.grid-nav {
-	  grid-column: 3 / span 4;
-	}
 }
 
 .grid-tag {
@@ -94,12 +70,6 @@
 
 .grid-body {
 	grid-area: body;
-}
-
-@screen md {
-	.grid-body {
-	  grid-column: 2 / span 3;
-	}
 }
 
 .grid-aside {
@@ -132,27 +102,6 @@
 
 .grid-footer {
 	grid-area: footer;
-}
-
-.instafeed {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-@screen md {
-	.instafeed {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-@screen lg {
-	.instafeed {
-		grid-template-columns: repeat(6, 1fr);
-	}
-}
-
-.bg-instagram {
-	background-image: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 }
 
 .extra-pagination {

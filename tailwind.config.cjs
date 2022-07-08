@@ -8,6 +8,7 @@ module.exports = {
 		extend: {
 			backgroundImage: {
 				bookshelf: 'url("../../src/images/bookshelf.png")',
+				instagram: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
 			},
 			colors: {
 				twitter: '#1da1f2',
@@ -37,6 +38,14 @@ module.exports = {
 						},
 						strong: {
 							fontWeight: '500',
+						},
+						hr: {
+							height: theme('spacing.20'),
+							borderStyle: 'none',
+							backgroundImage: theme('backgroundImage.bookshelf'),
+							backgroundPosition: 'center',
+							backgroundRepeat: 'no-repeat',
+							backgroundSize: 'contain',
 						},
 					},
 				},
