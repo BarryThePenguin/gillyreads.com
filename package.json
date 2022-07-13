@@ -73,7 +73,7 @@
     "webpack-merge": "^5.8.0",
     "webpack-notifier": "^1.15.0",
     "workbox-webpack-plugin": "^6.5.3",
-    "wrangler": "^2.0.16",
+    "wrangler": "^2.0.18",
     "xo": "^0.50.0"
   },
   "workspaces": [
