@@ -22,7 +22,6 @@ export const styles = {
 export const scripts = {
 	src: src('js/**/*'),
 	watch: [assets('*.js'), assets('*.mjs')],
-	bundle: src('js'),
 };
 
 export const templates = {

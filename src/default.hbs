@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{@site.locale}}">
 <head>
-    {{!-- Document Settings --}}
+		{{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
+    <title>{{meta_title}}</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    {{! Page Meta }}
-    <title>{{meta_title}}</title>
-
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -40,7 +37,11 @@
 
     {{> "sidebar"}}
 
-    <section role="complementary" class="grid-insta grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 instafeed"></section>
+		<instagram-embed
+			src="https://feeds.behold.so/1R6tyEunCryufxwGgOaZ"
+			role="complementary"
+			class="grid-insta grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+		></instagram-embed>
 
     <footer class="grid-footer flex justify-between flex-col md:flex-row m-6">
         <section class="prose">
@@ -53,8 +54,6 @@
 					Proudly published with <a href="https://ghost.org">Ghost</a>
 				</section>
     </footer>
-
-		{{> "search-overlay"}}
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}

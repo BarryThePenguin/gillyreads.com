@@ -11,8 +11,6 @@
 @import "components/related-posts";
 @import "components/gallery-card";
 @import "components/bookmark-card";
-@import "components/search-form";
-@import "components/search-overlay";
 
 .body-grid {
 	display: grid;

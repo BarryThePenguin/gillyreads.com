@@ -2,7 +2,7 @@ import process from 'node:process';
 import webpack from 'webpack';
 import {merge} from 'webpack-merge';
 import devConfig from './webpack.dev.js';
-import {legacyConfig, moduleConfig, serviceWorkerConfig} from './webpack.common.js';
+import {legacyConfig, moduleConfig} from './webpack.common.js';
 import {compileLogger} from './lib/compile-logger.js';
 
 const result = (done) => (error, stats) => {
@@ -22,15 +22,12 @@ export default function compile(done) {
 				merge(moduleConfig, {
 					mode: 'production',
 				}),
-				merge(serviceWorkerConfig, {
-					mode: 'production',
-				}),
 			],
 			result(done),
 		);
 	} else {
 		if (typeof compiler === 'undefined') {
-			compiler = webpack([devConfig, serviceWorkerConfig]);
+			compiler = webpack([devConfig]);
 		}
 
 		compiler.run(result(done));

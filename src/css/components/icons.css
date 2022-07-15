@@ -7,5 +7,5 @@
 }
 
 .icon-social:focus {
-	@apply text-gray-400
+	@apply text-gray-400;
 }

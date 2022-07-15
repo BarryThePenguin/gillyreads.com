@@ -1,6 +1,5 @@
 import path from 'node:path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import {InjectManifest} from 'workbox-webpack-plugin';
 
 import * as paths from './config/paths.js';
 
@@ -41,14 +40,10 @@ export const legacyConfig = {
 									'@babel/preset-env',
 									{
 										useBuiltIns: 'usage',
-										corejs: '3.6',
-										targets: {
-											esmodules: false,
-										},
+										corejs: '3.24',
 									},
 								],
 							],
-							plugins: ['@babel/plugin-syntax-dynamic-import'],
 						},
 					},
 					cssRule,
@@ -98,45 +93,4 @@ export const moduleConfig = {
 		],
 	},
 	plugins,
-};
-
-export const serviceWorkerConfig = {
-	mode: 'development',
-	entry: {},
-	output: {
-		path: path.resolve(paths.dest()),
-	},
-	module: {
-		rules: [
-			{
-				oneOf: [
-					{
-						test: /\.js$/,
-						exclude: /node_modules/,
-						loader: 'babel-loader',
-						options: {
-							presets: [
-								[
-									'@babel/preset-env',
-									{
-										useBuiltIns: 'usage',
-										corejs: '3.6',
-										targets: {
-											esmodules: false,
-										},
-									},
-								],
-							],
-							plugins: ['@babel/plugin-syntax-dynamic-import'],
-						},
-					},
-				],
-			},
-		],
-	},
-	plugins: [
-		new InjectManifest({
-			swSrc: './src/sw.js',
-		}),
-	],
 };
