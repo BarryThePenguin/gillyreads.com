@@ -31,7 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
-    "@cloudflare/workers-types": "^3.14.1",
+    "@cloudflare/workers-types": "^4.20221111.1",
     "@esbuild-kit/esm-loader": "^2.4.1",
     "@tailwindcss/typography": "^0.5.4",
     "ava": "^4.3.1",
