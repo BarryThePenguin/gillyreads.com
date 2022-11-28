@@ -1,7 +1,7 @@
 import process from 'node:process';
 import {pipeline} from 'node:stream';
 import gulp from 'gulp';
-import del from 'del';
+import {deleteAsync} from 'del';
 import gulpZip from 'gulp-zip';
 import {task} from 'gulp-execa';
 import log from 'fancy-log';
@@ -18,7 +18,7 @@ const {reload} = browserSync;
 function clean(path = paths.dest()) {
 	return () => {
 		log(`Cleaning ${path}`);
-		return del(path);
+		return deleteAsync(path);
 	};
 }
 
