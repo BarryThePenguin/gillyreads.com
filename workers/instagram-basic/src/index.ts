@@ -1,28 +1,28 @@
-export interface Env {
+export type Env = {
 	INSTAGRAM_CLIENT_ID: string;
 
 	INSTAGRAM_CLIENT_SECRET: string;
 
 	GRAPH_CONFIG: KVNamespace;
-}
+};
 
-interface ShortLivedAccessToken {
+type ShortLivedAccessToken = {
 	access_token: string;
 	user_id: number;
-}
+};
 
-interface LongLivedAccessToken {
+type LongLivedAccessToken = {
 	access_token: string;
 	token_type: string;
 	expires_in: number;
-}
+};
 
-interface InstagramProfile {
+type InstagramProfile = {
 	id: string;
 	username: string;
-}
+};
 
-interface InstagramMedia {
+type InstagramMedia = {
 	paging: unknown;
 	data: Array<{
 		id: string;
@@ -34,15 +34,15 @@ interface InstagramMedia {
 		caption: string;
 		permalink: string;
 	}>;
-}
+};
 
-interface UserProfile {
+type UserProfile = {
 	id: string;
 	username: string;
 	accessToken: string;
 	expiresIn: number;
 	updatedAt: number;
-}
+};
 
 const mediaRoute = /\/.+/;
 
@@ -312,9 +312,9 @@ function html(strings: TemplateStringsArray, ...values: Array<TemplateResult | s
 	};
 }
 
-interface View {
+type View = {
 	render(): TemplateResult;
-}
+};
 
 class Layout implements View {
 	constructor(readonly content: View) {}
