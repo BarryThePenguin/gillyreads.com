@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import anyTest, {TestFn} from 'ava';
-import {fetch, MockAgent, setGlobalDispatcher} from 'undici';
-import {Miniflare, Request, RequestInfo, RequestInit} from 'miniflare';
+import anyTest, {type TestFn} from 'ava';
+import {fetch, MockAgent, setGlobalDispatcher, type RequestInfo, type RequestInit} from 'undici';
+import {Miniflare, Request} from 'miniflare';
 
 type Context = {
 	mf: Miniflare;
