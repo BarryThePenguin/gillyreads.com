@@ -1,6 +1,5 @@
 import path from 'node:path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
 import * as paths from './config/paths.js';
 
 const cssRule = {

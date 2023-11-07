@@ -8,7 +8,6 @@ import log from 'fancy-log';
 import browserSync from 'browser-sync';
 import {copy} from './lib/copy.js';
 import * as paths from './config/paths.js';
-
 import webpack from './webpack.js';
 
 const {src, dest, series, parallel, watch} = gulp;
