@@ -30,7 +30,7 @@
     "instafeed.js": "v2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.20.2",
     "@cloudflare/workers-types": "^4.20230321.0",
     "@esbuild-kit/esm-loader": "^2.5.5",
