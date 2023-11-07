@@ -1,5 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable @typescript-eslint/naming-convention */
-
 import anyTest, {type TestFn} from 'ava';
 import {fetch, MockAgent, setGlobalDispatcher, type RequestInfo, type RequestInit} from 'undici';
 import {Miniflare, Request} from 'miniflare';
@@ -21,7 +21,7 @@ mockAgent.disableNetConnect();
 
 setGlobalDispatcher(mockAgent);
 
-test.beforeEach(async (t) => {
+test.beforeEach(async t => {
 	const url = new URL('../dist/index.js', import.meta.url);
 
 	const mf = new Miniflare({
@@ -49,11 +49,11 @@ test.beforeEach(async (t) => {
 	t.context = {mf};
 });
 
-test.afterEach(async (t) => {
+test.afterEach(async t => {
 	await t.context.mf.dispose();
 });
 
-test('it redirects to authorize the user', async (t) => {
+test('it redirects to authorize the user', async t => {
 	const {mf} = t.context;
 	const response = await mf.dispatchFetch('http://example.com');
 
@@ -64,7 +64,7 @@ test('it redirects to authorize the user', async (t) => {
 	);
 });
 
-test('it authorizes the user', async (t) => {
+test('it authorizes the user', async t => {
 	const apiScope = mockAgent.get('https://api.instagram.com');
 	const graphScope = mockAgent.get('https://graph.instagram.com');
 
@@ -145,7 +145,7 @@ test('it authorizes the user', async (t) => {
 	}
 });
 
-test('returns the media for a username', async (t) => {
+test('returns the media for a username', async t => {
 	const now = Date.now();
 
 	const {mf} = t.context;

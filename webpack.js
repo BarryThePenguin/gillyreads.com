@@ -26,7 +26,7 @@ export default function compile(done) {
 			result(done),
 		);
 	} else {
-		if (typeof compiler === 'undefined') {
+		if (!compiler) {
 			compiler = webpack([devConfig]);
 		}
 
