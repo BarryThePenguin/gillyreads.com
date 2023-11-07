@@ -52,7 +52,7 @@
     "miniflare": "^2.11.0",
     "node-libs-browser": "^2.2.1",
     "plugin-error": "^2.0.1",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.31",
     "postcss-browser-reporter": "^0.6.0",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.3.3",
