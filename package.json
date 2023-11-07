@@ -22,7 +22,8 @@
     "stop": "gulp stopGhost",
     "pack": "NODE_ENV=production gulp",
     "postpack": "gscan -z ./gillyreads.zip",
-    "test": "xo"
+    "test": "xo",
+    "prepare": "husky install"
   },
   "dependencies": {
     "core-js": "^3.29.1",
@@ -48,6 +49,8 @@
     "gulp": "^4.0.2",
     "gulp-execa": "^4.5.0",
     "gulp-zip": "^6.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "mini-css-extract-plugin": "^2.7.6",
     "miniflare": "^2.11.0",
     "node-libs-browser": "^2.2.1",
@@ -83,7 +86,7 @@
     ]
   },
   "xo": {
-    "prettier": true,
+    "extends": ["prettier"],
     "rules": {
       "import/no-extraneous-dependencies": [
         "error",
@@ -97,5 +100,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "lint-staged": {
+    "*.{cjs,js,ts,css,md}": "prettier --write"
+  }
 }
