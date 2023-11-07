@@ -68,7 +68,7 @@
     "webpack-merge": "^5.8.0",
     "webpack-notifier": "^1.15.0",
     "wrangler": "^2.20.1",
-    "xo": "^0.53.1"
+    "xo": "^0.56.0"
   },
   "workspaces": [
     "workers/instagram-basic"
