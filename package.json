@@ -52,7 +52,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "mini-css-extract-plugin": "^2.7.6",
-    "miniflare": "^2.11.0",
+    "miniflare": "^3.20231030.1",
     "node-libs-browser": "^2.2.1",
     "plugin-error": "^2.0.1",
     "postcss": "^8.4.31",
