@@ -6,30 +6,30 @@
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-<main class="grid-body body-content flex flex-col justify-end" role="main">
-    <article class="{{post_class}} lg:self-end prose sm:prose-xl">
+	<main class="grid-body body-content flex flex-col justify-end" role="main">
+		<article class="{{post_class}} lg:self-end prose sm:prose-xl">
 
-        <header class="post-header text-right">
-          <h1>
-						{{title}}
-					</h1>
-        </header>
+			<header class="post-header text-right">
+				<h1>
+					{{title}}
+				</h1>
+			</header>
 
-        <section class="post-content">
-						<h3 id="most-recent-blog-post">
-							Most recent blog post
-						</h3>
-						{{#get "posts" limit="1" order="published_at desc"}}
-							{{#foreach posts}}
-								<p>
-									<a href="{{url}}">{{title}}</a>
-								</p>
-							{{/foreach}}
-						{{/get}}
+			<section class="post-content">
+				<h3 id="most-recent-blog-post">
+					Most recent blog post
+				</h3>
+				{{#get "posts" limit="1" order="published_at desc"}}
+					{{#foreach posts}}
+						<p>
+							<a href="{{url}}">{{title}}</a>
+						</p>
+					{{/foreach}}
+				{{/get}}
 
-            {{content}}
-        </section>
+				{{content}}
+			</section>
 
-    </article>
-</main>
+		</article>
+	</main>
 {{/post}}

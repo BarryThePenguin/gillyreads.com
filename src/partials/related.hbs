@@ -1,15 +1,14 @@
-
 <section class="related-posts">
 	{{#get "posts" limit="3" filter="tags:[{{post.tags[*].slug}}]+id:-{{post.id}}" include="tags" as |related|}}
-	  <h4>
+		<h4>
 			Related posts
 		</h4>
-	  <ul>
-	    {{#foreach related}}
-	    	<li>
+		<ul>
+			{{#foreach related}}
+				<li>
 					<a href="{{url}}">{{title}}</a>
 				</li>
-	    {{/foreach}}
-	  </ul>
+			{{/foreach}}
+		</ul>
 	{{/get}}
 </section>
