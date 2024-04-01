@@ -23,7 +23,7 @@
     "pack": "NODE_ENV=production gulp",
     "postpack": "gscan -z ./gillyreads.zip",
     "test": "xo",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "core-js": "^3.33.2",
