@@ -44,7 +44,7 @@
     "cssnano": "^6.0.1",
     "del": "^7.1.0",
     "fancy-log": "^2.0.0",
-    "ghost-cli": "^1.25.3",
+    "ghost-cli": "^1.26.0",
     "gscan": "^4.36.1",
     "gulp": "^4.0.2",
     "gulp-execa": "^6.0.0",
