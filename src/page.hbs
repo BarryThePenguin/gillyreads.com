@@ -6,19 +6,22 @@
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-<main class="grid-body body-content flex flex-col justify-end" role="main">
-    <article class="{{post_class}} lg:self-end prose sm:prose-xl">
+	<main class="grid-body body-content flex flex-col justify-end" role="main">
+		<article class="{{post_class}} lg:self-end prose sm:prose-xl">
 
-        <header class="post-header text-right">
-          <h1>
+			{{#match @page.show_title_and_feature_image}}
+
+				<header class="post-header text-right">
+					<h1>
 						{{title}}
 					</h1>
-        </header>
+				</header>
+			{{/match}}
 
-        <section class="post-content">
-            {{content}}
-        </section>
+			<section class="post-content">
+				{{content}}
+			</section>
 
-    </article>
-</main>
+		</article>
+	</main>
 {{/post}}
