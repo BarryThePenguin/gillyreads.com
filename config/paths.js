@@ -1,50 +1,50 @@
-import path from 'node:path';
+import path from "node:path";
 
-const dirPath = (...paths) => path.join('.', ...paths);
+const directoryPath = (...paths) => path.join(".", ...paths);
 
-export const src = (...p) => dirPath('src', ...p);
+export const source = (...p) => directoryPath("src", ...p);
 
-export const dest = (...p) => dirPath('content/themes/gillian', ...p);
+export const destination = (...p) => directoryPath("content/themes/gillian", ...p);
 
-export const modules = (...p) => dirPath('node_modules', ...p);
+export const modules = (...p) => directoryPath("node_modules", ...p);
 
-export const assets = (...p) => dest('assets', ...p);
+export const assets = (...p) => destination("assets", ...p);
 
 export const bundle = {
-	src: src(),
+	src: source(),
 	dest: assets(),
 };
 
 export const styles = {
-	watch: assets('*.css'),
+	watch: assets("*.css"),
 };
 
 export const scripts = {
-	src: src('js/**/*'),
-	watch: [assets('*.js'), assets('*.mjs')],
+	src: source("js/**/*"),
+	watch: [assets("*.js"), assets("*.mjs")],
 };
 
 export const templates = {
-	src: src('**/*.hbs'),
-	clean: dest('**/*.hbs'),
-	dest: dest(),
-	watch: src('**/*.hbs'),
+	src: source("**/*.hbs"),
+	clean: destination("**/*.hbs"),
+	dest: destination(),
+	watch: source("**/*.hbs"),
 };
 
 export const images = {
-	src: src('images/**/*'),
-	clean: assets('images'),
-	dest: assets('images'),
-	watch: src('images/**/*'),
+	src: source("images/**/*"),
+	clean: assets("images"),
+	dest: assets("images"),
+	watch: source("images/**/*"),
 };
 
 export const extras = {
-	src: src('stuff/*'),
-	dest: dest(),
+	src: source("stuff/*"),
+	dest: destination(),
 };
 
 export const fonts = {
-	src: src('fonts/*.{eot,svg,ttf,woff,otf}'),
-	clean: assets('fonts'),
-	dest: assets('fonts'),
+	src: source("fonts/*.{eot,svg,ttf,woff,otf}"),
+	clean: assets("fonts"),
+	dest: assets("fonts"),
 };

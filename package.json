@@ -86,7 +86,7 @@
     ]
   },
   "xo": {
-    "extends": ["prettier"],
+    "prettier": true,
     "rules": {
       "import/no-extraneous-dependencies": [
         "error",

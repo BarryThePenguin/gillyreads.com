@@ -1,28 +1,28 @@
-import path from 'node:path';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import * as paths from './config/paths.js';
+import path from "node:path";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import * as paths from "./config/paths.js";
 
 const cssRule = {
 	test: /\.css$/,
-	use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+	use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
 };
 
 const fileRule = {
 	test: /\.(png|svg|jpg|jpeg|gif)$/i,
-	type: 'asset/resource',
+	type: "asset/resource",
 };
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		filename: '[name].css',
+		filename: "[name].css",
 	}),
 ];
 
 export const legacyConfig = {
-	mode: 'development',
+	mode: "development",
 
 	output: {
-		filename: '[name].bundle.js',
+		filename: "[name].bundle.js",
 		path: path.resolve(paths.bundle.dest),
 	},
 	module: {
@@ -32,14 +32,14 @@ export const legacyConfig = {
 					{
 						test: /\.js$/,
 						exclude: /node_modules/,
-						loader: 'babel-loader',
+						loader: "babel-loader",
 						options: {
 							presets: [
 								[
-									'@babel/preset-env',
+									"@babel/preset-env",
 									{
-										useBuiltIns: 'usage',
-										corejs: '3.24',
+										useBuiltIns: "usage",
+										corejs: "3.24",
 									},
 								],
 							],
@@ -55,10 +55,10 @@ export const legacyConfig = {
 };
 
 export const moduleConfig = {
-	mode: 'development',
+	mode: "development",
 
 	output: {
-		filename: '[name].mjs',
+		filename: "[name].mjs",
 		path: path.resolve(paths.bundle.dest),
 	},
 	module: {
@@ -68,21 +68,21 @@ export const moduleConfig = {
 					{
 						test: /\.js$/,
 						exclude: /node_modules/,
-						loader: 'babel-loader',
+						loader: "babel-loader",
 						options: {
 							presets: [
 								[
-									'@babel/preset-env',
+									"@babel/preset-env",
 									{
-										useBuiltIns: 'usage',
-										corejs: '3.6',
+										useBuiltIns: "usage",
+										corejs: "3.6",
 										targets: {
 											esmodules: true,
 										},
 									},
 								],
 							],
-							plugins: ['@babel/plugin-syntax-dynamic-import'],
+							plugins: ["@babel/plugin-syntax-dynamic-import"],
 						},
 					},
 					cssRule,

@@ -4,7 +4,7 @@ export class InstagramEmbed extends HTMLElement {
 	constructor() {
 		super();
 
-		if ('IntersectionObserver' in window) {
+		if ("IntersectionObserver" in window) {
 			const observer = new IntersectionObserver(
 				(entries) => {
 					for (const entry of entries) {
@@ -14,7 +14,7 @@ export class InstagramEmbed extends HTMLElement {
 						}
 					}
 				},
-				{threshold: 0},
+				{ threshold: 0 }
 			);
 
 			observer.observe(this);
@@ -24,7 +24,7 @@ export class InstagramEmbed extends HTMLElement {
 	}
 
 	loadFeed() {
-		return fetch(this.getAttribute('src'))
+		return fetch(this.getAttribute("src"))
 			.then(handleResponse)
 			.then((feed) => this.renderFeed(feed))
 			.catch((error) => console.log(error));
@@ -40,8 +40,8 @@ export class InstagramEmbed extends HTMLElement {
 
 	renderFeed(feed) {
 		for (const photo of feed) {
-			const link = document.createElement('a');
-			const image = document.createElement('img');
+			const link = document.createElement("a");
+			const image = document.createElement("img");
 			link.href = photo.permalink;
 			image.title = photo.caption;
 			image.src = photo.mediaUrl;
