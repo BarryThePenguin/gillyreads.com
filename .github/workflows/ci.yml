@@ -10,16 +10,16 @@ jobs:
       - uses: actions/checkout@v4.1.2
       - uses: actions/setup-node@v4
         with:
-          node-version-file: '.tool-versions'
-          cache: 'npm'
+          node-version-file: ".tool-versions"
+          cache: "npm"
 
       - run: npm ci
       - run: npm test
-      - run: npm run pack
+      - run: npm run build
       - uses: actions/upload-artifact@v4
         with:
           name: deploy-zip
-          path: 'gillyreads.zip'
+          path: "gillyreads.zip"
 
   deploy:
     needs: build
@@ -35,4 +35,4 @@ jobs:
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          file: 'gillyreads.zip'
+          file: "gillyreads.zip"

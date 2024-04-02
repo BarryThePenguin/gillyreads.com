@@ -21,9 +21,9 @@ function clean(path = paths.destination()) {
 	};
 }
 
-export const startGhost = task("ghost start --development");
-export const upgradeGhost = task("ghost update");
-export const stopGhost = task("ghost stop");
+export const startGhost = task("docker compose up --detach");
+
+export const stopGhost = task("docker compose down");
 
 const fonts = copy("fonts");
 const extras = copy("extras");
@@ -43,7 +43,7 @@ function serve() {
 	watch(paths.source("**/*"), parallel(extras, webpack));
 
 	browserSync({
-		proxy: "http://localhost:2369",
+		proxy: "http://localhost:2368",
 		port: 3000,
 		browser: ["firefox"],
 	});

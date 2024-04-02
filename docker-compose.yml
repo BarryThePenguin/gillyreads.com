@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  ghost:
+    image: ghost:alpine
+    user: 504:1000
+    volumes:
+      - ./content:/var/lib/ghost/content:Z
+    ports:
+      - 2368:2368
+    environment:
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+      NODE_ENV: development

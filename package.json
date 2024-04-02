@@ -20,8 +20,8 @@
   "scripts": {
     "start": "gulp",
     "stop": "gulp stopGhost",
-    "pack": "NODE_ENV=production gulp",
-    "postpack": "gscan -z ./gillyreads.zip",
+    "build": "NODE_ENV=production gulp",
+    "postbuild": "gscan -z ./gillyreads.zip",
     "test": "xo",
     "prepare": "husky"
   },
@@ -44,7 +44,6 @@
     "cssnano": "^6.1.2",
     "del": "^7.1.0",
     "fancy-log": "^2.0.0",
-    "ghost-cli": "^1.26.0",
     "gscan": "^4.42.0",
     "gulp": "^4.0.2",
     "gulp-execa": "^6.0.0",
