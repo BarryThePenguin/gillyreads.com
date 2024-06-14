@@ -39,12 +39,15 @@ export class InstagramEmbed extends HTMLElement {
 	}
 
 	renderFeed(feed) {
-		for (const photo of feed) {
+		for (const photo of feed.posts) {
 			const link = document.createElement("a");
 			const image = document.createElement("img");
 			link.href = photo.permalink;
-			image.title = photo.caption;
-			image.src = photo.mediaUrl;
+			image.alt = photo.caption;
+			image.src = photo.sizes.medium.mediaUrl;
+			image.width = photo.sizes.medium.width;
+			image.height = photo.sizes.medium.height;
+
 			link.append(image);
 			this.append(link);
 		}
