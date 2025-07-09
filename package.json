@@ -46,7 +46,7 @@
     "fancy-log": "^2.0.0",
     "gscan": "^4.49.7",
     "gulp": "^5.0.0",
-    "gulp-execa": "^6.0.0",
+    "gulp-execa": "^8.0.1",
     "gulp-zip": "^6.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^16.1.2",
