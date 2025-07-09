@@ -34,7 +34,7 @@
     "@babel/preset-env": "^7.25.4",
     "@cloudflare/workers-types": "^4.20240605.0",
     "@esbuild-kit/esm-loader": "^2.6.5",
-    "@tailwindcss/typography": "^0.5.12",
+    "@tailwindcss/typography": "^0.5.16",
     "ava": "^6.1.3",
     "babel-loader": "^9.1.3",
     "browser-sync": "^3.0.2",
