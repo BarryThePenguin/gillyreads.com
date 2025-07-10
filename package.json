@@ -47,7 +47,7 @@
     "gscan": "^4.49.7",
     "gulp": "^5.0.1",
     "gulp-execa": "^8.0.1",
-    "gulp-zip": "^6.0.0",
+    "gulp-zip": "^6.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "mini-css-extract-plugin": "^2.9.2",
