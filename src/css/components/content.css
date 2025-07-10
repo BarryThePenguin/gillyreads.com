@@ -8,14 +8,14 @@
 	grid-column: 1 / span 7;
 	text-align: left;
 	padding-right: 3rem;
-	border-right: 1rem solid #1A4731;
+	border-right: 1rem solid #1a4731;
 }
 
 .content-post:nth-of-type(even) {
 	grid-column: 1 / span 7;
 	text-align: right;
 	padding-left: 3rem;
-	border-left: 1rem solid #1A4731;
+	border-left: 1rem solid #1a4731;
 }
 
 .loop-content .extra-pagination,
@@ -23,7 +23,7 @@
 	grid-column: span 7;
 }
 
-@screen md {
+@media (width >= theme(--breakpoint-md)) {
 	.loop-content {
 		grid-gap: 2rem;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -41,14 +41,14 @@
 	.feature-colour {
 		height: 35vw;
 		background-size: contain;
-		background-color: #1A4731;
+		background-color: #1a4731;
 		margin-bottom: 1.5rem;
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
 
 	.content-post:nth-of-type(odd) {
-    grid-column: 2 / span 4;
+		grid-column: 2 / span 4;
 		border: none;
 		text-align: left;
 	}
@@ -65,7 +65,7 @@
 	}
 }
 
-@screen lg {
+@media (width >= theme(--breakpoint-lg)) {
 	.body-content .post {
 		width: 52ch;
 	}

@@ -1,5 +1,5 @@
 .icon-social {
-	@apply text-white outline-none inline-block rounded-lg p-2 origin-center transition duration-300 ease-in-out;
+	@apply text-white outline-hidden inline-block rounded-lg p-2 origin-center transition duration-300 ease-in-out;
 }
 
 .icon-social:hover {

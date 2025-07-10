@@ -1,16 +1,16 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-@import "components/icons";
-@import "components/navbar";
-@import "components/content";
-@import "components/instafeed";
-@import "components/pagination";
-@import "components/post";
-@import "components/related-posts";
-@import "components/gallery-card";
-@import "components/bookmark-card";
+@import "./components/icons.css" layer(utilities);
+@import "./components/navbar.css" layer(utilities);
+@import "./components/content.css" layer(utilities);
+@import "./components/instafeed.css" layer(utilities);
+@import "./components/pagination.css" layer(utilities);
+@import "./components/post.css" layer(utilities);
+@import "./components/related-posts.css" layer(utilities);
+@import "./components/gallery-card.css" layer(utilities);
+@import "./components/bookmark-card.css" layer(utilities);
+
+@config '../../tailwind.config.cjs';
 
 .body-grid {
 	display: grid;
@@ -25,7 +25,7 @@
 	grid-template-columns: 0 1rem 1fr 1fr 1fr 1rem 0;
 }
 
-@screen md {
+@media (width >= theme(--breakpoint-md)) {
 	.body-grid {
 		grid-template:
 			"nav      nav    nav    nav    nav"
@@ -40,7 +40,7 @@
 	}
 }
 
-@screen lg {
+@media (width >= theme(--breakpoint-lg)) {
 	.body-grid {
 		grid-template:
 			".      .      nav    nav    nav    nav"
@@ -74,7 +74,7 @@
 	grid-area: aside;
 }
 
-@screen sm {
+@media (width >= theme(--breakpoint-sm)) {
 	.grid-aside {
 		display: grid;
 		grid-gap: 1rem;
@@ -82,13 +82,13 @@
 	}
 }
 
-@screen md {
+@media (width >= theme(--breakpoint-md)) {
 	.grid-aside {
 		display: block;
 	}
 }
 
-@screen lg {
+@media (width >= theme(--breakpoint-lg)) {
 	.grid-aside {
 		grid-row: 2 / span 3;
 	}

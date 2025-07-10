@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default defineConfig({
@@ -22,4 +23,6 @@ export default defineConfig({
 		// 	},
 		// },
 	},
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+	plugins: [tailwindcss()],
 });
