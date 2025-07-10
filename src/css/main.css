@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @import "./components/icons.css" layer(utilities);
 @import "./components/navbar.css" layer(utilities);
@@ -10,7 +11,43 @@
 @import "./components/gallery-card.css" layer(utilities);
 @import "./components/bookmark-card.css" layer(utilities);
 
-@config '../../tailwind.config.cjs';
+@theme {
+	--color-twitter: #1da1f2;
+
+	--font-sans:
+		ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari, "Arial Rounded MT", "Arial Rounded MT Bold",
+		Calibri, source-sans-pro, sans-serif;
+
+	--background-image-bookshelf: url("../../src/images/bookshelf.png");
+	--background-image-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+@layer utilities {
+	.prose {
+		a {
+			@apply text-emerald-700 no-underline transition-colors hover:text-emerald-500;
+		}
+
+		blockquote {
+			@apply text-gray-500;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			@apply font-normal;
+		}
+
+		strong {
+			@apply font-medium;
+		}
+
+		hr {
+			@apply bg-bookshelf h-20 border-none bg-contain bg-center bg-no-repeat;
+		}
+	}
+}
 
 .body-grid {
 	display: grid;

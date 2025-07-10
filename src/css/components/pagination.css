@@ -1,5 +1,5 @@
 .pagination {
-	@apply text-center mb-6;
+	@apply mb-6 text-center;
 }
 
 .pagination a {

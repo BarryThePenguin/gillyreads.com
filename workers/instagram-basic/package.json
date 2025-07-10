@@ -1,27 +1,27 @@
 {
-  "name": "instagram-basic",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Clourflare worker for integrating with Instagram Basic Display API",
-  "main": "dist/index.js",
-  "type": "module",
-  "author": {
-    "name": "Jonathan Haines",
-    "email": "jonno.haine@gmail.com",
-    "url": "https://jonno.dev/"
-  },
-  "scripts": {
-    "build": "wrangler publish --dry-run --outdir dist",
-    "dev": "wrangler dev --local-protocol=https src/index.ts",
-    "generate": "wrangler types"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "hono": "^4.8.4",
-    "openid-client": "^6.6.2"
-  },
-  "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.8.50",
-    "vitest": "^3.2.4"
-  }
+	"name": "instagram-basic",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Clourflare worker for integrating with Instagram Basic Display API",
+	"main": "dist/index.js",
+	"type": "module",
+	"author": {
+		"name": "Jonathan Haines",
+		"email": "jonno.haine@gmail.com",
+		"url": "https://jonno.dev/"
+	},
+	"scripts": {
+		"build": "wrangler publish --dry-run --outdir dist",
+		"dev": "wrangler dev --local-protocol=https src/index.ts",
+		"generate": "wrangler types"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"hono": "^4.8.4",
+		"openid-client": "^6.6.2"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.8.50",
+		"vitest": "^3.2.4"
+	}
 }

@@ -1,9 +1,9 @@
 .icon-social {
-	@apply text-white outline-hidden inline-block rounded-lg p-2 origin-center transition duration-300 ease-in-out;
+	@apply inline-block origin-center rounded-lg p-2 text-white outline-hidden transition duration-300 ease-in-out;
 }
 
 .icon-social:hover {
-	@apply scale-95 shadow-lg no-underline text-gray-400;
+	@apply scale-95 text-gray-400 no-underline shadow-lg;
 }
 
 .icon-social:focus {

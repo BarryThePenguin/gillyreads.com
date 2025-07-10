@@ -1,20 +1,20 @@
 {
-  "name": "gillyreads",
-  "version": "3.0.0",
-  "description": "Gill's blog",
-  "author": {
-    "name" : "Jonathan Haines",
-    "email" : "jonno.haine@gmail.com",
-    "url" : "https://jonno.dev/"
-  },
-  "engines": {
-    "ghost": ">=4.0.0"
-  },
-  "keywords": [
-    "ghost-theme"
-  ],
-  "config": {
-    "posts_per_page": 10,
-    "card_assets": true
-  }
+	"name": "gillyreads",
+	"version": "3.0.0",
+	"description": "Gill's blog",
+	"author": {
+		"name": "Jonathan Haines",
+		"email": "jonno.haine@gmail.com",
+		"url": "https://jonno.dev/"
+	},
+	"engines": {
+		"ghost": ">=4.0.0"
+	},
+	"keywords": [
+		"ghost-theme"
+	],
+	"config": {
+		"posts_per_page": 10,
+		"card_assets": true
+	}
 }
