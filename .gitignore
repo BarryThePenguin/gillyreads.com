@@ -8,6 +8,7 @@ node_modules
 current
 config.development.json
 versions
+worker-configuration.d.ts
 
 config.js
 ghost*.db

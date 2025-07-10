@@ -1,4 +1,5 @@
 {
+	"extends": ["@tsconfig/node24/tsconfig.json", "@tsconfig/strictest/tsconfig.json", "@tsconfig/node-ts/tsconfig.json"],
 	"compilerOptions": {
 		"allowJs": true
 	},

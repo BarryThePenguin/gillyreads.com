@@ -1,33 +1,42 @@
-/* eslint-env browser */
-
 export class InstagramEmbed extends HTMLElement {
-	constructor() {
-		super();
-
-		if ("IntersectionObserver" in window) {
-			const observer = new IntersectionObserver(
-				(entries) => {
-					for (const entry of entries) {
-						if (entry.isIntersecting) {
-							entry.target.loadFeed();
-							observer.disconnect();
+	#timeoutId;
+	static observer =
+		'IntersectionObserver' in globalThis
+			? new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							if (entry.isIntersecting) {
+								entry.target.loadFeed();
+								InstagramEmbed.observer.unobserve(entry.target);
+							}
 						}
-					}
-				},
-				{ threshold: 0 }
-			);
+					},
+					{ threshold: 0 },
+				)
+			: null;
 
-			observer.observe(this);
+	connectedCallback() {
+		if (InstagramEmbed.observer) {
+			InstagramEmbed.observer.observe(this);
 		} else {
-			setTimeout(() => this.loadFeed());
+			this.#timeoutId = setTimeout(() => this.loadFeed());
 		}
 	}
 
-	loadFeed() {
-		return fetch(this.getAttribute("src"))
-			.then(handleResponse)
-			.then((feed) => this.renderFeed(feed))
-			.catch((error) => console.log(error));
+	disconnectedCallback() {
+		if (this.#timeoutId) {
+			clearTimeout(this.#timeoutId);
+		}
+	}
+
+	async loadFeed() {
+		try {
+			const response = await fetch(this.getAttribute('src'));
+			const feed = await handleResponse(response);
+			return this.renderFeed(feed);
+		} catch (error) {
+			return console.log(error);
+		}
 
 		function handleResponse(response) {
 			if (response.ok) {
@@ -39,9 +48,11 @@ export class InstagramEmbed extends HTMLElement {
 	}
 
 	renderFeed(feed) {
+		const shadow = this.attachShadow({ mode: 'open' });
+
 		for (const photo of feed.posts) {
-			const link = document.createElement("a");
-			const image = document.createElement("img");
+			const link = document.createElement('a');
+			const image = document.createElement('img');
 			link.href = photo.permalink;
 			image.alt = photo.caption;
 			image.src = photo.sizes.medium.mediaUrl;
@@ -49,7 +60,7 @@ export class InstagramEmbed extends HTMLElement {
 			image.height = photo.sizes.medium.height;
 
 			link.append(image);
-			this.append(link);
+			shadow.append(link);
 		}
 	}
 }

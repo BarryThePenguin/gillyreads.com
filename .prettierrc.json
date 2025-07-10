@@ -1,6 +1,11 @@
 {
-	"trailingComma": "es5",
-	"singleQuote": false,
-	"bracketSpacing": true,
-	"useTabs": true
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": "*.jsonc",
+			"options": {
+				"trailingComma": "none"
+			}
+		}
+	]
 }

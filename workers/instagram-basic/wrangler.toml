@@ -1,7 +1,0 @@
-name = "instagram-basic"
-main = "src/index.ts"
-compatibility_date = "2022-06-18"
-
-kv_namespaces = [
-	{ binding = "GRAPH_CONFIG", id = "98cbeacaed2c4e18a3763ad65289c79e", preview_id = "ae8a46eeb3984aa184998228eaf7a101" }
-]
