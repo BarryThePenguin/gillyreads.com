@@ -50,6 +50,10 @@ export class InstagramEmbed extends HTMLElement {
 	renderFeed(feed) {
 		const shadow = this.attachShadow({ mode: 'open' });
 
+		const container = document.createElement('div');
+		container.className = 'grid-insta grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6';
+		shadow.append(container);
+
 		for (const photo of feed.posts) {
 			const link = document.createElement('a');
 			const image = document.createElement('img');
@@ -60,7 +64,7 @@ export class InstagramEmbed extends HTMLElement {
 			image.height = photo.sizes.medium.height;
 
 			link.append(image);
-			shadow.append(link);
+			container.append(link);
 		}
 	}
 }
