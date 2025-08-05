@@ -26,7 +26,7 @@
 		"prepare": "husky"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.8.50",
+		"@cloudflare/vitest-pool-workers": "^0.8.60",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.11",
 		"@tsconfig/node-ts": "^23.6.1",
