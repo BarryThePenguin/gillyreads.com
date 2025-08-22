@@ -21,7 +21,7 @@
 		"openid-client": "^6.6.2"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.8.50",
+		"@cloudflare/vitest-pool-workers": "^0.8.66",
 		"vitest": "^3.2.4"
 	}
 }
