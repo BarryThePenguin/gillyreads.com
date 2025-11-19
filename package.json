@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.10.3",
-		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.16",
 		"@tsconfig/node-ts": "^23.6.1",
 		"@tsconfig/node24": "^24.0.1",
