@@ -18,7 +18,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"hono": "^4.10.4",
-		"openid-client": "^6.6.2"
+		"openid-client": "^6.8.1"
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.10.3",
