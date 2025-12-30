@@ -43,7 +43,7 @@
 		"gulp-execa": "^8.0.1",
 		"gulp-zip": "^6.1.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.1.2",
+		"lint-staged": "^16.2.7",
 		"prettier": "^3.6.2",
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"tailwindcss": "^4.1.11",
